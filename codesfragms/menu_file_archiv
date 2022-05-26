@@ -1,0 +1,56 @@
+ <?php
+  $id_cat = intval($_GET['id_cat']);
+
+  if(!empty($gl_id_user))
+      {
+       print "<a href='?mod=filearch2_cats_list' onmouseover='document.home.src=img1on.src' onmouseout='document.home.src=img1.src'>
+       <img src='themes/file_archiv/images/main_file_archiv1.gif' height=40px alt='Home' name='home' id='home' />
+      </a><br />";
+// *********************************************************************************************************            
+     	if ($gl_mod=='filearch2_cats_list')
+        {
+       print " <a href='?mod=filearch2_cats_add' onmouseover='document.add_cat.src=img3on.src' onmouseout='document.add_cat.src=img3.src'>
+       <img src='themes/file_archiv/images/add_cat1.gif' alt='add_cat' name='add_cat' id='add_cat' /></a><br />"; 
+        }                
+// *********************************************************************************************************             
+        if ($gl_mod=='filearch2_items_list')
+        {
+       print " <a href='?mod=filearch2_cats_edit&id_cat={$id_cat}' onmouseover='document.param_cat.src=img4on.src' onmouseout='document.param_cat.src=img4.src'>
+       <img src='themes/file_archiv/images/param_cat1.gif' alt='add_cat' name='param_cat' id='param_cat' /></a><br />"; 
+        }
+// *********************************************************************************************************           
+        if (!empty($id_cat ) AND $gl_mod=='filearch2_cats_edit' OR  $gl_mod=='filearch2_items_stat' OR  $gl_mod=='filearch2_items_autoload' OR  $gl_mod=='filearch2_manager_list')
+       {
+       print " <a href='?mod=filearch2_items_list&id_cat={$id_cat}' onmouseover='document.list_cat.src=img5on.src' onmouseout='document.list_cat.src=img5.src'>
+       <img src='themes/file_archiv/images/list_cat1.gif' alt='list_cat' name='list_cat' id='list_cat' /></a><br />"; 
+        } 
+        
+// *********************************************************************************************************      
+        if (!empty($id_cat ) AND $gl_mod=='filearch2_items_edit' OR $gl_mod=='filearch2_items_add')
+        {
+       print " <a href='?mod=filearch2_items_list&id_cat={$id_cat}' onmouseover='document.list_cat.src=img6on.src' onmouseout='document.list_cat.src=img6.src'>
+       <img src='themes/file_archiv/images/to_cat1.gif' alt='to_cat' name='to_cat' id='to_cat' /></a><br />"; 
+        }
+// *********************************************************************************************************                         
+      print " <a href='?act=auth_exit' onmouseover='document.exit.src=img2on.src' onmouseout='document.exit.src=img2.src'>
+       <img src='themes/file_archiv/images/exit_file_archiv1.gif' alt='Exit' name='exit' id='exit' />
+      </a><br />";
+      }
+
+ ?>
+<?php
+//    if(!empty($gl_id_user))
+//      {
+//      print "<a class='contentpagetitle' href='?mod=filearch2_cats_list'></a>";
+//      print "<br><br><a class='contentpagetitle' href='?act=auth_exit'><img src='themes/file_archiv/images/exit_file_archiv.gif' height = 15px></a>";       
+//      }
+//    else
+//	if ($mod=='auth' OR $mod=='users_psw_remember')
+//	{
+//      print "<ul>";          
+//      print "<li><a class='contentpagetitle' href='?mod=auth'>ВОЙТИ</a></li>";
+//      print "</ul>";  	
+//      }	
+ ?>
+
+

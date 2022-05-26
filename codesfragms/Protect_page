@@ -1,0 +1,19 @@
+<script language="Javascript1.2"> 
+<!--
+var mymessage = "Извините, но вы не можете просмотреть код страницы или скачать картинку.";
+if (document.layers){
+document.captureEvents(Event.MOUSEDOWN);
+}
+ function rtclickcheck(keyp){
+  if (document.layers && keyp.which != 1) {
+    alert(mymessage);
+    return false;
+  }
+  if (document.all && event.button != 1) { 
+    alert(mymessage);
+    return false;
+  }
+}
+document.onmousedown = rtclickcheck
+//-->
+</script>

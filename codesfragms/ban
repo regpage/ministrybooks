@@ -1,0 +1,5 @@
+<?php 
+include "flooders.inc.php"; 
+$f=new Flooders("bbd_tmpr/ban.txt", 300);
+$f->Check("403");
+?>
