@@ -1,0 +1,120 @@
+html {
+  	width			:100%; 
+    	height		:100%;
+  	overflow		:hidden;
+}
+
+body {
+	vertical-align		:top;
+  	width			:100%; 
+      	height          	:100%;
+  	margin			:0px; 
+    	padding         	:0px;
+  	overflow		:hidden;
+	font-family:Verdana; 
+}
+
+#menu {
+	position		:absolute;
+	top			:0px;
+ 	width			:250px;
+  	height           	:100%;
+	left			:0px;
+	padding			:0px 0px -1px 0px;
+	padding-left		:20px;   
+	padding-right		:27px;   
+	float			:none;
+	background		:url(../admin/images/side-bar.jpg) no-repeat;
+	font-weight		:bold;
+      	overflow		:auto;
+	overflow-x		:hidden;
+}
+
+top: 0px; 
+
+#layer1 {
+
+   	top			:0px;
+ 	padding		:0px; 
+ 	width			:250px;
+ 	height		:64px;
+}
+
+#layer2 {
+	top			:0px;
+  	height           	:100%;
+ 	left			:300px;
+	padding		:-1px -1px -1px -1px;
+ 	padding-right	:50px;
+ 	margin-top		:-19px;
+ 	 	margin-bottom		:-19px;
+ 	margin-left		:300px;
+ 	margin-right	:0px;
+      overflow		:auto;
+ }
+/* Text passed with mosmsg url parameter */
+#layer2 h3 { color:#000000; font-size:14px; margin-bottom:4px;}
+/* #layer2 b { font-size:12px; margin-bottom:4px;} */
+
+/* 
+#layer1 h3 { color:#000000; font-size:14px; margin-bottom:4px;}
+#layer1 b { background-color: #fff; color:#D25A0B; font-size:12px; margin-bottom:4px;}
+*/
+
+hr   { color: #d25a0b; background-color: #c30; text-align: left; width: 150px; height: 2px; border-width: 0 }
+
+table.bt1, table.bt1 td     { color: #aa0540; font-size: 14px; padding-left: 6px; width: 150px; height: 30px; border-style: solid; border-width: 0 0 2px; border-color: #999; border-collapse: collapse    }
+a:hover { text-decoration:underline;}
+table.tbl1, table.tbl1 td   { padding-left: 6px; width: 150px; height: 30px; border-top: 0 solid; border-right: 0 solid; border-bottom: 2px solid #c63; border-left: 0 solid; border-collapse: collapse  }
+/* image */
+.Image {border:1px solid gray; margin:10px;}
+.NavigTbl { margin-bottom:10px;}
+.NavigTD {
+  font-weight:normal;
+  font-size:14px;
+  font-family:'Times New Roman';
+  padding:5px 5px 5px 5px;
+  text-align:center;
+}
+
+.NavigTDCurPage {
+  	font-weight:normal;
+  	font-size:14px;
+  	font-family:'Times New Roman';
+  	padding:5px 5px 5px 5px;
+  	text-align:center;
+}
+
+
+/* Footer */
+.FooterTbl {
+  	background-color:#D25A0B;
+  	border-left:1px solid #6699FF;
+  	border-right:1px solid #6699FF;
+}
+
+.Footer {
+	position: fixed;       
+	bottom			:0px;
+ 	width			:100%;
+	float			:none;
+	text-align		:center;
+	font-size		:8pt;
+	color			:#000000;
+  	background  		:#EFEBDE;
+ 	border-top		:1px solid;
+	border-color		:#BDBEB5;
+       overflow: hidden;
+}
+
+.Footer a {
+	color			:#000000;
+}
+
+.button { color: #07273e; background-color: #ece1df; margin: 20px 20px 20px 5px; height: 26px; border: solid 1px #a3a3a3; outline: solid 1px #c6a49d }
+.button:hover  { color: #972A30; text-decoration: none }
+
+.button_us { color: #fff; background-color: #999; margin: 20px 20px 20px 5px; padding: 5px 5px 5px 5px; height: 26px; border: solid 1px #000;}
+.button_us:hover  { color: #972A30; text-decoration: none }
+
+#box2   { background-color: #ebebeb; margin-top: 0; margin-right: 300px; margin-left: 300px; padding-right: 300px; position: static; top: 0; right: 300px; left: 300px; width: 400px; height: 100% }

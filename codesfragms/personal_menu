@@ -1,0 +1,20 @@
+<?php
+
+     if(!empty($gl_id_user))
+     {
+       print "<a class='chap' href='?act=auth_exit'>ВЫЙТИ</a><br/>";
+	if ($mod=='filearch2_cats_list')
+	{
+         print "<a class='active' href='?mod=filearch2_cats_list'>ФАЙЛОВЫЙ АРХИВ</a><br/>";
+	}
+	else
+         print "<a class='chap' href='?mod=filearch2_cats_list'>ФАЙЛОВЫЙ АРХИВ</a><br/>";
+                      
+      }
+      else
+	if ($mod=='auth' OR $mod=='users_psw_remember')
+	{
+          print "<a class='active' href='?mod=auth'>ВОЙТИ</a><br/>";
+	}
+	
+ ?>

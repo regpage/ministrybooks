@@ -1,0 +1,61 @@
+<?php
+if ($mod=='by_alphabet')
+{ 
+echo "<a class='active' href='http://ministrybooks.ru/?mod=by_alphabet'>ПО АЛФАВИТУ</a><br/>"; 
+ } 
+else 
+print("<a href='http://ministrybooks.ru/?mod=by_alphabet'>ПО АЛФАВИТУ</a><br/>"); 				
+if ($mod=='books_list' )
+{ 
+//print "<a class='active' href='"?'".urlencode("mod=books_list")."'>ПО КАТЕГОРИЯМ</a><br/>"; 
+print "<a class='active' href='". htmlspecialchars("?mod=".urlencode("books_list"))."'>ПО КАТЕГОРИЯМ</a><br/>";  
+} 
+else 
+print "<a href='". htmlspecialchars("?mod=".urlencode("books_list"))."'>ПО КАТЕГОРИЯМ</a><br/>";
+
+if ($id_author_prec==1) 
+{ 
+print "<a class='active' href='?mod=by_author&id_author_prec=1'>ВОЧМАН НИ</a><br/>";
+} 
+else 
+{
+print "<a href='?mod=by_author&id_author_prec=1'>ВОЧМАН НИ</a><br/>";  
+}
+
+if ($id_author_prec==2) 
+{ 
+print "<a class='active' href='?mod=by_author&id_author_prec=2'>УИТНЕСС ЛИ</a>";
+} 
+else 
+{
+print "<a href='?mod=by_author&id_author_prec=2'>УИТНЕСС ЛИ</a>";  
+}
+?>
+<a href="http://ministrybooks.ru/" onmouseover="document.home.src=img1on.src" onmouseout="document.home.src=img1.src">
+<img src="images2/home_n.gif" alt="Living Stream Ministry Online Publications (home)" name="home" id="home" />
+</a>
+<br /><br />
+<a href='http://ministrybooks.ru/?mod=by_alphabet' onmouseover="document.alpha.src=img3on.src" onmouseout="document.alpha.src=img3.src">
+<img src="images2/alphabetical_n.gif" alt="Books in Alphabetical Order"  name="alpha" id="alpha" /></a>
+<br />
+<a href='http://ministrybooks.ru/?mod=books_list' onmouseover="document.category.src=img4on.src" onmouseout="document.category.src=img4.src">
+<img src="images2/category_n.gif" alt="Books by Category" name="category" id="category" /></a>
+<br />
+<a href='http://ministrybooks.ru/?mod=by_author&id_author_prec=1' onmouseover="document.neebooks.src=img12on.src" onmouseout="document.neebooks.src=img12.src">
+<img src="images2/watchman-nee.gif" alt="Books by Watchman Nee" name="neebooks" id="neebooks" /></a>
+<br />
+<img src="images2/witness-lee.gif" alt="Books by Witness Lee" name="leebooks" id="leebooks" />
+<br />
+<a href='http://ministrybooks.ru/?mod=life_study' onmouseover="document.lifestudy.src=img7on.src" onmouseout="document.lifestudy.src=img7.src">
+<img src="images2/life-study_n.gif" alt="Life-Study of the Bible" name="lifestudy" id="lifestudy" /></a>
+<br />
+<a href='http://ministrybooks.ru/?mod=conclnt' onmouseover="document.conclusion.src=img8on.src" onmouseout="document.conclusion.src=img8.src">
+<img src="images2/conclusion_n.gif" alt="Conclusion of the New Testament" name="conclusion" id="conclusion" /></a>
+<br />
+<a href='http://ministrybooks.ru/?mod=high_peak_books' onmouseover="document.highpeak.src=img9on.src" onmouseout="document.highpeak.src=img9.src">
+<img src="images2/high-peak_n.gif" alt="High Peak Books" name="highpeak" id="highpeak" /></a>
+<br />
+<a href='http://ministrybooks.ru/?mod=selected_titles' onmouseover="document.leetitles.src=img10on.src" onmouseout="document.leetitles.src=img10.src">
+<img src="images2/lee-titles_n.gif" alt="Selected Titles by Witness Lee" name="leetitles" id="leetitles" /></a>
+
+              

@@ -1,0 +1,89 @@
+body {
+vertical-align:top; 
+background-color:#FFFFFF; 
+margin: 0px; 
+padding: 0px; 
+scrollbar-base-color:#883A37; 
+scrollbar-arrow-color:white;
+scrollbar-DarkShadow-Color:gray;
+scrollbar-track-color:white
+margin-top: 0px;
+}
+
+img {border: 0px;}
+
+p {font-size:12px; font-weight:normal; font-family:arial,helvetica,verdana; text-align:justify; line-height:120%}
+
+form {font-family: verdana, arial; font-size: 11px;}
+
+input {font-family: verdana, arial; font-size: 11px;}
+
+#top {text-align:center;border-bottom:1px solid #a5b8d0;}
+
+#top a:link, #top a:visited {color:#a5b8d0;text-decoration:none;font-size:10px;}
+
+#top a:hover {color:#883a37;text-decoration:none;font-size:10px;}
+
+p.note {font-size:11px; font-weight:normal; color:#672624; font-family:arial,helvetica,verdana; line-height:120%}
+
+p.copyright {font-size:11px; font-weight:normal; font-family:arial,verdana; text-align:center; color:#A7A7A7; line-height:120%}
+
+.bold {font-size:12px; font-weight:bold; font-family:arial,helvetica,verdana; line-height:120%}
+
+.gray {font-size:12px; font-weight:bold; color:#ACACAC; font-family:arial,helvetica,verdana; line-height:120%}
+
+.left10 {font-size:12px; font-weight:normal; font-family:arial,verdana; text-align:justify; margin-left:10px; line-height:120%}
+
+.left20 {font-size:12px; font-weight:normal; font-family:arial,verdana; text-align:justify; margin-left:20px; line-height:120%}
+
+.left30 {font-size:12px; font-weight:normal; font-family:arial,verdana; text-align:justify; margin-left:30px; line-height:120%}
+
+.left40 {font-size:12px; font-weight:normal; font-family:arial,verdana; text-align:justify; margin-left:40px; line-height:120%}
+
+a:visited {font-size:12px; font-weight:bold; font-family:arial,verdana; text-align:center; color:#2959C4; text-decoration:none}
+a:link {font-size:12px; font-weight:bold; font-family:arial,verdana; text-align:center; color:#2959C4; text-decoration:none}
+a:hover {font-size:12px; font-weight:bold; font-family:arial,verdana; text-align:center; color:#891C1F; text-decoration:none}
+
+a:visited.copyright {font-size:11px; font-weight:bold; font-family:arial,verdana; text-align:center; color:#2959C4; text-decoration:none; line-height:120%}
+a:link.copyright {font-size:11px; font-weight:bold; font-family:arial,verdana; text-align:center; color:#2959C4; text-decoration:none; line-height:120%}
+a:hover.copyright {font-size:11px; font-weight:bold; font-family:arial,verdana; text-align:center; color:#883A37; text-decoration:underline; line-height:120%}
+
+a:visited.letter {font-size:12px; font-weight:bold; font-family:arial,verdana; text-align:center; color:#2959C4; text-decoration:none}
+a:link.letter {font-size:12px; font-weight:bold; font-family:arial,verdana; text-align:center; color:#2959C4; text-decoration:none}
+a:hover.letter {font-size:12px; font-weight:bold; font-family:arial,verdana; text-align:center; color:#FFFFFF; background:#883A37; text-decoration:none}
+
+ol.bullet {list-style-image:url(bullet.gif); list-style-position:outside; font-size:12px; font-weight:normal; font-family:arial,verdana; text-align:left; line-height:120%}
+
+ol.decimal {list-style-type:decimal; font-size:12px; font-weight:bold; font-family:arial,verdana; text-align:left; line-height:120%}
+
+.formcenter16 {font-family:verdana, arial, helvetica;	font-size: 16px;color: #8B0000;	font-weight: bold;text-align: center;vertical-align: top;}
+
+.formcenter13 {font-family:verdana, arial, helvetica;	font-size: 13px;color: #8B0000;	font-weight: bold;text-align: center;vertical-align: top;}
+
+.borders {font-family:arial,verdana; font-size:12px; border:1px solid #D9C297;}
+
+.header {font-family:arial,verdana; font-weight:bold; text-align:center; font-size:12px; border:1px solid #D9C297; background-color:#D9C297;}
+
+.search {font-family:arial,verdana; text-align:left; font-size:12px; border:1px solid #D9C297; background-color:#F5EEE0;}
+
+.normal {font-weight:normal}
+
+.message {
+	color: #c00;
+  	font-family:Verdana;
+	margin: 0 16px 16px 8px;
+  	font-size:16px;
+	border-width: 1px;
+	border-style: solid;
+	padding: 12px;
+	background-color: #ffebe8;
+	border-color: #FF5353;
+	outline: dashed 1px #c00;
+	width: 450px;
+}
+
+.message b {
+  	font-family:Verdana;
+  	font-size:16px;
+	font-weight:bold;
+}
