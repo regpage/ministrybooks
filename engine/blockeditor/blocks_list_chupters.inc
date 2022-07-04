@@ -5,71 +5,61 @@
   
 print "<table border='0' cellpadding='0' cellspacing='0' width='665'><tbody><tr><td><h1>{$ed_h1_prefix}</h1></td></tr></tbody></table>";
 
-if(isset($_POST['s']))
-  {
-       if(isset($_POST['Arr']))
-       {
-
+if(isset($_POST['s'])) {
+   if(isset($_POST['Arr'])) {
 //ссылка на страницу 
     
-    $ed_page_preview_href = "?mb={$ed_pg}";
-    $query = "SELECT content FROM {$gl_db_prefix}{$ed_tbl_pref}_blocks WHERE id_pg = {$ed_pg} ORDER BY pos LIMIT 0, 1";
-    $content = stripslashes(db_select_one($query));   
-    $content = explode("[NEWPAGE]", $content);
-    $pages_cnt = count($content);
+        $ed_page_preview_href = "?mb={$ed_pg}";
+        $query = "SELECT content FROM {$gl_db_prefix}{$ed_tbl_pref}_blocks WHERE id_pg = {$ed_pg} ORDER BY pos LIMIT 0, 1";
+        $content = stripslashes(db_select_one($query));   
+        $content = explode("[NEWPAGE]", $content);
+        $pages_cnt = count($content);
 
-    $start_table_contents = $_POST['s_table_contents'];
+        $start_table_contents = $_POST['s_table_contents'];
 
         $String = implode(", ", $_POST['Arr']);   //номера страниц по главам
-          $navig_tpl = file_get_contents("{$gl_path_to_engine_root}mods/spaw2full/navigchupter.inc");
-          $navig_tpl = str_replace("{ed_page_preview_href}", $ed_page_preview_href, $navig_tpl);
-          $navig_tpl = str_replace("{Arr}", $String, $navig_tpl);
-	  $navig_tpl = str_replace("{pages_cnt}", $pages_cnt, $navig_tpl);
+        $navig_tpl = file_get_contents("{$gl_path_to_engine_root}mods/spaw2full/navigchupter.inc");
+        $navig_tpl = str_replace("{ed_page_preview_href}", $ed_page_preview_href, $navig_tpl);
+        $navig_tpl = str_replace("{Arr}", $String, $navig_tpl);
+	    $navig_tpl = str_replace("{pages_cnt}", $pages_cnt, $navig_tpl);
         
         save_in_file("{$ed_path_to_file}ch_{$ed_pg}.inc", $navig_tpl, 'w');	
        
         print "<div class='message'>$l_gen[32] $String $start_table_contents</div>";
-       }
-     else
-       {
+    } else {
         print "<div class='message'>$l_gen[31]</div>";
-       } header("refresh: 1; url=?adm=parts_items_pages_chapter&ed_opt=blocks_list_chupters&pg={$id_item}");
+    } header("refresh: 1; url=?adm=parts_items_pages_chapter&ed_opt=blocks_list_chupters&pg={$id_item}");
+}
 
-    }
+//Выводим контент постранично    
 
-//Выводим контент постранично
- 
-    $query = "SELECT content FROM {$gl_db_prefix}{$ed_tbl_pref}_blocks WHERE id_pg = {$ed_pg} ORDER BY pos LIMIT 0, 1";
-    $content = stripslashes(db_select_one($query));   
-    $content = explode("[NEWPAGE]", $content);
-    $pages_cnt = count($content);
-             
-    if($pages_cnt <=1)
-                {
-                  print "<div class='message'>$l_gen[33]</div>";
-                }
-                  else
-                {   
+$query = "SELECT content FROM {$gl_db_prefix}{$ed_tbl_pref}_blocks WHERE id_pg = {$ed_pg} ORDER BY pos LIMIT 0, 1";
+$content = stripslashes(db_select_one($query));
+$content = explode("[NEWPAGE]", $content);
+$pages_cnt = count($content);
 
-  $path = "{$ed_path_to_file}ch_{$ed_pg}.inc";
+if($pages_cnt <=1) {
+    print "<div class='message'>$l_gen[33]</div>";
+} else {
+    $path = "{$ed_path_to_file}ch_{$ed_pg}.inc";
 //    Если файл с системой навигации существует извлекаем массив данных 
-             if(file_exists($path))
+    if(file_exists($path))
 
 //   Данные из файла помещаем в массив
+       $List=file($path);
 
-               $List=file($path);
+//   Определям номер строки в             
+        foreach ($List as $line_num => $line) {
+            if (substr_count($line, "ch")>0) { 
+                break;
+            }
+            $str_line = $line_num +1;                
+        }        
 
-//   Определям номер строки в 
-            
-              foreach ($List as $line_num => $line) {
-                      if (substr_count($line, "ch")>0) break;
-                           $str_line = $line_num +1;
-               } 
+    $great_labels = array_keys($List, "ch");
+    $Arrh = $List[$str_line];
 
-        $great_labels = array_keys($List, "ch"); 
-        $Arrh = $List[$str_line];
-
-        eval ($Arrh);   
+    eval ($Arrh);   
 
 //   Начало формы с checkboxами
   
@@ -78,30 +68,28 @@ if(isset($_POST['s']))
    <td class='SiteTblTH' align='center'>
    <input   type='checkbox' name='sel_all' onClick='var o=this.form.elements; for(var i=0;i<o.length;i++)if(o[i].type==\"checkbox\")o[i].checked=this.checked'></td></tr>";
  
-    for($i = 0; $i < $pages_cnt; $i++)
-      {
-     
-        $part= $i + 1;        
-     
-   	$content[$i] =  getPrewText($content[$i]);
-                
-                print "<tr><td class='SiteTblLeft' width='700'>";  
-   		print "<h2>$l_gen[34] $part </h2><div class='info'>$content[$i]...</div>";
+    for($i = 0; $i < $pages_cnt; $i++) {        
+        $part = $i + 1;
+        # ROMANS CODE 02/06/2022
+        // old
+   	    //$content[$i] =  getPrewText($content[$i]);
+        //new
+        $text_short =  getPrewText($content[$i]);        
+        
+        print "<tr><td class='SiteTblLeft' width='700'>";  
+   		print "<h2>$l_gen[34] $part </h2><div class='info'>{$text_short}...</div>";
    		print "</td><td class='SiteTblCenter'>";
        
-//Выбор нужной страницы с главой                
-         if(in_array($part, $ch))
-    { 
-      $checked = 'checked';
-    } 
-     	else
-    {
-               $checked = '';
-    }  
-                print "<input type='checkbox' name=Arr[] value=$part $checked>";
-                print "</td></tr>";    
+// Выбор нужной страницы с главой                
+        if(in_array($part, $ch)) {
+            $checked = 'checked';
+        } else {
+            $checked = '';
+        } 
+        print "<input type='checkbox' name=Arr[] value=$part $checked>";
+        print "</td></tr>";        
     }
-  //кнопки
+// кнопки
   print "<tr><td></td><td><input type='submit' name='s' value=$l_gen[17] class='button'></form></td></tr>";
   print "</tbody></table>";
 
@@ -110,8 +98,7 @@ if(isset($_POST['s']))
 //---------скрипт добавления гиперссылок к оглавлению -----------------------------
 /* */
 
-if(isset($_POST['s']))
-  { 
+if(isset($_POST['s'])) { 
 $path_book = "{$ed_path_to_file}{$ed_pg}.inc";
 
  if(file_exists($path_book))

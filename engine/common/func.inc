@@ -476,22 +476,29 @@ function create_navigation_old($pages_count, $url, $part, $var_name='part')
 
 //Функция корректно урезает строку в конце слова.
 
-function getPrewText( $text, $maxwords = 20, $maxchar = 300 )
- {
-    $sep = ' ';
-    $words = split( $sep, $text );
+function getPrewText($text, $maxwords = 20, $maxchar = 300) {
+  // old version DO NOT work
+    /*$sep = ' ';
+    $words = split($text);
     $char = iconv_strlen($text, 'utf-8');
 
-         if(count($words) > $maxwords)
-      {
-          $text = join($sep, array_slice($words, 0, $maxwords));
-      }
-    if ($char > $maxchar)
-      {
-        $text = iconv_substr( $text, 0, $maxchar, 'utf-8' );
-      }
-   return $text;
-  } 
+    if(count($words) > $maxwords) {
+      $text = join($sep, array_slice($words, 0, $maxwords));
+    }
+    if ($char > $maxchar) {
+      $text = iconv_substr($text, 0, $maxchar, 'utf-8');
+    }
+    return $text;*/
+    // new version
+    $words = explode(' ', $text, 25);
+    $words[24] = '';        
+    if(count($words) > 24) {
+        $text_short = implode(' ', $words);
+    } else {
+        $text_short = $text;
+    }
+    return $text_short;
+  }
 
 function err_handler($errno, $errmsg, $filename, $linenum) {
 
