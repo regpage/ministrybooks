@@ -231,14 +231,14 @@
   }
 
   //коррекция переменных, которые передаются методами $_GET и $_POST в строке $str
-  //Параметр $escape определяет обрабатывать ли строку функцией mysql_escape_string()
+  //Параметр $escape определяет обрабатывать ли строку функцией mysqli_escape_string()
   function correct_input($str, $escape=true)
   {
     $str = trim($str);
     if($escape == true)
     {
       //if (!get_magic_quotes_gpc())
-        $str = mysql_real_escape_string($str);
+        $str = mysqli_real_escape_string(DBBYMYSQLI::$link, $str);
     }
     if($escape == false)
     {

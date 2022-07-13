@@ -18,8 +18,8 @@
     $title = correct_input($_POST['title']);
 
     $separator = $_POST['separator'];
-    if(!get_magic_quotes_gpc())
-      $separator = mysql_escape_string($_POST['separator']);
+    if(true) //!get_magic_quotes_gpc()
+      $separator = mysqli_escape_string(DBBYMYSQLI::$link,$_POST['separator']);
 
     $disposition  = correct_input($_POST['disposition']);
 
