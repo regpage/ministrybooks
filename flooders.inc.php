@@ -20,7 +20,7 @@ class Flooders {
     /* Пример: $f=new Flooders("ban.txt",3600);                    */
 	/*                                                             */
 
-	function Flooders($filename="flooders.txt",$timeout=600) {
+	function __construct($filename="flooders.txt",$timeout=600) {
 		$this->filename=$filename;
 		$this->timeout=$timeout;
 		$this->AGENTS=Array();

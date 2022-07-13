@@ -75,3 +75,13 @@ var d=new Image(1,1);d.src=c+a;d.onload=function(){d.onload=null;d.onerror=null;
 !0;d.setRequestHeader("Content-Type","text/plain");d.onreadystatechange=function(){4==d.readyState&&(b(),d=null)};d.send(a);return!0},Ee=function(a,b){if(!J.body)return We(function(){Ee(a,b)},100),!0;a=encodeURIComponent(a);try{var c=J.createElement('<iframe name="'+a+'"></iframe>')}catch(d){c=J.createElement("iframe"),c.name=a}c.height="0";c.width="0";c.style.display="none";c.style.visibility="hidden";var e=Ne()+"/u/post_iframe.html";Ga(W,"beforeunload",function(){c.src="";c.parentNode&&c.parentNode.removeChild(c)});
 setTimeout(b,1E3);J.body.appendChild(c);c.src=e;return!0};var qf=function(){this.G=this.w=!1;0==Ea()%1E4&&(H(142),this.G=!0);this.C={};this.D=[];this.U=0;this.S=[["www.google-analytics.com","","/plugins/"]];this._gasoCPath=this._gasoDomain=this.bb=void 0;Re();Se()};E=qf.prototype;E.oa=function(a,b){return this.hb(a,void 0,b)};E.hb=function(a,b,c){b&&H(23);c&&H(67);void 0==b&&(b="~"+M.U++);a=new U(b,a,c);M.C[b]=a;M.D.push(a);return a};E.u=function(a){a=a||"";return M.C[a]||M.hb(void 0,a)};E.pa=function(){return M.D.slice(0)};E.ab=function(){return M.D.length};
 E.aa=function(){this.w=!0};E.la=function(){this.G=!0};var Fe=function(a){if("prerender"==J.visibilityState)return!1;a();return!0};var M=new qf;var Ha=W._gat;Ha&&Ba(Ha._getTracker)?M=Ha:W._gat=M;var Z=new Y;(function(a){if(!Fe(a)){H(123);var b=!1,c=function(){if(!b&&Fe(a)){b=!0;var d=J,e=c;d.removeEventListener?d.removeEventListener("visibilitychange",e,!1):d.detachEvent&&d.detachEvent("onvisibilitychange",e)}};Ga(J,"visibilitychange",c)}})(function(){var a=W._gaq,b=!1;if(a&&Ba(a.push)&&(b="[object Array]"==Object.prototype.toString.call(Object(a)),!b)){Z=a;return}W._gaq=Z;b&&Z.push.apply(Z,a)});function Yc(a){var b=1,c=0,d;if(a)for(b=0,d=a.length-1;0<=d;d--)c=a.charCodeAt(d),b=(b<<6&268435455)+c+(c<<14),c=b&266338304,b=0!=c?b^c>>21:b;return b};})();
+
+// ROMANS CODE 11-07-2022
+// Модальное окно c данными title (октуально в моб. версии)
+$("sup").click(function(e){
+	console.log($(this).parent("span").attr("title"));
+    //e.stopPropagation();
+    if ($(this).parent("span").attr("title")) {
+    	alert($(this).parent("span").attr("title"));
+    }
+});

@@ -594,7 +594,7 @@ h3 span, h2 span { color: #7f6959; display: block; }
 #ministry-text .right { text-align: right; }
 #ministry-text .alignleft { text-align: left; }
 #ministry-text .footnote { text-align: justify; color: #999; }
-#ministry-text .indent1, #ministry-text .INDENT1, #ministry-text .hbody, #ministry-text .HBODY, #ministry-text .hymn-verse {max-width: 940px; text-align: left; margin: 0 auto; text-align: justify; padding: 5px 20px 10px 20px; border-left: 1px solid #927d6c; line-height: 1.1em; }
+#ministry-text .indent1, #ministry-text .INDENT1, #ministry-text .hbody, #ministry-text .HBODY, #ministry-text .hymn-verse {display: table; max-width: 940px; min-width: 400px; margin-right: auto; margin-left: auto; padding: 5px 0px 10px 0px; line-height: 1.1em; }
 #ministry-text .scripture, #ministry-text .SCRIPTURE { text-align: left; margin-left: 1em; margin-right: 1em; line-height: 1.4; }
 #ministry-text .hbody2, #ministry-text .hymn-chorus { text-align: left; margin-left: 40px; margin-right: 10px; }
 #ministry-text .hbody-hymn, #ministry-text .hymn-number { text-align: right; margin-right: 10px; }
@@ -605,8 +605,8 @@ h3 span, h2 span { color: #7f6959; display: block; }
 #ministry-text .blue {color: #2959c4;}
 #ministry-text .bold, #ministry-text .regbold, #ministry-text .bd {font-weight: bold; text-align: left;}
 #ministry-text .underline {text-decoration: underline;}
-#ministry-text .bdit {font-style: italic; font-weight: bold; }
-#ministry-text sup, #ministry-text sub {font-size: 0.875em; text-align: left;}
+#ministry-text .bdit {font-style: italic; font-weight: bold; } 
+#ministry-text sup, #ministry-text sub {font-size: 0.875em; text-align: left; font-weight: bold;}
 #ministry-text .hbody62 {margin-left: 62px;}
 #ministry-text .left20 {margin-left: 20px;}
 #ministry-text .left30 {margin-left: 30px;}

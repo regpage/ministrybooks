@@ -24,7 +24,7 @@
   if(!empty($_POST))
   {
     $codesfragms = $_POST['codesfragms'];
-    if(get_magic_quotes_gpc())
+    if(false) //get_magic_quotes_gpc()
       $codesfragms = stripslashes($codesfragms);
 
     $codesfragms = preg_replace("/\[CONTENT\]/i", "<?php include(\"{\$gl_path_to_engine}public/content.inc\"); ?>", $codesfragms);

@@ -23,7 +23,7 @@
   if(!empty($_POST))
   {
     $css = $_POST['css'];
-    if(get_magic_quotes_gpc())
+    if(false) //get_magic_quotes_gpc()
       $css = stripslashes($css);
 
     save_in_file("{$gl_path_to_root}css/{$file}", $css, 'w');

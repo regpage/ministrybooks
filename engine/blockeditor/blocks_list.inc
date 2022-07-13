@@ -36,7 +36,7 @@
     $text_for_save = str_replace("&lt;?php", "<?php", $text_for_save);
     $text_for_save = str_replace("?&gt;", "?>", $text_for_save);
     
-    if(get_magic_quotes_gpc())
+    if(false) //get_magic_quotes_gpc()
     $text_for_save = stripslashes($text_for_save);
     $text_for_save = explode("[NEWPAGE]", $text_for_save);
     $pages_cnt = count($text_for_save);
