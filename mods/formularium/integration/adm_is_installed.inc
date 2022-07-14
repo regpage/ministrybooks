@@ -10,9 +10,10 @@
 
   $query = "SHOW TABLES";
 
-  $result = mysql_query($query);
+  $result = mysqli_query(DBBYMYSQLI::$link, $query)
+           or die(mysqli_error(DBBYMYSQLI::$link));
 
-  while ($row = mysql_fetch_row($result)) {
+  while ($row = mysqli_fetch_row($result)) {
     if($row[0] == "{$gl_db_prefix}forms")
       $installed = true;
   }

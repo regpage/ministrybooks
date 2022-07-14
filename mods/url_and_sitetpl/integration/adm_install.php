@@ -38,9 +38,10 @@
       $dump[$i] = str_replace("CREATE TABLE `", "CREATE TABLE `{$gl_db_prefix}", $dump[$i]);
       $dump[$i] = str_replace("INSERT INTO `",  "INSERT INTO  `{$gl_db_prefix}",  $dump[$i]);
 
-      $res = mysql_query($dump[$i]);
+      //$res = mysql_query($dump[$i]);
+      $res = mysqli_query(DBBYMYSQLI::$link, $dump[$i]);
       if(!$res)
-        print "Can't execute this query {$dump[$i]} <br>".mysql_error()."<br>";
+        print "Can't execute this query {$dump[$i]} <br>".mysqli_error(DBBYMYSQLI::$link)."<br>";
     }
   }
 
@@ -68,8 +69,9 @@
       //подключаем файл с параметрами сайта
       include("../../../config/sites/{$sites[$i]}");
       //вставляем дамп
-      $db1   = mysql_connect($s_db_server, $s_db_user, $s_db_psw);
-       mysql_select_db($s_db_name, $db1);
+      //$db1   = mysql_connect($s_db_server, $s_db_user, $s_db_psw);
+      $db1 = mysqli_connect($s_db_server, $s_db_user, $s_db_psw, $s_db_name);
+      //mysql_select_db($s_db_name, $db1);
       $dump = file_get_contents("../../../mods/url_and_sitetpl/install/dump.inc");
       $dump = explode("#is_separator", $dump);
 
@@ -81,12 +83,14 @@
           $dump[$b] = str_replace("CREATE TABLE `", "CREATE TABLE `{$s_db_prefix}", $dump[$b]);
           $dump[$b] = str_replace("INSERT INTO `",  "INSERT INTO  `{$s_db_prefix}", $dump[$b]);
 
-          $res = mysql_query($dump[$b], $db1);
+          //$res = mysql_query($dump[$b], $db1);
+          $res = mysqli_query($db1, $dump[$b]);
           if(!$res)
-            print "Can't execute this query {$dump[$b]} <br>".mysql_error()."<br>";
+            print "Can't execute this query {$dump[$b]} <br>".mysqli_error($db1)."<br>";
         }
       }
-      mysql_close($db1);
+      //mysql_close($db1);
+      mysqli_close($db1);
 
       //компируем директориии из корневой директории модуля в нужные места
       copy_dir("../../../mods/url_and_sitetpl/langfiles/", "../../../{$s_path_to_root}langfiles/");

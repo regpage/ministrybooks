@@ -92,7 +92,7 @@ if(!empty($_POST['save']))
       $errors[] = $l_parts[61];
     $params['descr'] = correct_input($_POST['descr']);
     $params['keywords'] = correct_input($_POST['keywords']);
-    $params = mysql_escape_string(serialize($params));
+    $params = mysqli_real_escape_string(DBBYMYSQLI::$link, serialize($params));
 
     //калибруем позицию
     if(empty($errors))

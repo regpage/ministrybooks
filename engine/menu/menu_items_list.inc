@@ -31,14 +31,15 @@
     $query = "SELECT caption, id_item, id_item_prec
               FROM {$gl_db_prefix}menu_items
               WHERE id_item = {$tmp_id_item_prec}";
-    $res = mysql_query($query);
+    $res = mysqli_query(DBBYMYSQLI::$link, $query)
+           or die(mysqli_error(DBBYMYSQLI::$link));
     if(!$res)
     {
       print "<p>{$l_err[0]}</p>";
     }
     else
     {
-      $arr = mysql_fetch_assoc($res);
+      $arr = mysqli_fetch_assoc($res);
       $caption = stripslashes($arr['caption']);
       $tmp_id_item_prec = $arr['id_item_prec'];
 

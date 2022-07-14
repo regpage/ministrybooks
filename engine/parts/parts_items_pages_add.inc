@@ -38,7 +38,7 @@
       $errors[] = $l_parts[61];
     $params['descr'] = correct_input($_POST['descr']);
     $params['keywords'] = correct_input($_POST['keyworkds']);
-    $params = mysql_escape_string(serialize($params));
+    $params = mysqli_real_escape_string(DBBYMYSQLI::$link, serialize($params));
 
     //обновляем базу данных
     if(empty($errors))

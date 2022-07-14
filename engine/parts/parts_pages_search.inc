@@ -70,9 +70,12 @@
 	     $tpl = str_replace('*', '%', $tpl);
 
 	     //устраняем короткие слова
-	     $tpl = trim(preg_replace("/\s(\S{1,2})\s/", " ", ereg_replace(" +", "  "," $tpl ")));
+	     //$tpl = trim(preg_replace("/\s(\S{1,2})\s/", " ", ereg_replace(" +", "  "," $tpl ")));
+       $tpl = trim(preg_replace("/\s(\S{1,2})\s/", " ", mb_ereg_replace(" +", "  "," $tpl ")));
 	     //убираем лишние пробелы
-	     $tpl = ereg_replace(" +", " ", $tpl);
+	     
+       //$tpl = ereg_replace(" +", " ", $tpl);
+       $tpl = mb_ereg_replace(" +", " ", $tpl);
 
       //часть запроса, содержащая условие поиска
       if(!empty($tpl))

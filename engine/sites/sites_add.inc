@@ -92,34 +92,44 @@
     save_in_file("{$s_path_to_root}config/db_connect.inc", $str, 'w');
 
     //создаем базу данных
-    if(empty($errors))
-    {
-      $db1   = mysql_connect($s_db_server, $s_db_user, $s_db_psw);
+    if(empty($errors)) {
+      //$db1 = mysql_connect($s_db_server, $s_db_user, $s_db_psw);
+      $db1 = mysqli_connect($s_db_server, $s_db_user, $s_db_psw, "");
 
+      mysqli_query($db1, "SET NAMES '{$s_db_encoding}'")
+           or die(mysqli_error($db1));
+      mysqli_query($db1, "set character_set_client='{$s_db_encoding}'")
+           or die(mysqli_error($db1));
+      mysqli_query($db1, "set character_set_results='{$s_db_encoding}'")
+           or die(mysqli_error($db1));
+      mysqli_query($db1, "set collation_connection='{$s_db_encoding}_general_ci'")
+           or die(mysqli_error($db1));
+     /*
       mysql_query("SET NAMES '{$s_db_encoding}'", $db1);
 	     mysql_query ("set character_set_client='{$s_db_encoding}'", $db1);
       mysql_query ("set character_set_results='{$s_db_encoding}'", $db1);
 	     mysql_query ("set collation_connection='{$s_db_encoding}_general_ci'", $db1);
-
-      if($db1)
-      {
+    */
+      if($db1) {
         //получаем список баз данных
-        $db_list = mysql_list_dbs($db1);
-        while ($row = mysql_fetch_object($db_list))
-        {
+        //$db_list = mysql_list_dbs($db1);
+        $db_list = mysqli_query($db1, "SHOW DATABASES");
+        //while ($row = mysql_fetch_object($db_list))
+        while ($row = mysqli_fetch_object($db_list)) {
           $dbs[] = $row->Database;
         }
 
         //создаем базу, если ее нет
-        if(!in_array($s_db_name, $dbs))
-        {
+        if(!in_array($s_db_name, $dbs)) {
           $query = "CREATE DATABASE {$s_db_name}  DEFAULT CHARACTER SET {$s_db_encoding}";
-          $res = mysql_query($query, $db1);
-          if(mysql_affected_rows($db1) < 1)
+          //$res = mysql_query($query, $db1);
+          $res = mysqli_query($db1, $query)
+                  or die(mysqli_error($db1));
+          //if(mysql_affected_rows($db1) < 1)
+          if(mysqli_affected_rows($db1) < 1)
             $errors[] = "{$l_sites[24]} {$s_db_name}.";
-
         }
-        mysql_select_db($s_db_name, $db1);
+        mysqli_select_db($db1, $s_db_name);
 
         //вставляем дамп
         $dump = file_get_contents("{$gl_path_to_root}config/dump/structure.inc");
@@ -132,14 +142,17 @@
             $dump[$i] = str_replace("CREATE TABLE `", "CREATE TABLE `{$s_db_prefix}", $dump[$i]);
             $dump[$i] = str_replace("INSERT INTO `",  "INSERT INTO `{$s_db_prefix}",  $dump[$i]);
 
-            $res = mysql_query($dump[$i], $db1);
+            //$res = mysql_query($dump[$i], $db1);
+            $res = mysqli_query($db1, $dump[$i])
+                  or die(mysqli_error($db1));
             if(!$res)
-              $errors[] = "{$l_sites[25]} {$dump[$i]} <br>".mysql_error();
+              $errors[] = "{$l_sites[25]} {$dump[$i]} <br>".mysqli_error($db1);
           }
         }
 
       } else "{$l_sites[26]} {$s_db_server}";
-      mysql_close($db1);
+      //mysql_close($db1);
+      mysqli_close($db1);
 
       //переходим в список сайтов
       echo "<HTML><HEAD><META HTTP-EQUIV='Refresh' CONTENT='0; URL=?adm=sites_list'></HEAD></HTML>";

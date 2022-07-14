@@ -25,7 +25,8 @@
   $query = "SELECT title, id_part
               FROM {$gl_db_prefix}parts_items
              WHERE id_item = {$id_item}";
-  $res = mysql_query($query);
+  $res = mysqli_query(DBBYMYSQLI::$link, $query)
+           or die(mysqli_error(DBBYMYSQLI::$link));
 
   $results = db_select($query);
   if(is_array($results))

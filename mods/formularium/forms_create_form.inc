@@ -177,7 +177,7 @@
         //print "<pre>"; var_dump($_POST); print "</pre>";
         //print $message; return;
         //сохраняем сообщение в базе данных
-        $message_for_db = mysql_escape_string($message);
+        $message_for_db = mysqli_real_escape_string(DBBYMYSQLI::$link, $message);
         $query = "INSERT INTO {$gl_db_prefix}forms_messages SET id_mess = NULL, message = '{$message_for_db}', date=NOW(), id_form = {$id_form}";
         db_insert($query);
 
