@@ -145,7 +145,7 @@
               else
               {
                 $$field_name = $_POST[$field_name];
-                if(get_magic_quotes_gpc())
+                if(false)
                   $$field_name  = stripslashes($$field_name);
               }
 	           }
@@ -155,7 +155,7 @@
               $$field_name = $_POST[$field_name];
               if(!empty($$field_name))
               {
-              	 if(get_magic_quotes_gpc())
+              	 if(false)
 	                 $$field_name  = stripslashes($$field_name);
               } else $$field_name = $l_forms[124];
             }
@@ -370,7 +370,7 @@
           else
           {
             $value = $_POST[$field_name];
-            if(get_magic_quotes_gpc())
+            if(false)
               $value = stripslashes($value);
           }
           $field = '';
@@ -458,7 +458,7 @@
               	 $cnt2 = count($items);
                 for($b = 0; $b < $cnt2; $b++)
                 {
-                  if(get_magic_quotes_gpc())
+                  if(false)
                     $items[$b] = stripslashes($items[$b]);
                   print form_create_hidden("{$field_name}[{$b}]", $items[$b]);
                 }
@@ -466,7 +466,7 @@
             } else
             {
               $$field_name = $_POST[$field_name];
-              if(get_magic_quotes_gpc())
+              if(false)
                 $$field_name = stripslashes($$field_name);
               print form_create_hidden($field_name, $$field_name);
             }
@@ -491,7 +491,7 @@
     if(!empty($_POST[$name]))
     {
     	 $value = $_POST[$name];
-	     if(get_magic_quotes_gpc())
+	     if(false)
 	       $value = stripslashes($value);
     }
     else
@@ -514,7 +514,7 @@
     if(!empty($_POST[$name]))
     {
     	 $value = $_POST[$name];
-	     if(get_magic_quotes_gpc())
+	     if(false)
 	       $value = stripslashes($value);
     }
     else
