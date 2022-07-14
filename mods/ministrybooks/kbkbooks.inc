@@ -4,7 +4,7 @@ print "<div class='large-12 columns'>
       <li><a href='index.cfm'>Главная</a></li>
       <li class='current'><a href=''>Карта сайта</a></li>
     </ul>
-    <h2>Карта сайта <a href='http://ministrybooks.ru'>www.ministrybooks.ru</a></h2>";
+    <h2>Карта сайта <a href='https://ministrybooks.ru'>www.ministrybooks.ru</a></h2>";
     //выводим страницы подкатегории
     $query = "SELECT *
                FROM {$gl_db_prefix}parts_items WHERE bookstorelink is NULL OR bookstorelink ='' ORDER BY title";

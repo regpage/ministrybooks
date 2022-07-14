@@ -2,13 +2,13 @@
 /**
  * SPAW Editor v.2 Javascript file
  *
- * Outputs javascript code for the editor 
+ * Outputs javascript code for the editor
  * @package spaw2
- * @subpackage JavaScript  
- * @author Alan Mendelevich <alan@solmetra.lt> 
+ * @subpackage JavaScript
+ * @author Alan Mendelevich <alan@solmetra.lt>
  * @copyright UAB Solmetra
  */
-header('Content-Type: application/x-javascript; charset=utf-8'); 
+header('Content-Type: application/x-javascript; charset=utf-8');
 
 require_once(str_replace('\\\\','/',dirname(__FILE__)).'/../config/config.php');
 require_once(str_replace('\\\\','/',dirname(__FILE__)).'/../class/util.class.php');
@@ -17,14 +17,20 @@ $spaw_root = SpawConfig::getStaticConfigValue("SPAW_ROOT");
 $agent = SpawAgent::getAgentName();
 
 // load main javascript for all browsers
-if (is_dir($spaw_root.'js/common'))
-{
-  if ($dh = opendir($spaw_root.'js/common')) 
-  {
-    while (($fn = readdir($dh)) !== false) 
-    {
-      if ($fn != '.' && $fn != '..' && !is_dir($spaw_root.'js/common/'.$fn))
+if (is_dir($spaw_root.'js/common')) {
+  if ($dh = opendir($spaw_root.'js/common')) {
+    while (($fn = readdir($dh)) !== false) {
+      if ($fn != '.' && $fn != '..' && !is_dir($spaw_root.'js/common/'.$fn)) {
+        #print $spaw_root.'js/common/'.$fn;
+        #print "I am here!";
+      # ROMANS CODE
+      #if ($spaw_root[0] === '/') {
+      #  $spaw_root1 = substr($spaw_root, 1);
+      #  include($spaw_root1.'js/common/'.$fn);
+      #} else {
         include($spaw_root.'js/common/'.$fn);
+      #}
+    }
     }
     closedir($dh);
   }
@@ -32,12 +38,19 @@ if (is_dir($spaw_root.'js/common'))
 // load main javascript specific for current browser
 if (is_dir($spaw_root.'js/'.$agent))
 {
-  if ($dh = opendir($spaw_root.'js/'.$agent)) 
+  if ($dh = opendir($spaw_root.'js/'.$agent))
   {
-    while (($fn = readdir($dh)) !== false) 
+    while (($fn = readdir($dh)) !== false)
     {
-      if ($fn != '.' && $fn != '..' && !is_dir($spaw_root.'js/'.$agent.'/'.$fn))
-        include($spaw_root.'js/'.$agent.'/'.$fn);
+      if ($fn != '.' && $fn != '..' && !is_dir($spaw_root.'js/'.$agent.'/'.$fn)){
+        # ROMANS CODE
+        /*if ($spaw_root[0] === '/') {
+          $spaw_root1 = substr($spaw_root, 1);
+          include($spaw_root1.'js/'.$agent.'/'.$fn);
+        } else {*/
+          include($spaw_root.'js/'.$agent.'/'.$fn);
+        /*}*/
+      }
     }
     closedir($dh);
   }
@@ -45,23 +58,30 @@ if (is_dir($spaw_root.'js/'.$agent))
 
 // load plugin javascript
 $pgdir = $spaw_root.'plugins/';
-if (is_dir($pgdir)) 
+if (is_dir($pgdir))
 {
-  if ($dh = opendir($pgdir)) 
+  if ($dh = opendir($pgdir))
   {
-    while (($pg = readdir($dh)) != false) 
+    while (($pg = readdir($dh)) != false)
     {
       if ($pg != '.' && $pg != '..')
       {
         // load javascript for all browsers
         if (is_dir($pgdir.$pg.'/js/common'))
         {
-          if ($pgdh = opendir($pgdir.$pg.'/js/common')) 
+          if ($pgdh = opendir($pgdir.$pg.'/js/common'))
           {
-            while (($fn = readdir($pgdh)) !== false) 
+            while (($fn = readdir($pgdh)) !== false)
             {
-              if ($fn != '.' && $fn != '..' && !is_dir($pgdir.$pg.'/js/common/'.$fn))
-                include($pgdir.$pg.'/js/common/'.$fn);
+              if ($fn != '.' && $fn != '..' && !is_dir($pgdir.$pg.'/js/common/'.$fn)){
+                # ROMANS CODE
+                /*if ($spaw_root[0] === '/') {
+                  $pgdir1 = substr($pgdir, 1);
+                  include($pgdir1.$pg.'/js/common/'.$fn);
+                } else {*/
+                  include($pgdir.$pg.'/js/common/'.$fn);
+                /*}*/
+              }
             }
             closedir($pgdh);
           }
@@ -69,12 +89,18 @@ if (is_dir($pgdir))
         // load javascript for current browser
         if (is_dir($pgdir.$pg.'/js/'.$agent))
         {
-          if ($pgdh = opendir($pgdir.$pg.'/js/'.$agent)) 
+          if ($pgdh = opendir($pgdir.$pg.'/js/'.$agent))
           {
-            while (($fn = readdir($pgdh)) !== false) 
-            {
-              if ($fn != '.' && $fn != '..' && !is_dir($pgdir.$pg.'/js/'.$agent.'/'.$fn))
-                include($pgdir.$pg.'/js/'.$agent.'/'.$fn);
+            while (($fn = readdir($pgdh)) !== false) {
+              if ($fn != '.' && $fn != '..' && !is_dir($pgdir.$pg.'/js/'.$agent.'/'.$fn)){
+                # ROMANS CODE
+                /*if ($spaw_root[0] === '/') {
+                  $pgdir1 = substr($pgdir, 1);
+                  include($pgdir1.$pg.'/js/'.$agent.'/'.$fn);
+                } else {*/
+                  include($pgdir.$pg.'/js/'.$agent.'/'.$fn);
+                /*}*/
+              }
             }
             closedir($pgdh);
           }
@@ -91,12 +117,17 @@ if (is_dir($pgdir))
                 // load javascript for all browsers
                 if (is_dir($pgdir.$pg.'/lib/theme/'.$th.'/js/common'))
                 {
-                  if ($thdh = opendir($pgdir.$pg.'/lib/theme/'.$th.'/js/common')) 
-                  {
-                    while (($fn = readdir($thdh)) !== false) 
-                    {
-                      if ($fn != '.' && $fn != '..' && !is_dir($pgdir.$pg.'/lib/theme/'.$th.'/js/common/'.$fn))
-                        include($pgdir.$pg.'/lib/theme/'.$th.'/js/common/'.$fn);
+                  if ($thdh = opendir($pgdir.$pg.'/lib/theme/'.$th.'/js/common')) {
+                    while (($fn = readdir($thdh)) !== false) {
+                      if ($fn != '.' && $fn != '..' && !is_dir($pgdir.$pg.'/lib/theme/'.$th.'/js/common/'.$fn)){
+                        # ROMANS CODE
+                        /*if ($spaw_root[0] === '/') {
+                          $pgdir1 = substr($pgdir, 1);
+                          include($pgdir1.$pg.'/lib/theme/'.$th.'/js/common/'.$fn);
+                        } else {*/
+                          include($pgdir.$pg.'/lib/theme/'.$th.'/js/common/'.$fn);
+                        /*}*/
+                      }
                     }
                     closedir($thdh);
                   }
@@ -104,12 +135,19 @@ if (is_dir($pgdir))
                 // load javascript for current browser
                 if (is_dir($pgdir.$pg.'/lib/theme/'.$th.'/js/'.$agent))
                 {
-                  if ($thdh = opendir($pgdir.$pg.'/lib/theme/'.$th.'/js/'.$agent)) 
+                  if ($thdh = opendir($pgdir.$pg.'/lib/theme/'.$th.'/js/'.$agent))
                   {
-                    while (($fn = readdir($thdh)) !== false) 
+                    while (($fn = readdir($thdh)) !== false)
                     {
-                      if ($fn != '.' && $fn != '..' && !is_dir($pgdir.$pg.'/lib/theme/'.$th.'/js/'.$agent.'/'.$fn))
-                        include($pgdir.$pg.'/lib/theme/'.$th.'/js/'.$agent.'/'.$fn);
+                      if ($fn != '.' && $fn != '..' && !is_dir($pgdir.$pg.'/lib/theme/'.$th.'/js/'.$agent.'/'.$fn)) {
+                        # ROMANS CODE
+                        /*if ($spaw_root[0] === '/') {
+                          $pgdir1 = substr($pgdir, 1);
+                          include($pgdir1.$pg.'/lib/theme/'.$th.'/js/'.$agent.'/'.$fn);
+                        } else {*/
+                          include($pgdir.$pg.'/lib/theme/'.$th.'/js/'.$agent.'/'.$fn);
+                        /*}*/
+                      }
                     }
                     closedir($thdh);
                   }
@@ -118,10 +156,10 @@ if (is_dir($pgdir))
             }
           }
         }
-        
+
       }
     }
     closedir($dh);
   }
-}    
+}
 ?>

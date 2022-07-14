@@ -1,16 +1,16 @@
 <?php
   //////////////////////////////////////////////////////////////////////////////
-  // Основные узлы системы
+  // �������� ���� �������
   //////////////////////////////////////////////////////////////////////////////
 
   //////////////////////////////////////////////////////////////////////////////
-  //Функции системы
+  //������� �������
   //////////////////////////////////////////////////////////////////////////////
 
 
-   //отправляет письмо по адерсу $email, с темой $subject, сообщением $message,
-   //заголовками $headers
-   //Функция нужна, чтобы легко можно было переключится в тестовый режим на локалке (откомментировать закомментированный код)
+   //���������� ������ �� ������ $email, � ����� $subject, ���������� $message,
+   //����������� $headers
+   //������� �����, ����� ����� ����� ���� ������������ � �������� ����� �� ������� (���������������� ������������������ ���)
    function send_email($email, $subject, $message, $headers)
    {
    	 if(@mail($email,
@@ -26,10 +26,10 @@
 	    return 1;*/
    }
 
-   //устанавливает содержимое meta-тегов descr and keywords для страницы $gl_page
-   //gl_page - id страницы/модуля в таблице parts_items
-   //$site_keywords - ключевые слова сайта
-   //$site_descr - описание сайта
+   //������������� ���������� meta-����� descr and keywords ��� �������� $gl_page
+   //gl_page - id ��������/������ � ������� parts_items
+   //$site_keywords - �������� ����� �����
+   //$site_descr - �������� �����
    function setmeta($gl_page, $site_keywords, $site_descr)
    {
      global $gl_db_prefix;
@@ -47,8 +47,8 @@
      print "<META NAME='description' CONTENT='$site_descr'>";
    }
 
-   //удаляет из директории $path все файлы, имена которых соответствуют регулярному
-   //выражению $regexp
+   //������� �� ���������� $path ��� �����, ����� ������� ������������� �����������
+   //��������� $regexp
    function purge_dir($regexp, $path)
  	 {
 
@@ -63,7 +63,7 @@
 	    closedir($dir);
 	  }
 
-	 //удаляет каталог $catalog со всеми файлами и подкаталогами
+	 //������� ������� $catalog �� ����� ������� � �������������
 	 function remove_dir($catalog)
 		{
 		  $dir = opendir($catalog);
@@ -78,8 +78,8 @@
 		  rmdir($catalog);
 		}
 
-  //вставялеят в шаблон $tpl данные из массива $vars
-  //массив vars имеет формат: array("{entity}" => $replace)
+  //���������� � ������ $tpl ������ �� ������� $vars
+  //������ vars ����� ������: array("{entity}" => $replace)
   function work_template($tpl, $vars = '')
   {
     $code = $tpl;
@@ -93,18 +93,18 @@
     return $code;
   }
 
-  //считывает шаблон из файла $tpl_file и возвращает его
-  //функцию желательно заменить на file_get_contents()
-  //этот вариант оставлен для совместимости
+  //��������� ������ �� ����� $tpl_file � ���������� ���
+  //������� ���������� �������� �� file_get_contents()
+  //���� ������� �������� ��� �������������
   function get_tpl_from_file($tpl_file)
   {
     $tpl = file_get_contents($tpl_file);
     return $tpl;
   }
 
-  //конвертирует bb-теги в тексте $text в html-код, возвращает обработанный текст
-  //mode = 'articles' - обрабатывать теги форматирования абзацев [JUST] [LEFT] [RIGHT] [CENTER]
-  //       'forum' - не обрабатывать теги форматирования абзацев [JUST] [LEFT] [RIGHT] [CENTER]
+  //������������ bb-���� � ������ $text � html-���, ���������� ������������ �����
+  //mode = 'articles' - ������������ ���� �������������� ������� [JUST] [LEFT] [RIGHT] [CENTER]
+  //       'forum' - �� ������������ ���� �������������� ������� [JUST] [LEFT] [RIGHT] [CENTER]
   function convert_bb_tags($text, $mode = 'articles')
   {
     global $l_gen;
@@ -155,7 +155,7 @@
 
     $text = preg_replace("|\[BR]|i", "<br \>", $text);
 
-    //форматирование: абзацы, заголовки
+    //��������������: ������, ���������
     if($mode == 'articles')
     {
       $text = preg_replace("|\[JUST\]|i", "<div class='Just'>", $text);
@@ -175,7 +175,7 @@
       $text = preg_replace("|\[BR]|i", "<br \>", $text);
     }
 
-    //цитирование
+    //�����������
     $text = preg_replace("#\[cit\]#is", "<div class='Cit'>", $text);
     $text = preg_replace("#\[/cit\]#is", "</div>", $text);
     $text = preg_replace("#\[quote=([^\]]+)\]#is", "<b>$1</b> {$l_gen[30]}:<br /><div class='Cit'>", $text);
@@ -195,14 +195,14 @@
     return($text);
   }
 
-  //удаляет bb-code из текста $text, возвращает текст без bb-тегов
+  //������� bb-code �� ������ $text, ���������� ����� ��� bb-�����
   function strip_bb_tags($text)
   {
     $text = preg_replace("/\[[^]]+\]/i", "", $text);
     return $text;
   }
 
-  //преобразовывает код смайлика в изображение в тексте $text
+  //��������������� ��� �������� � ����������� � ������ $text
   function smiles_code_to_img($text)
   {
     global $gl_path_to_root, $gl_admin_url, $gl_db_prefix;
@@ -230,27 +230,27 @@
     return($text);
   }
 
-  //коррекция переменных, которые передаются методами $_GET и $_POST в строке $str
-  //Параметр $escape определяет обрабатывать ли строку функцией mysql_escape_string()
+  //��������� ����������, ������� ���������� �������� $_GET � $_POST � ������ $str
+  //�������� $escape ���������� ������������ �� ������ �������� mysqli_escape_string()
   function correct_input($str, $escape=true)
   {
     $str = trim($str);
     if($escape == true)
     {
-      //if (!get_magic_quotes_gpc())
-        $str = mysqli_real_escape_string(DBBYMYSQLI::$link, $str);
+      //if (!false)
+        $str = mysqli_real_escape_string(DBBYMYSQLI::$link,$str);
     }
     if($escape == false)
     {
-      //if(get_magic_quotes_gpc())
+      //if(false)
         $str = stripslashes($str);
     }
     return($str);
   }
 
-  //принимает имя столбца($sort) ,по которому должны сортироваться значения при выборке из таблицы бд
-  //если $sort  задан фильтрует его
-  //если $sort не задан, присваиваем ему значение $default
+  //��������� ��� �������($sort) ,�� �������� ������ ������������� �������� ��� ������� �� ������� ��
+  //���� $sort  ����� ��������� ���
+  //���� $sort �� �����, ����������� ��� �������� $default
   function get_sort($sort, $default)
   {
     //$sort = $_GET['sort'];
@@ -261,8 +261,8 @@
     return($sort);
   }
 
-  //принимает значение $mode (ASC/DESC), проверяет его на корректность,
-  //если проверка не пройдена возвращает значение $def
+  //��������� �������� $mode (ASC/DESC), ��������� ��� �� ������������,
+  //���� �������� �� �������� ���������� �������� $def
   function get_mode($mode, $def='ASC')
   {
     $modes = array('ASC', 'DESC');
@@ -272,9 +272,9 @@
   }
 
 
-  //переводит сокращенные (Feb) английские названия месяцев в строке $str
-  //на язык интерфейса
-  //варианты перевода находятся в ассоциативном массиве months
+  //��������� ����������� (Feb) ���������� �������� ������� � ������ $str
+  //�� ���� ����������
+  //�������� �������� ��������� � ������������� ������� months
   function translate_data($str, $months)
   {
     if(!empty($months))
@@ -285,7 +285,7 @@
     return($str);
   }
 
-  //создает постраничную навигацию на сайте
+  //������� ������������ ��������� �� �����
   
   function create_navigation($pages_count, $url, $part, $var_name='part')
   {
@@ -311,34 +311,35 @@
         $end = $pages_count;
       }
     }
+
     $navig .=  "<div class='ngg-navigation'>";
-    //ссылка на первую страницу <img height='7px' width='18px' src='images/double-arrows-left.png' alt='double-arrows-left'>
-    //ссылка на предыдущую страницу
+    //������ �� ������ �������� <img height='7px' width='18px' src='images/double-arrows-left.png' alt='double-arrows-left'>
+    //������ �� ���������� ��������
     if($part != 1)
-      $navig .=  "<a class='prev' href='{$url}&{$var_name}=1' title='{$l_gen[13]}'>&#x25c0;&#x25c0;</a><a class='prev' href='{$url}&{$var_name}=".($part - 1)."' title='{$l_gen[14]}'>&#x25c0;</a>";
+      $navig .=  "<a class='prev' href='{$url}&{$var_name}=1' title='{$l_gen[13]}'>&#9668;&#9668;</a><a class='prev' href='{$url}&{$var_name}=".($part - 1)."' title='{$l_gen[14]}'>&#9668;</a>";
     else
       $navig .=   "";
-    //страницы
+    //��������
     for($i = $begin; $i <= $end; $i++)
     	 {
        if($i <= $pages_count)
        {
           if($i == $part)
-            $navig .= "<span> $i </span>";
+            $navig .= "<span> $i <span>";
           else
             $navig .= "<a class='page-numbers' href='{$url}&{$var_name}={$i}'> $i </a>";
         }
         else break;
+
 	     }
-    //ссылка на предыдущую страницу
+    //������ �� ���������� ��������
     if($part != $pages_count)
-      $navig .=  "<a class='next' href='{$url}&{$var_name}=".($part + 1)."' title='{$l_gen[15]}'>&#x25B6;</a><a class='next' href='{$url}&{$var_name}=".$pages_count."' title='{$l_gen[16]}'>&#x25B6;&#x25B6;</a>";
+      $navig .=  "<a class='next' href='{$url}&{$var_name}=".($part + 1)."' title='{$l_gen[15]}'>&#9658;</a><a class='next' href='{$url}&{$var_name}=".$pages_count."' title='{$l_gen[16]}'>&#9658;&#9658;</a>";
     else
     $navig .=  "";
     $navig .= "</div><br>";
     return($navig);
   }
-
 function create_navigation_old($pages_count, $url, $part, $var_name='part')
   {
     global $l_gen;
@@ -367,14 +368,14 @@ function create_navigation_old($pages_count, $url, $part, $var_name='part')
 
     $navig .=  "<table  align=center class='NavigTbl' cellspacing='0' cellpadding='0' border='0'>";
     $navig .=  "<tr>";
-    //ссылка на первую страницу
+    //������ �� ������ ��������
     $navig .=   "<td class='NavigTD'><a href='{$url}&{$var_name}=1' title='{$l_gen[13]}'>&lt;&lt;</a></td>";
-    //ссылка на предыдущую страницу
+    //������ �� ���������� ��������
     if($part != 1)
       $navig .=  "<td class='NavigTD'><a href='{$url}&{$var_name}=".($part - 1)."' title='{$l_gen[14]}'>&lt;</a></td>";
     else
       $navig .=   "<td class='NavigTDCurPageArr'>&lt;</td>";
-    //страницы
+    //��������
     for($i = $begin; $i <= $end; $i++)
     	 {
        if($i <= $pages_count)
@@ -387,7 +388,7 @@ function create_navigation_old($pages_count, $url, $part, $var_name='part')
         else break;
 
 	     }
-    //ссылка на предыдущую страницу
+    //������ �� ���������� ��������
     if($part != $pages_count)
       $navig .=  "<td class='NavigTD'><a href='{$url}&{$var_name}=".($part + 1)."' title='{$l_gen[15]}'>&gt;</a></td>";
     else
@@ -427,9 +428,11 @@ function create_navigation_old($pages_count, $url, $part, $var_name='part')
     closedir($dir);
   }
 
-   //сохранение строки в файл
+
+   //���������� ������ � ����
   function save_in_file($filename, $str, $mode = 'w')
   {
+
     $fp = fopen ($filename, $mode);
     if($fp)
     {
@@ -444,8 +447,8 @@ function create_navigation_old($pages_count, $url, $part, $var_name='part')
     }
   }
 
-  //выводит серию смайликов
-  //js_field_def - js обозначение поля формы, куда будет вставляться код смайлика при клике на него: document.edit_form.post.value
+  //������� ����� ���������
+  //js_field_def - js ����������� ���� �����, ���� ����� ����������� ��� �������� ��� ����� �� ����: document.edit_form.post.value
   function get_smiles($js_field_def)
   {
     global $gl_path_to_engine_root, $gl_db_prefix;
@@ -474,31 +477,24 @@ function create_navigation_old($pages_count, $url, $part, $var_name='part')
     return($smiles);
   }
 
-//Функция корректно урезает строку в конце слова.
+//������� ��������� ������� ������ � ����� �����.
 
-function getPrewText($text, $maxwords = 20, $maxchar = 300) {
-  // old version DO NOT work
-    /*$sep = ' ';
-    $words = split($text);
+function getPrewText( $text, $maxwords = 20, $maxchar = 300 )
+ {
+    $sep = ' ';
+    $words = split( $sep, $text );
     $char = iconv_strlen($text, 'utf-8');
 
-    if(count($words) > $maxwords) {
-      $text = join($sep, array_slice($words, 0, $maxwords));
-    }
-    if ($char > $maxchar) {
-      $text = iconv_substr($text, 0, $maxchar, 'utf-8');
-    }
-    return $text;*/
-    // new version
-    $words = explode(' ', $text, 25);
-    $words[24] = '';        
-    if(count($words) > 24) {
-        $text_short = implode(' ', $words);
-    } else {
-        $text_short = $text;
-    }
-    return $text_short;
-  }
+         if(count($words) > $maxwords)
+      {
+          $text = join($sep, array_slice($words, 0, $maxwords));
+      }
+    if ($char > $maxchar)
+      {
+        $text = iconv_substr( $text, 0, $maxchar, 'utf-8' );
+      }
+   return $text;
+  } 
 
 function err_handler($errno, $errmsg, $filename, $linenum) {
 
@@ -662,54 +658,16 @@ function navigation_books($pages_count, $url, $part, $var_name='part')
         $end = $pages_count;
       }
     }
-
 $navig .=  "<ul class='button-group radius'>";
-    
-	if($part != 1)
-      $navig .=  "<li><a class='button radius' href='{$url}&{$var_name}=".($part - 1)."' title='{$l_gen[14]}'>« Предыдущая</a> </li>";
+    if($part != 1)
+      $navig .=  "<li><a class='button radius' href='{$url}&{$var_name}=".($part - 1)."' title='{$l_gen[14]}'>� Previous Section</a></li>";
     else
       $navig .=   "";
     if($part != $pages_count)
-      $navig .=  "<li> <a  class='button radius' style='margin-left:4px;'href='{$url}&{$var_name}=".($part + 1)."' title='{$l_gen[15]}'>Следующая »</a></li>";
+      $navig .=  "<li><a  class='button radius' href='{$url}&{$var_name}=".($part + 1)."' title='{$l_gen[15]}'>Next Section �</a></li>";
     else
-    $navig .=  " ";
+    $navig .=  "";
     $navig .= "</ul>";
     return($navig);
   }
-/////////////////////////////////
-function mb_ucfirst($str, $encoding='UTF-8')
-    {
-        $str = mb_ereg_replace('^[\ ]+', '', $str);
-        $str = mb_strtoupper(mb_substr($str, 0, 1, $encoding), $encoding).
-               mb_substr($str, 1, mb_strlen($str), $encoding);
-        return $str;
-    }
-/**
- * Функция возвращает окончание для множественного числа слова на основании числа и массива окончаний
- * param  $number Integer Число на основе которого нужно сформировать окончание
- * param  $endingsArray  Array Массив слов или окончаний для чисел (1, 4, 5),
- *         например array('яблоко', 'яблока', 'яблок')
- * return String
- */
-function getNumEnding($number, $endingArray)
-{
-    $number = $number % 100;
-    if ($number>=11 && $number<=19) {
-        $ending=$endingArray[2];
-    }
-    else {
-        $i = $number % 10;
-        switch ($i)
-        {
-            case (1): $ending = $endingArray[0]; break;
-            case (2):
-            case (3):
-            case (4): $ending = $endingArray[1]; break;
-            default: $ending=$endingArray[2];
-        }
-    }
-    return $ending;
-}
-
-
 ?>

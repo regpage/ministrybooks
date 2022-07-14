@@ -19,9 +19,9 @@
    {  print "<p>{$l_users[54]}</p>"; return; }
 
   //меняем пароль
-  db_update("UPDATE {$gl_db_prefix}users SET psw = '{$new_psw}' WHERE id_user = {$id_user}");
+  $resrowsupdate = db_update("UPDATE {$gl_db_prefix}users SET psw = '{$new_psw}' WHERE id_user = {$id_user}");
 
-  if(db_affected_rows() > 0)
+  if($resrowsupdate > 0)
     print "<p>{$l_users[55]}</p>";
   else
     print "<p>{$l_users[56]}</p>";

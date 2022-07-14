@@ -1,47 +1,47 @@
 <?php
 /**
  * SPAW Editor v.2 Theme classes
- * 
+ *
  * Theme (skin) related classes
- *   
+ *
  * @package spaw2
- * @subpackage Theme  
- * @author Alan Mendelevich <alan@solmetra.lt> 
+ * @subpackage Theme
+ * @author Alan Mendelevich <alan@solmetra.lt>
  * @copyright UAB Solmetra
- */ 
+ */
 
 require_once(str_replace('\\\\','/',dirname(__FILE__)).'/config.class.php');
 
 /**
  * Theme (skin) class
- * 
+ *
  * Stores and retrieves data related to editor themes (skins)
  * @package spaw2
  * @subpackage Theme
- */     
+ */
 class SpawTheme
 {
   /**
    * Name of the theme
    * @access private
    * @var string
-   */           
+   */
   var $name;
-  
+
   /**
    * Returns the name of the theme
    * @returns string
-   */        
+   */
   function getName()
   {
     return $this->name;
   }
-  
+
   /**
    * Initializes Theme object
    * @param string @name Theme name
    */
-  function SpawTheme($name)
+  function __construct($name)
   {
     $this->name = $name;
   }
@@ -49,26 +49,26 @@ class SpawTheme
   /**
    * Returns Theme object
    * @param string $name Theme name
-   * @returns SpawTheme SpawTheme object   
+   * @returns SpawTheme SpawTheme object
    * @static
    */
-  function getTheme($name)
+  public static function getTheme($name)
   {
     $theme = new SpawTheme($name);
     $theme->loadData();
     return $theme;
   }
-             
+
   /**
    * Default toolbar button style
-   * @access private   
+   * @access private
    * @var string
    */
   var $default_tb_button_style;
   /**
    * Sets default toolbar button style
    * @param string $style Style string
-   */           
+   */
   function setDefaultTbButtonStyle($style)
   {
     $this->default_tb_button_style = $style;
@@ -76,7 +76,7 @@ class SpawTheme
   /**
    * Returns default toolbar button style
    * @returns string
-   */           
+   */
   function getDefaultTbButtonStyle()
   {
     return $this->default_tb_button_style;
@@ -89,7 +89,7 @@ class SpawTheme
   /**
    * Sets default toolbar image style
    * @param string $style Style string
-   */           
+   */
   function setDefaultTbImageStyle($style)
   {
     $this->default_tb_image_style = $style;
@@ -97,7 +97,7 @@ class SpawTheme
   /**
    * Returns default toolbar image style
    * @returns string
-   */           
+   */
   function getDefaultTbImageStyle()
   {
     return $this->default_tb_image_style;
@@ -110,7 +110,7 @@ class SpawTheme
   /**
    * Sets default toolbar dropdown style
    * @param string $style Style string
-   */           
+   */
   function setDefaultTbDropdownStyle($style)
   {
     $this->default_tb_dropdown_style = $style;
@@ -118,7 +118,7 @@ class SpawTheme
   /**
    * Returns default toolbar dropdown style
    * @returns string
-   */           
+   */
   function getDefaultTbDropdownStyle()
   {
     return $this->default_tb_dropdown_style;
@@ -128,13 +128,13 @@ class SpawTheme
    * Stores custom styles for specific toolbar items
    * @access private
    * @var array
-   */           
+   */
   var $custom_tbi_styles = array();
   /**
    * Returns true if specified toolbar item has custom style
    * @param string $name Toolbar item name
    * @returns bool
-   */           
+   */
   function isCustomStyleTbi($name)
   {
     if (isset($this->custom_tbi_styles[$name]))
@@ -146,7 +146,7 @@ class SpawTheme
    * Returns custom style for specified toolbar item
    * @param string $name Toolbar item name
    * @returns string
-   */           
+   */
   function getCustomTbiStyle($name)
   {
     if (isset($this->custom_tbi_styles[$name]))
@@ -157,14 +157,14 @@ class SpawTheme
 
   /**
    * Default toolbar button CSS class
-   * @access private   
+   * @access private
    * @var string
    */
   var $default_tb_button_css_class;
   /**
    * Sets default toolbar button CSS class
    * @param string $css_class CssClass string
-   */           
+   */
   function setDefaultTbButtonCssClass($css_class)
   {
     $this->default_tb_button_css_class = $css_class;
@@ -172,7 +172,7 @@ class SpawTheme
   /**
    * Returns default toolbar button CSS class
    * @returns string
-   */           
+   */
   function getDefaultTbButtonCssClass()
   {
     return $this->default_tb_button_css_class;
@@ -185,7 +185,7 @@ class SpawTheme
   /**
    * Sets default toolbar image CSS class
    * @param string $css_class CssClass string
-   */           
+   */
   function setDefaultTbImageCssClass($css_class)
   {
     $this->default_tb_image_css_class = $css_class;
@@ -193,7 +193,7 @@ class SpawTheme
   /**
    * Returns default toolbar image CSS class
    * @returns string
-   */           
+   */
   function getDefaultTbImageCssClass()
   {
     return $this->default_tb_image_css_class;
@@ -206,7 +206,7 @@ class SpawTheme
   /**
    * Sets default toolbar dropdown CSS class
    * @param string $css_class CssClass string
-   */           
+   */
   function setDefaultTbDropdownCssClass($css_class)
   {
     $this->default_tb_dropdown_css_class = $css_class;
@@ -214,7 +214,7 @@ class SpawTheme
   /**
    * Returns default toolbar dropdown CSS class
    * @returns string
-   */           
+   */
   function getDefaultTbDropdownCssClass()
   {
     return $this->default_tb_dropdown_css_class;
@@ -224,13 +224,13 @@ class SpawTheme
    * Stores custom CSS classs for specific toolbar items
    * @access private
    * @var array
-   */           
+   */
   var $custom_tbi_css_classes = array();
   /**
    * Returns true if specified toolbar item has custom CSS class
    * @param string $name Toolbar item name
    * @returns bool
-   */           
+   */
   function isCustomCssClassTbi($name)
   {
     if (isset($this->custom_tbi_css_classes[$name]))
@@ -242,7 +242,7 @@ class SpawTheme
    * Returns custom CSS class for specified toolbar item
    * @param string $name Toolbar item name
    * @returns string
-   */           
+   */
   function getCustomTbiCssClass($name)
   {
     if (isset($this->custom_tbi_css_classes[$name]))
@@ -254,14 +254,14 @@ class SpawTheme
 
   /**
    * Default toolbar button events
-   * @access private   
+   * @access private
    * @var array
    */
   var $default_tb_button_events;
   /**
    * Sets default toolbar button events
    * @param array $events array representing events (key) and their respective handler functions (value)
-   */           
+   */
   function setDefaultTbButtonEvents($events)
   {
     $this->default_tb_button_events = $events;
@@ -269,7 +269,7 @@ class SpawTheme
   /**
    * Returns default toolbar button events
    * @returns array
-   */           
+   */
   function getDefaultTbButtonEvents()
   {
     return $this->default_tb_button_events;
@@ -279,13 +279,13 @@ class SpawTheme
    * Stores custom events for specific toolbar items
    * @access private
    * @var array
-   */           
+   */
   var $custom_tbi_events = array();
   /**
    * Returns true if specified toolbar item has custom events
    * @param string $name Toolbar item name
    * @returns bool
-   */           
+   */
   function isCustomEventsTbi($name)
   {
     if (isset($this->custom_tbi_events[$name]))
@@ -297,7 +297,7 @@ class SpawTheme
    * Returns custom events for specified toolbar item
    * @param string $name Toolbar item name
    * @returns string
-   */           
+   */
   function getCustomTbiEvents($name)
   {
     if (isset($this->custom_tbi_events[$name]))
@@ -311,10 +311,10 @@ class SpawTheme
   /**
    * Holds editor layout template
    * @var string
-   * @access private   
+   * @access private
    */
   var $template;
-  
+
   /**
    * Sets template variable
    * @param string $template Template code
@@ -323,7 +323,7 @@ class SpawTheme
   {
     $this->template = $template;
   }
-  
+
   /**
    * Returns layout template
    * @returns string
@@ -331,24 +331,24 @@ class SpawTheme
   function getTemplate()
   {
     return $this->template;
-  }        
-                  
+  }
+
   /**
    * Holds editor layout template when in floating mode
    * @var string
-   * @access private   
+   * @access private
    */
   var $template_floating;
-  
+
   /**
-   * Sets editor template variable for floating mode 
+   * Sets editor template variable for floating mode
    * @param string $template Template code
    */
   function setTemplateFloating($template)
   {
     $this->template_floating = $template;
   }
-  
+
   /**
    * Returns editor layout template for floating toolbar mode
    * @returns string
@@ -356,24 +356,24 @@ class SpawTheme
   function getTemplateFloating()
   {
     return $this->template_floating;
-  }        
-                  
+  }
+
   /**
    * Holds toolbar layout template when in floating mode
    * @var string
-   * @access private   
+   * @access private
    */
   var $template_toolbar;
-  
+
   /**
-   * Sets toolbar template variable for floating mode 
+   * Sets toolbar template variable for floating mode
    * @param string $template Template code
    */
   function setTemplateToolbar($template)
   {
     $this->template_toolbar = $template;
   }
-  
+
   /**
    * Returns toolbar layout template for floating toolbar mode
    * @returns string
@@ -381,24 +381,24 @@ class SpawTheme
   function getTemplateToolbar()
   {
     return $this->template_toolbar;
-  }        
+  }
 
   /**
    * Holds standard template for dialog header
    * @var string
-   * @access private   
+   * @access private
    */
   var $template_dialog_header;
-  
+
   /**
-   * Sets standard template for dialog header 
+   * Sets standard template for dialog header
    * @param string $template Template code
    */
   function setTemplateDialogHeader($template)
   {
     $this->template_dialog_header = $template;
   }
-  
+
   /**
    * Returns standard template for dialog header
    * @returns string
@@ -406,24 +406,24 @@ class SpawTheme
   function getTemplateDialogHeader()
   {
     return $this->template_dialog_header;
-  }        
+  }
 
   /**
    * Holds standard template for dialog footer
    * @var string
-   * @access private   
+   * @access private
    */
   var $template_dialog_footer;
-  
+
   /**
-   * Sets standard template for dialog footer 
+   * Sets standard template for dialog footer
    * @param string $template Template code
    */
   function setTemplateDialogFooter($template)
   {
     $this->template_dialog_footer = $template;
   }
-  
+
   /**
    * Returns standard template for dialog footer
    * @returns string
@@ -431,7 +431,7 @@ class SpawTheme
   function getTemplateDialogFooter()
   {
     return $this->template_dialog_footer;
-  }        
+  }
 
 
   /**
@@ -445,13 +445,18 @@ class SpawTheme
      // load theme settings
      if ($dh = opendir($pgdir)) {
        while (($pg = readdir($dh)) !== false) {
-        if (file_exists($pgdir.$pg.'/lib/theme/'.$this->name.'/config/theme.config.php'))
-        {
+        if (file_exists($pgdir.$pg.'/lib/theme/'.$this->name.'/config/theme.config.php')) {
           // load theme config file for each plugin
-          include($pgdir.$pg.'/lib/theme/'.$this->name.'/config/theme.config.php');
+          # ROMANS CODE
+          /*if ($pgdir[0]=== '/') {
+            $pgdir1 = substr($pgdir,1);
+            include($pgdir1.$pg.'/lib/theme/'.$this->name.'/config/theme.config.php');
+          } else {*/
+            include($pgdir.$pg.'/lib/theme/'.$this->name.'/config/theme.config.php');
+          /*}*/
+
           // load default styles for "core" only
-          if ($pg == "core")
-          {
+          if ($pg == "core") {
             if (isset($default_tb_button_style))
             {
               $this->default_tb_button_style = $default_tb_button_style;
@@ -508,8 +513,9 @@ class SpawTheme
        closedir($dh);
      }
      // load template
-     if (file_exists($pgdir."core/lib/theme/".$this->name."/templates/editor.tpl"))
-     {
+     # This is work
+     # ПРОВЕРИТЬ
+     if (file_exists($pgdir."core/lib/theme/".$this->name."/templates/editor.tpl")) {
       $fn = $pgdir."core/lib/theme/".$this->name."/templates/editor.tpl";
       $handle = fopen($fn, "r");
       $this->template = fread($handle, filesize($fn));
@@ -547,7 +553,7 @@ class SpawTheme
       $this->template_dialog_footer = fread($handle, filesize($fn));
       fclose($handle);
      }
-    }    
-  }                
+    }
+  }
 }
 ?>

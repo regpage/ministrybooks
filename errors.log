@@ -1,0 +1,14 @@
+<error>
+  <date>2022-07-04 11:38:06 (MSK)</date>
+  <errno>8192</errno>
+  <errmsg>Function get_magic_quotes_gpc() is deprecated</errmsg>
+  <filename>/home/k/kbkbooks/ministrybooks/public_html/engine/blockeditor/blocks_list.inc</filename>
+  <linenum>39</linenum>
+</error>
+<error>
+  <date>2022-07-13 14:11:29 (MSK)</date>
+  <errno>8192</errno>
+  <errmsg>Function get_magic_quotes_gpc() is deprecated</errmsg>
+  <filename>/home/k/kbkbooks/ministrybooks/public_html/engine/blockeditor/blocks_list.inc</filename>
+  <linenum>39</linenum>
+</error>

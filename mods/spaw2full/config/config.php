@@ -5,7 +5,7 @@ require_once(str_replace('\\\\','/',dirname(__FILE__)).'/../class/util.class.php
 // sets physical filesystem directory of web site root
 // if calculation fails (usually if web server is not apache) set this manually
 SpawConfig::setStaticConfigItem('DOCUMENT_ROOT', str_replace("\\","/",SpawVars::getServerVar("DOCUMENT_ROOT")));
-if (!ereg('/$', SpawConfig::getStaticConfigValue('DOCUMENT_ROOT')))
+if (!preg_match('/$', SpawConfig::getStaticConfigValue('DOCUMENT_ROOT')))
   SpawConfig::setStaticConfigItem('DOCUMENT_ROOT', SpawConfig::getStaticConfigValue('DOCUMENT_ROOT').'/');
 // sets physical filesystem directory where spaw files reside
 // should work fine most of the time but if it fails set SPAW_ROOT manually by providing correct path
@@ -45,10 +45,10 @@ SpawConfig::setStaticConfigItem('default_theme','spaw2');
 SpawConfig::setStaticConfigItem('default_toolbarset','all');
 // stylesheet
 
-SpawConfig::setStaticConfigItem('default_stylesheet','http://ministrybooks.ru/themes/Templ_Books/css/epub.css');
+SpawConfig::setStaticConfigItem('default_stylesheet','https://ministrybooks.ru/themes/Templ_Books/css/epub.css');
 
-//SpawConfig::setStaticConfigItem('default_stylesheet','http://ministrybooks.ru/themes/general/index/app.css');
-//SpawConfig::setStaticConfigItem('default_stylesheet','http://ministrybooks.ru/mods/spaw2full/wys.css');
+//SpawConfig::setStaticConfigItem('default_stylesheet','https://ministrybooks.ru/themes/general/index/app.css');
+//SpawConfig::setStaticConfigItem('default_stylesheet','https://ministrybooks.ru/mods/spaw2full/wys.css');
 // width
 SpawConfig::setStaticConfigItem('default_width','100%');
 // height
@@ -113,6 +113,7 @@ SpawConfig::setStaticConfigItem("dropdown_data_core_fontsize",
     '6' => '6'
   )
 );
+
 // data for paragraph dropdown list
 SpawConfig::setStaticConfigItem("dropdown_data_core_formatBlock",
   array(

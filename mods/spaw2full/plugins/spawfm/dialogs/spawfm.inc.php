@@ -19,8 +19,14 @@ $doc_root = $config->getConfigValue('DOCUMENT_ROOT');
 if (preg_match('|[\\/]$|', $doc_root))
   $doc_root = substr($doc_root, 0, -1);
 $imgdir = $config->getConfigValue('SPAW_DIR').'plugins/spawfm/lib/theme/'.$theme->name.'/img/';
-
-require_once($config->getConfigValue('SPAW_ROOT').'plugins/spawfm/class/spawfm.class.php');
+$ffileppatch2 = $config->getConfigValue('SPAW_ROOT').'plugins/spawfm/class/spawfm.class.php';
+//print $ffileppatch2;
+/*if ($ffileppatch2[0] === '/') {
+  $ffileppatch21 = substr($ffileppatch2, 1);
+  require_once($ffileppatch21);
+} else {*/
+  require_once($ffileppatch2);
+/*}*/
 $spawfm = new SpawFm();
 
 $error_msg = '';

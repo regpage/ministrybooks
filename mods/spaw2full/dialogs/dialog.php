@@ -121,7 +121,14 @@ SpawDialog.returnValue = function(result)
 </head>
 <body onload="SpawDialog.dialogInit();" dir="<?php echo $lang->getDir() ?>
 <?php echo $htpl; ?>
-<?php include(SpawConfig::getStaticConfigValue('SPAW_ROOT').'plugins/'.$module.'/dialogs/'.$dialog.'.inc.php'); ?>
+<?php $ffileppatch = SpawConfig::getStaticConfigValue('SPAW_ROOT').'plugins/'.$module.'/dialogs/'.$dialog.'.inc.php';
+/*if ($ffileppatch[0] === '/') {
+$ffileppatch = substr($ffileppatch, 1);
+}
+include($ffileppatch);
+*/
+include(SpawConfig::getStaticConfigValue('SPAW_ROOT').'plugins/'.$module.'/dialogs/'.$dialog.'.inc.php');
+?>
 <?php echo $ftpl ?>
 </body>
 </html>

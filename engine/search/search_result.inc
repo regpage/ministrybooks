@@ -66,7 +66,7 @@
     }
  if($search_books_by_stype == 'S') {
     $tpl = trim($templateid); 
-    $tpl = mysql_real_escape_string($tpl);
+    $tpl = mysqli_real_escape_string(DBBYMYSQLI::$link, $tpl);
     $tpl = htmlspecialchars($tpl);
     $stemmed = array();
     $stemmed[0] = $tpl; 
@@ -77,7 +77,8 @@
     $tpl = str_replace('?', '_', $tpl);
     $tpl = str_replace('*', '%', $tpl);
     $tpl = trim(preg_replace("/\s(\S{1,2})\s/", " ", $tpl));     // ограничение по количеству вводимых символов
-    $tpl = ereg_replace(" +", " ", $tpl);                        // сжатие 2-х пробелов   
+    //$tpl = ereg_replace(" +", " ", $tpl);                        // сжатие 2-х пробелов   
+    $tpl = mb_ereg_replace(" +", " ", $tpl);                        // сжатие 2-х пробелов 
     $words = explode(" ", $tpl);
     
     $stemmer = new \NXP\Stemmer();
@@ -196,8 +197,8 @@
 		                 	    $content_by_pages[$j] .= " ...";  
 				   	  }      
 		                 $replacement = "<mark>".$stemmed[$k]."</mark>"; 
-		                 $content_by_pages[$j] = eregi_replace($stemmed[$k], $replacement, $content_by_pages[$j]);
-                               
+		                 //$content_by_pages[$j] = eregi_replace($stemmed[$k], $replacement, $content_by_pages[$j]);
+                     $content_by_pages[$j] = mb_eregi_replace($stemmed[$k], $replacement, $content_by_pages[$j]);
    // echo "<li><a href='?mb={$id_pg}&part={$part}'>{$title}</a> : стр.[{$part}] : [{$pages_cnt}] : [Вхожд.: {$pos} ] : [Повт.: {$reps}]</li>";
    // $links_books = "<li><a href='?mb={$id_pg}&part={$part}'>{$title}</a></li>";
     $links_books = "<a href='?mb={$id_pg}&part={$part}'>{$title}</a>";

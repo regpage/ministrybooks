@@ -1,0 +1,17 @@
+php_flag register_globals off
+php_flag display_errors off
+AddType application/x-httpd-php .cfm .php3
+DirectoryIndex index.cfm
+AddDefaultCharset utf-8
+ErrorDocument 404 https://ministrybooks.ru/?mod=errors
+
+<IfModule mod_rewrite.c>
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /
+RewriteRule shilov/?$ /shilov/index.html
+RewriteCond %{HTTP:X-HTTPS} !1
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+RewriteRule ^([a-zA-Z0-9_-]+)$ ?mb=$1
+RewriteRule ^([a-zA-Z0-9_-]+)/$ ?mb=$1
+</IfModule>

@@ -1,39 +1,39 @@
 <?php
 /**
  * SPAW Editor v.2 Config classes
- * 
+ *
  * Configuration related classes
- *   
+ *
  * @package spaw2
- * @subpackage Configuration  
- * @author Alan Mendelevich <alan@solmetra.lt> 
- * @copyright UAB Solmetra   
- */ 
+ * @subpackage Configuration
+ * @author Alan Mendelevich <alan@solmetra.lt>
+ * @copyright UAB Solmetra
+ */
 
 /**
  * Specifies that value for the config item is not transfered to external parts of spaw
- */    
+ */
 define("SPAW_CFG_TRANSFER_NONE", 0);
 /**
  * Specifies that value for the config item is transfered via JavaScript variables
- */ 
+ */
 define("SPAW_CFG_TRANSFER_JS", 1);
 /**
  * Specifies that value for the config item is appended to request url
- */ 
+ */
 define("SPAW_CFG_TRANSFER_REQUEST", 2);
 /**
  * Specifies that value for the config item is stored on the server
- */ 
+ */
 define("SPAW_CFG_TRANSFER_SECURE", 4);
 
 /**
  * Configuration item class
- * 
+ *
  * Class defines single configuration item
  * @package spaw2
- * @subpackage Configuration    
- */ 
+ * @subpackage Configuration
+ */
 class SpawConfigItem
 {
   /**
@@ -41,9 +41,9 @@ class SpawConfigItem
    * @param string $name Config item's name
    * @param mixed $value Config item's value
    * @param integer $tranfer_type The way item should be transfered to other parts of the editor (one of SPAW_CFG_TRANSFER_* constants)
-   * @return SpawConfigItem            
-   */           
-  function SpawConfigItem($name, $value, $transfer_type)
+   * @return SpawConfigItem
+   */
+  function __construct($name, $value, $transfer_type)
   {
     $this->name = $name;
     $this->value = $value;
@@ -51,44 +51,44 @@ class SpawConfigItem
   }
   /**
    * item name
-   * @var string   
-   */   
+   * @var string
+   */
   var $name;
   /**
    * item value
-   * @var mixed   
-   */   
+   * @var mixed
+   */
   var $value;
   /**
-   * the way item is transferred to dialogs, etc. 
+   * the way item is transferred to dialogs, etc.
    * Holds information on the prefered method to transfer this value to external
    * of the editor like dialogs. Should be set to one (or several combined with OR)
    * of SPAW_CFG_TRANFER_* constants.
-   * @var integer   
-   */    
+   * @var integer
+   */
   var $transfer_type;
 }
 
 /**
  * Configuration class
- * 
- * Holds global (when accessed through class) SPAW configuration and 
+ *
+ * Holds global (when accessed through class) SPAW configuration and
  * instance configuration when insantiated
  * @package spaw2
- * @subpackage Configuration     
- */ 
+ * @subpackage Configuration
+ */
 class SpawConfig
 {
   /**
    * array for instance config settings
    * @access private
-   */      
+   */
   var $config;
 
   /**
    * Copies global SPAW configuration to instance
-   */     
-  function SpawConfig()
+   */
+  function __construct()
   {
     // copy static config to this instance
     $this->config = SpawConfig::configVar();
@@ -97,47 +97,47 @@ class SpawConfig
   /**
    * Workaround for "static" class variable under php4
    * @access private
-   */      
-  function &configVar()
+   */
+  public static function &configVar()
   {
     static $config;
-    
+
     return $config;
   }
- 
+
   /**
    * Sets global config item
    * @param string $name Config item's name
    * @param mixed $value Config item's value
    * @param integer $transfer_type Transfer type for the value (One or several of SPAW_CFG_TRANSFER_* constants). Default value - SPAW_CFG_TRANSFER_NONE
    * @see SPAW_CFG_TRANSFER_NONE, SPAW_CFG_TRANSFER_JS, SPAW_CFG_TRANSFER_REQUEST, SPAW_CFG_TRANSFER_SECURE
-   * @static      
-   */   
-  function setStaticConfigItem($name, $value, $transfer_type=SPAW_CFG_TRANSFER_NONE)
+   * @static
+   */
+  public static function setStaticConfigItem($name, $value, $transfer_type=SPAW_CFG_TRANSFER_NONE)
   {
     $cfg = &SpawConfig::configVar();
     $cfg[$name] = new SpawConfigItem($name, $value, $transfer_type);
   }
-  
+
   /**
    * Sets instance config item
    * @param string $name Config item's name
    * @param mixed $value Config item's value
    * @param integer $transfer_type Transfer type for the value (One or several of SPAW_CFG_TRANSFER_* constants). Default value - SPAW_CFG_TRANSFER_NONE
-   * @see SPAW_CFG_TRANSFER_NONE, SPAW_CFG_TRANSFER_JS, SPAW_CFG_TRANSFER_REQUEST, SPAW_CFG_TRANSFER_SECURE   
-   */   
+   * @see SPAW_CFG_TRANSFER_NONE, SPAW_CFG_TRANSFER_JS, SPAW_CFG_TRANSFER_REQUEST, SPAW_CFG_TRANSFER_SECURE
+   */
   function setConfigItem($name, $value, $transfer_type=SPAW_CFG_TRANSFER_NONE)
   {
     $this->config[$name] = new SpawConfigItem($name, $value, $transfer_type);
   }
-  
+
   /**
-   * Gets global config item 
+   * Gets global config item
    * @param string $name Config item name
-   * @returns SpawConfigItem      
-   * @static      
-   */   
-  function getStaticConfigItem($name)
+   * @returns SpawConfigItem
+   * @static
+   */
+  public static function getStaticConfigItem($name)
   {
     $cfg = &SpawConfig::configVar();
     if (isset($cfg[$name]))
@@ -149,8 +149,8 @@ class SpawConfig
   /**
    * Gets instance config item
    * @param string $name Config item name
-   * @returns SpawConfigItem      
-   */   
+   * @returns SpawConfigItem
+   */
   function getConfigItem($name)
   {
     $cfg = $this->config;
@@ -164,8 +164,8 @@ class SpawConfig
    * Sets global config item value
    * @param string $name Config item name
    * @param mixed $value Config item value
-   * @static      
-   */         
+   * @static
+   */
   function setStaticConfigValue($name, $value)
   {
     $cfg_item = SpawConfig::getStaticConfigItem($name);
@@ -190,17 +190,17 @@ class SpawConfig
       $cfg_item->value[$index] = $value;
       SpawConfig::setStaticConfigItem($cfg_item->name, $cfg_item->value, $cfg_item->transfer_type);
     }
-  }              
-  
+  }
+
   /**
    * Sets instance config item value
    * @param string $name Config item name
    * @param mixed $value Config item value
-   */         
+   */
   function setConfigValue($name, $value)
   {
     $cfg_item = $this->getConfigItem($name);
-    
+
     if ($cfg_item)
     {
       $cfg_item->value = $value;
@@ -222,15 +222,15 @@ class SpawConfig
       $cfg_item->value[$index] = $value;
       $this->setConfigItem($cfg_item->name, $cfg_item->value, $cfg_item->transfer_type);
     }
-  }              
-  
+  }
+
   /**
    * Gets global config item value
    * @param string $name Config item name
    * @returns mixed Config item value
-   * @static      
-   */         
-  function getStaticConfigValue($name)
+   * @static
+   */
+  public static function getStaticConfigValue($name)
   {
     $cfg_item = SpawConfig::getStaticConfigItem($name);
 
@@ -253,14 +253,14 @@ class SpawConfig
       return $cfg_item->value[$index];
     else
       return NULL;
-  }              
+  }
 
 
   /**
    * Gets instance config item value
    * @param string $name Config item name
    * @returns mixed Config item value
-   */         
+   */
   function getConfigValue($name)
   {
     $cfg_item = $this->getConfigItem($name);
@@ -284,8 +284,8 @@ class SpawConfig
       return $cfg_item->value[$index];
     else
       return NULL;
-  }              
-  
+  }
+
   /**
    * Stores "secure" config items in session and returns md5 of serialized config variables
    * @returns string
@@ -297,14 +297,14 @@ class SpawConfig
     $sec_cfg = array();
     $result = '';
     $stored_cfg = SpawVars::getSessionVar("spaw_configs");
-    
+
     foreach($cfg as $key => $cfg_item)
     {
       if ($cfg_item->transfer_type & SPAW_CFG_TRANSFER_SECURE)
       {
         $strcfg .= $key . serialize($cfg_item);
         $sec_cfg[$key] = $cfg_item;
-      } 
+      }
     }
     if ($strcfg != '')
     {
@@ -314,11 +314,11 @@ class SpawConfig
     }
     return $result;
   }
-  
+
   /**
    * Restores "secure" config items from session
    * @params string $scid Config id
-   */                
+   */
   function restoreSecureConfig($scid)
   {
     $sec_cfg = SpawVars::getSessionVar("spaw_configs");

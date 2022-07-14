@@ -65,7 +65,7 @@ jQuery(document).ready(function ($) {
 	+                удаление сессии по GET запросу                  +
 	+ --------------------------------------------------------------*/
 
- if(strlen($_GET['srcStr'])>0 || isset($srcStr) || !empty($srcStr)) {    
+  if(strlen($_GET['srcStr'])>0 || isset($srcStr) || !empty($srcStr)) {    
     unset($_SESSION['template']);
     unset($_SESSION['temp']);
     unset($_SESSION['search_by_author']);
@@ -73,7 +73,8 @@ jQuery(document).ready(function ($) {
     unset($_SESSION['search_by_stype']);
     session_destroy();
     echo "<HTML><HEAD><META HTTP-EQUIV='Refresh' CONTENT='0; URL=?mod=search_books'></HEAD></HTML>";
-   return;  }
+   return;
+  }
 
 	/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
 	+                                                                +
@@ -141,14 +142,12 @@ jQuery(document).ready(function ($) {
              ORDER BY title ASC";
   $results_CAT = db_select($query_CAT);
 
-  if(is_array($results_CAT))
-    {      
+  if(is_array($results_CAT)) {      
       $cnt_CAT = count($results_CAT);
    
       $id_search_by .= "<optgroup label='По категории:'>";
 
-      for($i = 0; $i < $cnt_CAT; $i++)
-         {
+      for($i = 0; $i < $cnt_CAT; $i++) {
             $id_part = $results_CAT[$i]['id_part'];
             $title_ct = stripslashes($results_CAT[$i]['title']);
 
@@ -176,15 +175,12 @@ jQuery(document).ready(function ($) {
              ORDER BY title ASC, pos";
    $results_all_books = db_select($query_all_books);
 
-   if(is_array($results_all_books))
-
-    {      
+   if(is_array($results_all_books)) {      
       $cnt_all_books = count($results_all_books);
    
       $id_search_by .= "<optgroup label='По книге:'>";
 
-      for($q = 0; $q < $cnt_all_books; $q++)
-          {
+      for($q = 0; $q < $cnt_all_books; $q++) {
               $title_all_books = $results_all_books[$q]['title'];
               $id_item_all_books  = $results_all_books[$q]['id_item'];
               $id_item_all_books  = "G" . $id_item_all_books ;
@@ -247,8 +243,7 @@ $noise_words = array('а', 'без', 'более', 'бы', 'был', 'была',
       +                                                                 +
       +----------------------------------------------------------------*/
 
-if(!empty($_POST['search']) || isset($_GET['part']))
-{ 
+if(!empty($_POST['search']) || isset($_GET['part'])) {
   //   if (count($out) < 1 || !is_array($out))
 
       /*  + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
@@ -275,9 +270,7 @@ if(!empty($_POST['search']) || isset($_GET['part']))
 	+                   Помещаем переменные в сессию                 +
 	+ --------------------------------------------------------------*/
 
-  if (isset($_POST["template"])) 
-  {     
-
+  if (isset($_POST["template"])) {
     $template = strip_tags($_POST['template']); 
     $_SESSION['template']=$_POST['template'];
     $_SESSION['temp']=$_POST['template'];
@@ -285,6 +278,7 @@ if(!empty($_POST['search']) || isset($_GET['part']))
     $_SESSION['search_by_logic']=$_POST['logic'];
     $_SESSION['search_by_stype']=$_POST['stype']; 
    }
+
     $template = strip_tags($_SESSION['template']);  
     $templateid = strip_tags($_SESSION['temp']);
     $search_books_by_author = strip_tags($_SESSION['search_by_author']);
@@ -295,11 +289,10 @@ if(!empty($_POST['search']) || isset($_GET['part']))
       +                          Точное совпадение                      +
       +----------------------------------------------------------------*/
 
- if($search_books_by_stype == 'S') 
-   {
+ if($search_books_by_stype == 'S') {
     $tpl = trim($templateid);
-    $tpl = mysqli_real_escape_string(DBBYMYSQLI::$link,$tpl);
-    $tpl = htmlspecialchars($tpl);  // преобразование в HTML сущности 
+ /*   $tpl = mysqli_real_escape_string(DBBYMYSQLI::$link,$tpl);
+    $tpl = htmlspecialchars($tpl);  // преобразование в HTML сущности
     $tpl = stripcslashes($tpl);   // Удаляет экранирование символов
     $tpl = stripslashes($tpl);   // Удаляет экранирование символов
     $tpllower = mb_strtolower($tpl, 'utf-8');
@@ -312,95 +305,77 @@ if(!empty($_POST['search']) || isset($_GET['part']))
     $stemmed[] = $tplupper;         // Все буквы большие
     $stemmed[] = $tpllower;         // Все буквы маленькие
     if (!in_array($tpl, $stemmed)) {  $stemmed[] = $tpl; }  // Проверяем есть ли исходная фраза в массиве, и если нет добавляем в массив
-    $wrd_cnt = count($stemmed);
+    $wrd_cnt = count($stemmed);    */
    }       
       /*  + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
       +                          Включая все словоформы                 +
       +----------------------------------------------------------------*/
-  else
-    {
+  else {
       $tpl = preg_replace("/[^\w\x7F-\xFF\s]/", " ", $templateid);  
       $tpl = str_replace('?', '_', $tpl);
       $tpl = str_replace('*', '%', $tpl);
       $tpl = trim(preg_replace("/\s(\S{1,2})\s/", " ", $tpl));   
-      //$tpl = ereg_replace(" +", " ", $tpl);
-      $tpl = mb_ereg_replace(" +", " ", $tpl);
+      $tpl = ereg_replace(" +", " ", $tpl);                        
       $words = explode(" ", $tpl);                               
       $stemmer = new \NXP\Stemmer();
       $stemmed = array();
-        foreach ($words as $word) 
-          {
-           if (!in_array(mb_strtolower($word, 'utf-8'), $noise_words))
-             { 
+        foreach ($words as $word) {
+           if (!in_array(mb_strtolower($word, 'utf-8'), $noise_words)) { 
              $word = $stemmer->getWordBase($word);                               // Слова в исходном состоянии
              $stemmed[] = $stemmer->getWordBase(mb_ucfirst($word));              //  Первая заглавная буква
              $stemmed[] = $stemmer->getWordBase(mb_strtoupper($word, 'utf-8'));  //  Слова из заглавных букв
              $stemmed[] = $stemmer->getWordBase(mb_strtolower($word, 'utf-8'));  //  Слова из маленькие буквы 
              }
-          } 
+          }
              $wrd_cnt = count($stemmed);
-     }
+  }
         $result = implode(', ', $stemmed);
         $_SESSION['words_sessia'] = serialize($stemmed);    //  не удалять сессию
         $_SESSION['words_stemmed'] = $result;               //  не удалять сессию                                           
  
-  if(empty($tpl))
-    {
+  if(empty($tpl)) {
       echo "<script> 
                document.getElementById('resultalert').innerHTML = '<strong>Введите, пожалуйста, ключевые слова.</strong>';
-                  setTimeout(function() { document.getElementById('resultalert').style.display = 'none'; }, 8000); </script>";                    
+                  setTimeout(function() { document.getElementById('resultalert').style.display = 'none'; }, 8000); </script>";
       return;
-    } 
-      else 
-    { 
-
-  if (mb_strlen(trim($tpl), 'utf-8') < 3) 
-     {           
-       echo "<script>document.getElementById('resultalert').innerHTML = '<strong>Слишком короткий поисковый запрос, меньше 3 символов.</strong>'; 
-                     setTimeout(function() { document.getElementById('resultalert').style.display = 'none';}, 8000);</script>";  
+  } else {
+    if (mb_strlen(trim($tpl), 'utf-8') < 3) {           
+         echo "<script>document.getElementById('resultalert').innerHTML = '<strong>Слишком короткий поисковый запрос, меньше 3 символов.</strong>'; 
+                      setTimeout(function() { document.getElementById('resultalert').style.display = 'none';}, 8000);</script>";  
 
              unset($_SESSION['template']);
              return;          
-     }        
-  else if (mb_strlen(trim($tpl), 'utf-8') > 128) 
-     {
-       echo "<script>document.getElementById('resultalert').innerHTML = '<strong>Слишком длинный поисковый запрос, больше 128 символов.</strong>';
+    } else if (mb_strlen(trim($tpl), 'utf-8') > 128) {
+         echo "<script>document.getElementById('resultalert').innerHTML = '<strong>Слишком длинный поисковый запрос, больше 128 символов.</strong>';
                     setTimeout(function() { document.getElementById('resultalert').style.display = 'none';}, 8000);</script>";  
              unset($_SESSION['template']);
              return;
-     }
-  else if (in_array(mb_strtolower($tpl, 'utf-8'), $noise_words)) 
-     {
-        echo "<script>document.getElementById('resultalert').innerHTML = '<strong>Слово относится к Стоп-словам</strong>';
+    } else if (in_array(mb_strtolower($tpl, 'utf-8'), $noise_words)) {
+          echo "<script>document.getElementById('resultalert').innerHTML = '<strong>Слово относится к Стоп-словам</strong>';
                    setTimeout(function() { document.getElementById('resultalert').style.display = 'none';}, 8000);</script>";  
              unset($_SESSION['template']);
              return;
-     }
+    }
+  }
 
-}
-
-if($search_books_by_author[0]<>'G') 
-{
-   $query_CAT = "SELECT *
+  if($search_books_by_author[0]<>'G') {
+    $query_CAT = "SELECT *
              FROM {$gl_db_prefix}parts
              ORDER BY title ASC";
 
    $results_CAT = db_select($query_CAT);
 
-   if(is_array($results_CAT))
-     {      
+      if(is_array($results_CAT)) {
        $cnt_CAT = count($results_CAT); 
-       for($i = 0; $i < $cnt_CAT; $i++)
-         {   
+        for($i = 0; $i < $cnt_CAT; $i++) {   
             $id_part = $results_CAT[$i]['id_part']; 
             $cat_title = $results_CAT[$i]['title']; 
             if($id_part = $search_books_by_author) {$cat_books = $id_part;}
-         }
+        }
       }
-   $search_criterion_books = "WHERE id_part = " . $id_part;
-} 
-else if($search_books_by_author[0]=='G')
-{
+      $search_criterion_books = "WHERE id_part = " . $id_part;
+    }
+  else if($search_books_by_author[0]=='G') {
   $search_books_by_author = substr($search_books_by_author, 1);
   $query_all_books = "SELECT *
              FROM {$gl_db_prefix}parts_items
@@ -408,12 +383,10 @@ else if($search_books_by_author[0]=='G')
 
   $results_all_books = db_select($query_all_books);
 
-  if(is_array($results_all_books))
-    {      
+  if(is_array($results_all_books)) {      
       $cnt_all_books = count($results_all_books);
     
-     for($q = 0; $q < $cnt_all_books; $q++)
-       {
+     for($q = 0; $q < $cnt_all_books; $q++) {
            $id_item_all_books  = $results_all_books[$q]['id_item'];
            $title_all_books = $results_all_books[$q]['title'];
            if($id_item_all_books = $search_books_by_author) {$cat_books = $id_item_all_books;}
@@ -481,13 +454,11 @@ else if($search_books_by_author[0]=='G')
       $tpl = str_replace('?', '_', $tpl);
       $tpl = str_replace('*', '%', $tpl);
       $tpl = preg_replace("/\s(\S{1,2})\s/", " ", $tpl);    
-      //$tpl = ereg_replace(" +", " ", $tpl);
-      $tpl = preg_replace(" +", " ", $tpl);
+      $tpl = ereg_replace(" +", " ", $tpl);                        
 
    $arr = array();    // инициализация ассоциативного многомерного массива для заполнения данными
   
- if(is_array($results))
-    {  // 6
+ if(is_array($results)) {  // 6
      $cnt = count($results);                                         //  количество книг, найденных по критерию поиска
       for($i = 0; $i < $cnt; $i++)                                   //  постраничный перебор каждой книги
         {    // 5
@@ -523,7 +494,7 @@ else if($search_books_by_author[0]=='G')
 		                            $content_by_pages[$j] .= " ...";
                                   	    $replacement = "<mark>".$tpl."</mark>"; 
 		                //$content_by_pages[$j] = eregi_replace($tpl, $replacement, $content_by_pages[$j]);
-                    $content_by_pages[$j] = mb_eregi_replace($tpl, $replacement, $content_by_pages[$j]);
+                    $content_by_pages[$j] = mb_eregi_replace($tpl, $replacement, $content_by_pages[$j]);                                        
   $arr[$i][$j] = array('subject' => $title, 'lnk' => $links_books, 'shot_content' => $content_by_pages[$j], 'prt' => $part, 'ps' => $pos, 'rep' => $count_words);   
                                             	                            
                              }       //1
@@ -534,17 +505,14 @@ else if($search_books_by_author[0]=='G')
           }  // 5
    }  // 6
  
-foreach ($arr as $elements => $element) {$vcount = count($element) + $vcount;}
+  foreach ($arr as $elements => $element) {$vcount = count($element) + $vcount;}
  
-if($vcount > 0) 
-  {
+  if($vcount > 0) {
     $n = 0;
     $ar_sort = array();
 
-      foreach ($arr as $key => $val) 
-         {  
-             foreach ($val as $v1)
-               {
+      foreach ($arr as $key => $val) {  
+             foreach ($val as $v1) {
                  $ar_sort[] = $v1[subject];    // заполняем массив для сортировки
                  $n = $n + 1;         
                  $mass[$n] = '<tr><td>' . $v1[lnk] . '</td><td>' . $v1[shot_content] . '</td><td>' . $v1[prt] . '</td><td>' . $v1[rep] . '</td></tr>'; 
@@ -564,8 +532,7 @@ if($vcount > 0)
 	+                          КОНЕЦ                                 +
 	+ --------------------------------------------------------------*/
   } 
-  else 
-  {
+  else {
 	/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
 	+	                                                         +
 	+      Сообщение, если ничего не найдено по запросу              +

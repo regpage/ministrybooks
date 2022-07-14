@@ -1,6 +1,6 @@
 <?php
 // global filetypes definitions
-// warning: changing default filetypes may lead to unexpected behaviour 
+// warning: changing default filetypes may lead to unexpected behaviour
 SpawConfig::setStaticConfigItem(
   'PG_SPAWFM_FILETYPES',
   array(
@@ -14,7 +14,7 @@ SpawConfig::setStaticConfigItem(
     'archives'      => array('.zip', '.rar', '.gz'),
     // add your custom filetypes below
     //'' => '',
-  ), 
+  ),
   SPAW_CFG_TRANSFER_SECURE
 );
 
@@ -34,7 +34,7 @@ SpawConfig::setStaticConfigItem(
     'icon'      => 'ico_folder.gif',
     'icon_big'  => 'ico_folder_big.gif',
   )
-);  
+);
 
 // icons for specific filetypes (determined by their extensions)
 SpawConfig::setStaticConfigItem(
@@ -66,4 +66,5 @@ SpawConfig::setStaticConfigItem(
   '|',
   SPAW_CFG_TRANSFER_JS
 );
+
 ?>

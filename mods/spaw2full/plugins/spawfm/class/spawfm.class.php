@@ -8,12 +8,12 @@ class SpawFm
   var $current_type = false;
   var $image_ext = array('.gif', '.png', '.jpg', '.jpeg');
   var $error_msg = false;
-  
+
   function SpawFm()
   {
   }
-  
-  
+
+
   function normalizeDir($dir, $stripslashes = false, $noleadslash = false)
   {
     if (!strlen($dir))
@@ -22,37 +22,37 @@ class SpawFm
     if (!$noleadslash and !preg_match('#[a-z]+://#i', $dir))
       $dir = preg_replace('|^/*(.*)|', '/$1', $dir);
     $dir = SpawFm::addTrailingSlash($dir);
-    if ($stripslashes) 
+    if ($stripslashes)
       return SpawVars::stripSlashes($dir);
     return $dir;
   }
-  
+
   function addTrailingSlash($dir)
   {
     return preg_replace('|/*$|', '', $dir).'/';
   }
-  
-  
+
+
   function getFileIcon($filename)
   {
     $icons = SpawFm::getFileIconsDefinition($filename);
     return $icons['icon'];
   }
-  
+
   function getFileIconBig($filename)
   {
     $icons = SpawFm::getFileIconsDefinition($filename);
     return $icons['icon_big'];
   }
-  
-  function getFileIconsDefinition($filename) 
+
+  function getFileIconsDefinition($filename)
   {
     global $config;
     static $spawfm_ftypes_icons;
     $icons = false;
     $ext = SpawFm::getFileExtension($filename);
     if (!isset($spawfm_ftypes_icons[$ext])) {
-      // search for icon definition for this extension 
+      // search for icon definition for this extension
       $icons_def = $config->getConfigValue('PG_SPAWFM_FILETYPES_ICONS');
       foreach ($icons_def as $definition) {
         if (in_array($ext, $definition['extensions'])) {
@@ -63,7 +63,7 @@ class SpawFm
           break;
         }
       }
-      
+
       // set default icon if definition not found
       if (!$icons) {
         $icons = $config->getConfigValue('PG_SPAWFM_FILETYPES_ICON_DEFAULT');
@@ -74,13 +74,13 @@ class SpawFm
     }
     return $icons;
   }
-  
+
   function getFileThumbnail($filename)
   {
     $icons = SpawFm::getFileIconsDefinition($filename);
     return '../plugins/spawfm/img/'.$icons['icon_big'];
   }
-  
+
   function getFileSize($file)
   {
     $fsize = @filesize($this->getCurrentFsDir().$file);
@@ -88,7 +88,7 @@ class SpawFm
       $fsize = 0;
     return $fsize;
   }
-   
+
   function getFileDate($file)
   {
     $fdate = @filemtime($this->getCurrentFsDir().$file);
@@ -96,7 +96,7 @@ class SpawFm
       $fdate = 0;
     return $fdate;
   }
-  
+
   function isImage($file)
   {
     $ext = $this->getFileExtension($file);
@@ -105,39 +105,39 @@ class SpawFm
     }
     return false;
   }
-  
+
   function isThumbailsModePossible($dir_path)
   {
     // check required system tools for image resizing
     // check if current directory is writable
     return true;
   }
-  
+
   function getCurrentDir()
   {
     return !empty($this->current_dir_data['dir']) ? $this->current_dir_data['dir'] : false;
   }
-  
+
   function getCurrentFsDir()
   {
     return !empty($this->current_dir_data['fsdir']) ? $this->current_dir_data['fsdir'] : false;
   }
-  
+
   function setCurrentDirData($dir_data)
   {
     $this->current_dir_data = $dir_data;
   }
-  
+
   function getCurrentDirData()
   {
     return $this->current_dir_data;
   }
-  
+
   function unsetCurrentDirData()
   {
     $this->current_dir_data = false;
   }
-  
+
   function getCurrentDirSetting($name)
   {
     $data = $this->getCurrentDirData();
@@ -146,7 +146,7 @@ class SpawFm
     }
     return false;
   }
-  
+
   function setCurrentType($type)
   {
     $this->current_type = $type;
@@ -155,7 +155,7 @@ class SpawFm
   {
     return $this->current_type;
   }
-  
+
   // returns allowed extensions for selected directory and type
   function getAllowedExtensions()
   {
@@ -164,9 +164,9 @@ class SpawFm
     if (!$this->getCurrentDir() or !$curr_dir_data = $this->getCurrentDirData()) {
       return $allowed_ext;
     }
-    
+
     $filetypes = $config->getConfigValue('PG_SPAWFM_FILETYPES');
-    
+
     if ($curr_type = $this->getCurrentType()) {
       $allowed_ext = $filetypes[$curr_type];
     } elseif (!empty($curr_dir_data['params']['allowed_filetypes'])) {
@@ -185,13 +185,13 @@ class SpawFm
     }
     return $allowed_ext;
   }
-  
+
   // returns list of files in current directory
   function getFilesList()
   {
     global $lang;
     $files = array();
-    
+
     if (!$this->getCurrentFsDir()) {
       return $files;
     }
@@ -199,7 +199,7 @@ class SpawFm
     $allowed_ext = $this->getAllowedExtensions();
     if ($dh = @opendir($this->getCurrentFsDir())) {
       while (false !== ($file = readdir($dh))) {
-        if (!is_dir($this->getCurrentFsDir().$file)) {  
+        if (!is_dir($this->getCurrentFsDir().$file)) {
           $ext = SpawFm::getFileExtension($file);
           if (in_array('.*', $allowed_ext) or in_array($ext, $allowed_ext)) {
             $files[] = $file;
@@ -210,10 +210,10 @@ class SpawFm
     } else {
       return false;
     }
-    
+
     // reorder files by title
     sort($files, SORT_STRING);
-    
+
     // load files' details
     foreach ($files as $key=>$file) {
       $ext = SpawFm::getFileExtension($file);
@@ -227,10 +227,10 @@ class SpawFm
       } else {
         $other = '';
       }
-      
+
       // get thumbail
       // TO DO
-      
+
       $files[$key] = array(
         'type'      => 'F',
         'name'      => $file,
@@ -243,16 +243,16 @@ class SpawFm
         'other'     => $other
       );
     }
-    
+
     return $files;
   }
-  
+
   // returns list of files in current directory
   function getDirectoriesList()
   {
     global $lang, $config;
     $directories = array();
-    
+
     if (!$this->getCurrentFsDir()) {
       return $directories;
     }
@@ -267,10 +267,10 @@ class SpawFm
     } else {
       return false;
     }
-    
+
     // sort
     sort($directories);
-    
+
     // load details
     foreach ($directories as $key=>$file) {
       $directories[$key] = array(
@@ -284,32 +284,32 @@ class SpawFm
         'other'     => ''
       );
     }
-    
+
     return $directories;
   }
-  
+
   function setThumbnailsEnabled($status = false)
   {
     $this->thumbnails_enabled = $status;
   }
-  
+
   function getThumbnailsEnabled()
   {
     return $this->thumbnails_enabled;
   }
-  
+
   // static helper methods
   function getFileExtension($filename)
   {
     return strtolower(strrchr($filename, '.'));
   }
-  
+
   // adds slashes before single quotes
   function escJsStr($str)
   {
     return addcslashes($str, '\'');
   }
-  
+
   // strip leading slash
   function stripLeadSlash($dir)
   {
@@ -318,43 +318,43 @@ class SpawFm
     }
     return $dir;
   }
-  
+
   // escape HTML special chars
   function escapeHtml($str)
   {
     return str_replace(
-      array('<', '>', '"'), 
-      array('&lt;', '&gt;', '&quot;'), 
+      array('<', '>', '"'),
+      array('&lt;', '&gt;', '&quot;'),
       $str
     );
   }
-  
+
   function error()
   {
     return false !== $this->getError();
   }
-  
+
   function getError()
   {
     return $this->error_msg;
   }
-  
+
   function setError($msg)
   {
     $this->error_msg = $msg;
   }
-  
+
   function deleteFile($del_file)
   {
     global $lang;
-  
+
     // filter file/dir name
     $del_file = basename($del_file);
-    
+
     if (file_exists($this->getCurrentFsDir().$del_file)) {
       if (is_dir($this->getCurrentFsDir().$del_file)) {
         if (!$this->getCurrentDirSetting('recursive') or
-            !$this->getCurrentDirSetting('allow_modify_subdirectories')) 
+            !$this->getCurrentDirSetting('allow_modify_subdirectories'))
         {
           $this->setError($lang->m('error_delete_subdirectories_forbidden', 'spawfm'));
         } else {
@@ -369,7 +369,7 @@ class SpawFm
             }
             closedir($dh);
           }
-        
+
           if (!$empty) {
             $this->setError($lang->m('error_delete_subdirectories_not_empty', 'spawfm'));
           } elseif (!@rmdir($this->getCurrentFsDir().$del_file)) {
@@ -384,27 +384,27 @@ class SpawFm
         }
       }
     }
-    
+
     return !$this->error();
   }
-  
+
   function renameFile($ren_old_name, $ren_new_name)
   {
     global $lang;
-    
+
     // cleanup/filter file/directory names
     $ren_old_name = basename($ren_old_name);
     $ren_new_name = basename(trim($ren_new_name));
-    
+
     // check if file/directory can be renamed
     if (!file_exists($this->getCurrentFsDir().$ren_old_name)) {
       $this->setError($lang->m('error_rename_file_missing', 'spawfm'));
-    } elseif (is_dir($this->getCurrentFsDir().$ren_old_name) and 
-              !$this->getCurrentDirSetting('allow_modify_subdirectories')) 
+    } elseif (is_dir($this->getCurrentFsDir().$ren_old_name) and
+              !$this->getCurrentDirSetting('allow_modify_subdirectories'))
     {
       $this->setError($lang->m('error_rename_directories_forbidden', 'spawfm'));
-    } elseif (!is_dir($this->getCurrentFsDir().$ren_old_name) and 
-              !$this->getCurrentDirSetting('allow_modify')) 
+    } elseif (!is_dir($this->getCurrentFsDir().$ren_old_name) and
+              !$this->getCurrentDirSetting('allow_modify'))
     {
       $this->setError($lang->m('error_rename_forbidden', 'spawfm'));
     } elseif (file_exists($this->getCurrentFsDir().$ren_new_name)) {
@@ -420,20 +420,20 @@ class SpawFm
         $this->setError($lang->m('error_rename_failed', 'spawfm'));
       }
     }
-    
+
     return !$this->error();
   }
-  
+
   function createDirectory($dir_name)
   {
     global $lang;
-  
-    if ($this->getCurrentDirSetting('recursive') and 
+
+    if ($this->getCurrentDirSetting('recursive') and
         $this->getCurrentDirSetting('allow_create_subdirectories'))
     {
       // filter dir name
       $dir_name = trim(basename($dir_name));
-      
+
       if (preg_match('#[:<>|?*"/\\\\]+#', $dir_name)) {
         $this->setError($lang->m('error_create_directories_name_invalid', 'spawfm'));
       }
@@ -450,18 +450,18 @@ class SpawFm
         if (!$res) {
           $this->setError($lang->m('error_create_directories_failed', 'spawfm'));
         }
-      }    
+      }
     } else {
       $this->setError($lang->m('error_create_directories_forbidden', 'spawfm'));
     }
-    
+
     return !$this->error();
   }
-  
+
   function uploadFile($uplfile)
   {
     global $lang;
-  
+
     // check if upload is allowed
     if (!$this->getCurrentDirSetting('allow_upload')) {
       $this->setError($lang->m('error_upload_forbidden', 'spawfm'));
@@ -472,29 +472,29 @@ class SpawFm
         $allowed_ext = $this->getAllowedExtensions();
         if ((in_array('.*', $allowed_ext) or in_array($ext, $allowed_ext)) and $this->isSecureFile($uplfile['name'])) {
           // check filesize
-          if (!$this->getCurrentDirSetting('max_upload_filesize') or 
+          if (!$this->getCurrentDirSetting('max_upload_filesize') or
               $uplfile['size'] <= $this->getCurrentDirSetting('max_upload_filesize'))
           {
             $ok = true;
             $err = array();
             /*
-              check image dimensions: try to read image dimensions (this step is 
-              omitted if getimagesize() does not recognize file as image or fails 
+              check image dimensions: try to read image dimensions (this step is
+              omitted if getimagesize() does not recognize file as image or fails
               to read it's dimensions
             */
             if (($this->getCurrentDirSetting('max_img_width') or
-                $this->getCurrentDirSetting('max_img_height')) and 
-                $imgsize = @getimagesize($uplfile['tmp_name'])) 
+                $this->getCurrentDirSetting('max_img_height')) and
+                $imgsize = @getimagesize($uplfile['tmp_name']))
             {
-              // check if dimensions not too big if specified   
-              if ($this->getCurrentDirSetting('max_img_width') and 
-                  $imgsize[0] > $this->getCurrentDirSetting('max_img_width')) 
+              // check if dimensions not too big if specified
+              if ($this->getCurrentDirSetting('max_img_width') and
+                  $imgsize[0] > $this->getCurrentDirSetting('max_img_width'))
               {
                 $ok = false;
                 $err[] = str_replace('[*MAXWIDTH*]', $this->getCurrentDirSetting('max_img_width'), $lang->m('error_img_width_max', 'spawfm'));
               }
-              if ($this->getCurrentDirSetting('max_img_height') and 
-                  $imgsize[0] > $this->getCurrentDirSetting('max_img_height')) 
+              if ($this->getCurrentDirSetting('max_img_height') and
+                  $imgsize[0] > $this->getCurrentDirSetting('max_img_height'))
               {
                 $ok = false;
                 $err[] = str_replace('[*MAXHEIGHT*]', $this->getCurrentDirSetting('max_img_height'), $lang->m('error_img_height_max', 'spawfm'));
@@ -508,7 +508,8 @@ class SpawFm
               $i = 1;
               // pick unused file name
               while (file_exists($this->getCurrentFsDir().$uplfile_name)) {
-                $uplfile_name = ereg_replace('(.*)(\.[a-zA-Z]+)$', '\1_'.$i.'\2', $uplfile['name']);
+                //$uplfile_name = ereg_replace('(.*)(\.[a-zA-Z]+)$', '\1_'.$i.'\2', $uplfile['name']);
+                $uplfile_name = mb_ereg_replace('(.*)(\.[a-zA-Z]+)$', '\1_'.$i.'\2', $uplfile['name']);
                 $i++;
               }
               if (!@move_uploaded_file($uplfile['tmp_name'], $this->getCurrentFsDir().$uplfile_name)) {
@@ -536,12 +537,12 @@ class SpawFm
         } else {
           $this->setError($lang->m('error_upload_failed', 'spawfm'));
         }
-      }    
+      }
     }
-    
+
     return $this->error() ? false : $uplfile_name;
   }
-  
+
   function isSecureFile($filename)
   {
     $unsafe_ext = $this->getCurrentDirSetting('forbid_extensions');

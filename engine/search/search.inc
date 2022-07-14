@@ -1,5 +1,3 @@
-<?php
-?>
 <style>
 #preloader {
     position: fixed;
@@ -300,7 +298,6 @@ if(!empty($_POST['search']) || isset($_GET['part']))
 
  if($search_books_by_stype == 'S') {
 /*
-изначальная версия
 $tpl = trim($templateid);
     $tpl = mysqli_real_escape_string(DBBYMYSQLI::$link,$tpl);
     $tpl = htmlspecialchars($tpl);  // преобразование в HTML сущности 

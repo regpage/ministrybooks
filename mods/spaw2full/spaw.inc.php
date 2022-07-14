@@ -28,8 +28,15 @@ if (is_dir($spaw_pgdir))
           {
             while (($spaw_fn = readdir($spaw_pgdh)) !== false)
             {
-              if ($spaw_fn != '.' && $spaw_fn != '..' && !is_dir($spaw_pgdir.$spaw_pg.'/config/'.$spaw_fn))
-                include($spaw_pgdir.$spaw_pg.'/config/'.$spaw_fn);
+              if ($spaw_fn != '.' && $spaw_fn != '..' && !is_dir($spaw_pgdir.$spaw_pg.'/config/'.$spaw_fn)){                
+                # ROMANS CODE
+                /*if ($spaw_pgdir === '/') {
+                  $spaw_pgdir1 = substr($spaw_pgdir, 1);
+                  include($spaw_pgdir1.$spaw_pg.'/config/'.$spaw_fn);
+                } else {*/
+                  include($spaw_pgdir.$spaw_pg.'/config/'.$spaw_fn);
+                /*}*/
+              }
             }
             closedir($spaw_pgdh);
           }

@@ -1,5 +1,5 @@
 <?php
-  include("{$gl_path_to_root}config/site_settings.inc"); 
+  include("{$gl_path_to_root}config/site_settings.inc");
   $path = "{$gl_path_to_engine_root}langfiles/";
   $dir = opendir($path);
   while($file = readdir($dir))
@@ -10,13 +10,13 @@
         { include("{$path}{$file}"); }
     }
   }
-  closedir($dir);       
-  include("{$gl_path_to_engine}common/actions.inc");  
+  closedir($dir);
+  include("{$gl_path_to_engine}common/actions.inc");
   if($gl_group != 'admin')
   {
-    header("Location: http://ministrybooks.ru");
+    header("Location: https://ministrybooks.ru");
     exit;
-  }  
+  }
 ?>
 <html>
 	<head>
@@ -41,13 +41,13 @@
 
 <head><body marginwidth=0 marginheight=0 leftmargin=0 rightmargin=0 topmargin=0 bottommargin=0 bgcolor='#ffffff' alink='#F26D00' link='#0857A6' vlink='#0857A6'>
 <!--  //print "<div id='header'><strong>{$l_admmain[28]}</strong></div>";   -->
-<?php   
+<?php
     $editor_path = "{$gl_path_to_engine_root}mods/editarea/ortus_connector.inc";
     if(file_exists($editor_path))
     include($editor_path);
-    unset($editor_path); 
+    unset($editor_path);
 ?>
-<?php     
+<?php
     print "<div id='layer1'><div id='menu'> ";
        include("{$gl_path_to_engine}admin/leftcol.inc");
     print "</div></div><div id='layer2'>";
@@ -144,8 +144,6 @@
 	     case 'regform_fields_add'      : include("{$gl_path_to_engine}regform_fields/regform_fields_add.inc");   break;
 	     case 'regform_fields_edit'      : include("{$gl_path_to_engine}regform_fields/regform_fields_edit.inc");   break;
 	     case 'regform_fields_del'      : include("{$gl_path_to_engine}regform_fields/regform_fields_del.inc");   break;
-
-	   
 }
 //print "</td></tr></table>";
     print "</div>";

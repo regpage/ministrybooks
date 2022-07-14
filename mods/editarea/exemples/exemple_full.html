@@ -127,8 +127,12 @@
 	$authors= array();
 	$news= array();
 	$query="SELECT author, COUNT(id) as 'nb_news' FROM news_messages GROUP BY author";
-	$result=mysql_query($query, $DBnews);
-	while($line = mysql_fetch_assoc($result)){
+	//$result=mysql_query($query, $DBnews);
+	$result = mysqli_query(DBBYMYSQLI::$link, $query)
+           or die(mysqli_error(DBBYMYSQLI::$link));
+    
+	//while($line = mysql_fetch_assoc($result)){
+	while($line = mysqli_fetch_assoc($result)){
 		$authors[$line["author"]]= $line["author"];
 		$news[$line["author"]]=$line['nb_news'];
 	}
@@ -143,8 +147,11 @@
 	if(isset($_GET["order"]) && $_GET["order"]!="nb_news")
 		$query.=" ORDER BY ".$_GET["order"];
 		
-	$result=mysql_query($query, $DBkal);
-	while($line = mysql_fetch_assoc($result)){
+	//$result=mysql_query($query, $DBkal);
+	$result = mysqli_query(DBBYMYSQLI::$link, $query)
+           or die(mysqli_error(DBBYMYSQLI::$link));
+	//while($line = mysql_fetch_assoc($result)){
+	while($line = mysqli_fetch_assoc($result)){
 		printf("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>", $line["name"], $line["fname"],
 			$news[$line["people_id"]], $line["status"], $line["team_name"], ($line["team_leader"]=="1")?"yes":"no", $line["type"], $line["wp_name"]);
 	

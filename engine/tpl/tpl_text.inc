@@ -37,7 +37,7 @@
   if(!empty($_POST))
   {
     $tpl = $_POST['tpl'];
-    if(get_magic_quotes_gpc())
+    if(false)
       $tpl = stripslashes($tpl);
 
     $fp = fopen ("{$gl_path_to_templates}site/{$file}.tpl", "w");

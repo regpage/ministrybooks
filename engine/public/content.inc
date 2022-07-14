@@ -4,7 +4,7 @@ $part = "";
 
 if(!empty($_GET['part']))
 {
-$part = "<b>&nbsp;&nbsp; :: &nbsp;&nbsp;</b> {$l_pages[3]} ";  
+$part = "<b>&nbsp;&nbsp; :: &nbsp;&nbsp;</b> {$l_pages[3]} ";
 $part .= intval($_GET['part']);
 }
   if(!empty($gl_page))
@@ -18,23 +18,23 @@ $part .= intval($_GET['part']);
 <div id="toc">
 <?php
     $ch_path = "{$gl_path_to_root}content/{$gl_page}/ch_{$gl_page}.inc";
-    if(file_exists($ch_path))include($ch_path); 
+    if(file_exists($ch_path))include($ch_path);
 
     $path = "{$gl_path_to_root}content/{$gl_page}/{$gl_page}.inc";
     if(file_exists($path) && $_GET['part']<= $pages_count)
         include($path);
     else
     {
-      
-echo "</div>"; 
+
+echo "</div>";
 echo "<div class='row collapse' id='ministry'>";
-        include("{$gl_path_to_engine}errors/errors.inc");    echo "</div>";   
+        include("{$gl_path_to_engine}errors/errors.inc");    echo "</div>";
          return;
  }
 ?>
 </div>
-<?php  
-//  !!!  ВЫВОДИТ ССЫЛКУ < РЕДАКТИРОВАТЬ > НА СТРАНИЦЫ С ТЕКСТАМИ ПУБЛИКАЦИЙ   !!!  
+<?php
+//  !!!  ВЫВОДИТ ССЫЛКУ < РЕДАКТИРОВАТЬ > НА СТРАНИЦЫ С ТЕКСТАМИ ПУБЛИКАЦИЙ   !!!
 // if($gl_group == 'editors' || $gl_group == 'admin')
 if($gl_group == 'admin')
 // print "<p><a href='?mod=pages_text&ed_opt=blocks_list&amp;pg={$gl_page}&amp;new_page=1' class='Mustred'>{$l_gen[25]}</a></p>";
@@ -52,7 +52,7 @@ if($gl_group == 'admin')
     case 'conclnt':     include("{$gl_path_to_engine_root}mods/ministrybooks/conclnt.inc");  break;
     case 'high_peak_books':     include("{$gl_path_to_engine_root}mods/ministrybooks/high_peak_books.inc");  break;
     case 'selected_titles':     include("{$gl_path_to_engine_root}mods/ministrybooks/selected_titles.inc");  break;
- //-----------------------------------------------------------------------------------------------  
+ //-----------------------------------------------------------------------------------------------
     case 'search_on_site':    include("{$gl_path_to_engine}search/search.inc");  break;
     case 'search_tips':     include("{$gl_path_to_engine}search/search_tips.inc");  break;
     case 'search_result':     include("{$gl_path_to_engine}search/search_result.inc");  break;
@@ -89,7 +89,7 @@ if($gl_group == 'admin')
       //case 'sitemap':         include("{$gl_path_to_engine}sitemap/sitemap.inc");  break;
 
 //===========  ФАЙЛОВЫЙ АРХИВ =============================================================================================
- 
+
  case 'filearch2_cats_list': if($gl_group == 'admin' Or $gl_group=='editors') include("{$gl_path_to_engine_root}mods/filearch2/filearch2_cats_list.inc"); else  Header('Location: ?mod=errors'); break;
  case 'filearch2_items_list': if($gl_group == 'admin' Or $gl_group=='editors') include("{$gl_path_to_engine_root}mods/filearch2/filearch2_items_list.inc"); else  Header('Location: ?mod=errors'); break; case 'filearch2_cats_add': if($gl_group == 'admin' Or $gl_group=='editors') include("{$gl_path_to_engine_root}mods/filearch2/filearch2_cats_add.inc");  break;
  case 'filearch2_cats_edit': if($gl_group == 'admin' Or $gl_group=='editors') include("{$gl_path_to_engine_root}mods/filearch2/filearch2_cats_edit.inc"); else  Header('Location: ?mod=errors'); break; case 'filearch2_cats_del': if($gl_group == 'admin' Or $gl_group=='editors') include("{$gl_path_to_engine_root}mods/filearch2/filearch2_cats_del.inc");  break;
@@ -98,11 +98,11 @@ if($gl_group == 'admin')
  case 'filearch2_items_autoload': if($gl_group == 'admin' Or $gl_group=='editors') include("{$gl_path_to_engine_root}mods/filearch2/filearch2_items_autoload.inc"); else  Header('Location: ?mod=errors'); break; case 'filearch2_items_detstat': if($gl_group == 'admin' Or $gl_group=='editors') include("{$gl_path_to_engine_root}mods/filearch2/filearch2_items_detstat.inc");  break;
  case 'filearch2_items_stat': if($gl_group == 'admin' Or $gl_group=='editors') include("{$gl_path_to_engine_root}mods/filearch2/filearch2_items_stat.inc"); else  Header('Location: ?mod=errors'); break; case 'filearch2_manager_list': if($gl_group == 'admin' Or $gl_group=='editors') include("{$gl_path_to_engine_root}mods/filearch2/filearch2_manager_list.inc");  break;
  case 'filearch2_manager_del': if($gl_group == 'admin' Or $gl_group=='editors') include("{$gl_path_to_engine_root}mods/filearch2/filearch2_manager_del.inc"); else  Header('Location: ?mod=errors'); break; case 'filearch2_manager_del_all': if($gl_group == 'admin' Or $gl_group=='editors') include("{$gl_path_to_engine_root}mods/filearch2/filearch2_manager_del_all.inc");  break;
- case 'filearch2_settings': if($gl_group == 'admin' Or $gl_group=='editors') include("{$gl_path_to_engine_root}mods/filearch2/filearch2_settings.inc"); else  Header('Location: ?mod=errors'); break;      
+ case 'filearch2_settings': if($gl_group == 'admin' Or $gl_group=='editors') include("{$gl_path_to_engine_root}mods/filearch2/filearch2_settings.inc"); else  Header('Location: ?mod=errors'); break;
 default:  include("{$gl_path_to_engine}errors/errors.inc");
-                              //case 'errors': include("{$gl_path_to_engine}errors/errors.inc");  break;    
+                              //case 'errors': include("{$gl_path_to_engine}errors/errors.inc");  break;
 }
-    
+
                               //if($gl_group == 'admin')
                               //{
                               // switch($gl_mod)
@@ -130,5 +130,5 @@ default:  include("{$gl_path_to_engine}errors/errors.inc");
     }
   }
 
-  closedir($dir); 
+  closedir($dir);
 ?>

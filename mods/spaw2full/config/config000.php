@@ -1,11 +1,12 @@
 <?php
+print "I am there!";
 require_once(str_replace('\\\\','/',dirname(__FILE__)).'/../class/config.class.php');
 require_once(str_replace('\\\\','/',dirname(__FILE__)).'/../class/util.class.php');
 
 // sets physical filesystem directory of web site root
 // if calculation fails (usually if web server is not apache) set this manually
 SpawConfig::setStaticConfigItem('DOCUMENT_ROOT', str_replace("\\","/",SpawVars::getServerVar("DOCUMENT_ROOT")));
-if (!ereg('/$', SpawConfig::getStaticConfigValue('DOCUMENT_ROOT')))
+if (!preg_match('/$', SpawConfig::getStaticConfigValue('DOCUMENT_ROOT')))
   SpawConfig::setStaticConfigItem('DOCUMENT_ROOT', SpawConfig::getStaticConfigValue('DOCUMENT_ROOT').'/');
 // sets physical filesystem directory where spaw files reside
 // should work fine most of the time but if it fails set SPAW_ROOT manually by providing correct path

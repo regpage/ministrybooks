@@ -5,7 +5,7 @@ require_once(str_replace('\\\\','/',dirname(__FILE__)).'/../class/util.class.php
 // sets physical filesystem directory of web site root
 // if calculation fails (usually if web server is not apache) set this manually
 SpawConfig::setStaticConfigItem('DOCUMENT_ROOT', str_replace("\\","/",SpawVars::getServerVar("DOCUMENT_ROOT")));
-if (!ereg('/$', SpawConfig::getStaticConfigValue('DOCUMENT_ROOT')))
+if (!preg_match('/$', SpawConfig::getStaticConfigValue('DOCUMENT_ROOT')))
   SpawConfig::setStaticConfigItem('DOCUMENT_ROOT', SpawConfig::getStaticConfigValue('DOCUMENT_ROOT').'/');
 // sets physical filesystem directory where spaw files reside
 // should work fine most of the time but if it fails set SPAW_ROOT manually by providing correct path
@@ -35,19 +35,19 @@ SpawConfig::setStaticConfigItem('SPAW_DIR', '/spaw2/');
 */
 
 // DEFAULTS used when no value is set from code
-// language 
+// language
 SpawConfig::setStaticConfigItem('default_lang','en');
 // output charset (empty strings means charset specified in language file)
 SpawConfig::setStaticConfigItem('default_output_charset','');
-// theme 
+// theme
 SpawConfig::setStaticConfigItem('default_theme','spaw2');
-// toolbarset 
+// toolbarset
 SpawConfig::setStaticConfigItem('default_toolbarset','standard');
 // stylesheet
 SpawConfig::setStaticConfigItem('default_stylesheet',SpawConfig::getStaticConfigValue('SPAW_DIR').'wysiwyg.css');
-// width 
+// width
 SpawConfig::setStaticConfigItem('default_width','100%');
-// height 
+// height
 SpawConfig::setStaticConfigItem('default_height','200px');
 
 // specifies if language subsystem should use iconv functions to convert strings to the specified charset
@@ -56,7 +56,7 @@ SpawConfig::setStaticConfigItem('USE_ICONV',true);
 SpawConfig::setStaticConfigItem('rendering_mode', 'xhtml', SPAW_CFG_TRANSFER_JS);
 // specifies that xhtml rendering engine should indent it's output
 SpawConfig::setStaticConfigItem('beautify_xhtml_output', true, SPAW_CFG_TRANSFER_JS);
-// specifies host and protocol part (like http://mydomain.com) that should be added to urls returned from file manager (and probably other places in the future) 
+// specifies host and protocol part (like http://mydomain.com) that should be added to urls returned from file manager (and probably other places in the future)
 SpawConfig::setStaticConfigItem('base_href', '', SPAW_CFG_TRANSFER_JS);
 // specifies if spaw should strip domain part from absolute urls (IE makes all links absolute)
 SpawConfig::setStaticConfigItem('strip_absolute_urls', true, SPAW_CFG_TRANSFER_JS);
@@ -122,7 +122,7 @@ SpawConfig::setStaticConfigItem("dropdown_data_core_formatBlock",
     '<H6>' => 'Heading 6',
     '<pre>' => 'Preformatted',
     '<address>' => 'Address',
-    '<p>' => 'Paragraph'    
+    '<p>' => 'Paragraph'
   )
 );
 // data for link targets drodown list in hyperlink dialog
@@ -147,7 +147,7 @@ SpawConfig::setStaticConfigItem('toolbarset_standard',
     "plugins" => "plugins",
     "insert" => "insert",
     "tools" => "tools"
-  ) 
+  )
 );
 // all core toolbars
 SpawConfig::setStaticConfigItem('toolbarset_all',
@@ -159,8 +159,8 @@ SpawConfig::setStaticConfigItem('toolbarset_all',
     "plugins" => "plugins",
     "insert" => "insert",
     "tools" => "tools",
-    "font" => "font"   
-  ) 
+    "font" => "font"
+  )
 );
 // mini core toolbars
 SpawConfig::setStaticConfigItem('toolbarset_mini',
@@ -168,7 +168,7 @@ SpawConfig::setStaticConfigItem('toolbarset_mini',
     "format" => "format_mini",
     "edit" => "edit",
     "tools" => "tools"
-  ) 
+  )
 );
 
 // colorpicker config
@@ -223,7 +223,7 @@ SpawConfig::setStaticConfigItem(
   array(
     array(
       'dir'     => SpawConfig::getStaticConfigValue('SPAW_DIR').'uploads/flash/',
-      'caption' => 'Flash movies', 
+      'caption' => 'Flash movies',
       'params'  => array(
         'allowed_filetypes' => array('flash')
       )
@@ -239,7 +239,7 @@ SpawConfig::setStaticConfigItem(
     array(
       'dir'     => SpawConfig::getStaticConfigValue('SPAW_DIR').'uploads/files/',
       'fsdir'   => SpawConfig::getStaticConfigValue('SPAW_ROOT').'uploads/files/', // optional absolute physical filesystem path
-      'caption' => 'Files', 
+      'caption' => 'Files',
       'params'  => array(
         'allowed_filetypes' => array('any')
       )

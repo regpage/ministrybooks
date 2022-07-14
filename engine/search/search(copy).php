@@ -45,7 +45,7 @@ jQuery(document).ready(function ($) {
 
   print '<ul class="breadcrumbs">
         <li><a href="index.cfm">Главная</a></li>
-        <li class="current"><a href="/?mod=search_books">Поиск по книгам</a></li>
+        <li class="current"><a href="/?mod=search_on_site">Поиск по книгам</a></li>
       </ul>';
   print "<h2>Поиск по книгам</h2>";
 
@@ -72,7 +72,7 @@ jQuery(document).ready(function ($) {
     unset($_SESSION['search_by_logic']);
     unset($_SESSION['search_by_stype']);
     session_destroy();
-    echo "<HTML><HEAD><META HTTP-EQUIV='Refresh' CONTENT='0; URL=?mod=search_books'></HEAD></HTML>";
+    echo "<HTML><HEAD><META HTTP-EQUIV='Refresh' CONTENT='0; URL=?mod=search_on_site'></HEAD></HTML>";
    return;  }
 
 	/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
@@ -80,7 +80,7 @@ jQuery(document).ready(function ($) {
 	+                ВЫБОР КРИТЕРИЕВ ПОИСКА В ФОРМЕ                  +
 	+                ------------------------------                  +
 	+                                                                +
-	+               Выпадющий список: | Логига поиска: И, ИЛИ        +
+	+            Выпадющий список: | Логига поиска: И, ИЛИ           +
 	+ --------------------------------------------------------------*/
  
  /* $logic = $_POST['logic'];    
@@ -231,8 +231,8 @@ $noise_words = array('а', 'без', 'более', 'бы', 'был', 'была',
 //  print form_create_hidden('old_pos', $old_pos);
   print form_create_hidden('id_tpl', $id_tpl);
   print form_end();
-  print '<p>Область поиска <strong><a href="#" data-reveal-id="myModalScope">Что это?</a></strong><br>';  
-  if(isset($_SESSION['template'])){ print '<a class="button radius" href="/?mod=search_books&srcStr='. $templateid .'">Очистить поиск</a></p>'; } 
+//  print '<p>Область поиска <strong><a href="#" data-reveal-id="myModalScope">Что это?</a></strong><br>';  
+  if(isset($_SESSION['template'])){ print '<a class="button radius" href="/?mod=search_on_site&srcStr='. $templateid .'">Очистить поиск</a></p>'; } 
 
      /*  + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
       +          Подключает класс извлечения корня слова                +
@@ -269,22 +269,21 @@ if(!empty($_POST['search']) || isset($_GET['part']))
   $search_by = $_POST['search_by'];   // Выбор критерия поиска по категории
 
   $stype = $_POST['stype'];
-  if($stype != 'F') $stype = 'S';      // Выбор критерия поиска по автору
+  if($stype != 'F') $stype = 'S';      // Выбор критерия поиска по автору ??? ROMANS QUESTION
 
 	/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
 	+                   Помещаем переменные в сессию                 +
 	+ --------------------------------------------------------------*/
 
-  if (isset($_POST["template"])) 
-  {     
-
-    $template = strip_tags($_POST['template']); 
+  if (isset($_POST["template"])) {
+    $template = strip_tags($_POST['template']);
     $_SESSION['template']=$_POST['template'];
     $_SESSION['temp']=$_POST['template'];
     $_SESSION['search_by_author']=$_POST['search_by'];
     $_SESSION['search_by_logic']=$_POST['logic'];
     $_SESSION['search_by_stype']=$_POST['stype']; 
    }
+
     $template = strip_tags($_SESSION['template']);  
     $templateid = strip_tags($_SESSION['temp']);
     $search_books_by_author = strip_tags($_SESSION['search_by_author']);
@@ -302,47 +301,62 @@ if(!empty($_POST['search']) || isset($_GET['part']))
     $tpl = htmlspecialchars($tpl);  // преобразование в HTML сущности 
     $tpl = stripcslashes($tpl);   // Удаляет экранирование символов
     $tpl = stripslashes($tpl);   // Удаляет экранирование символов
-    $tpllower = mb_strtolower($tpl, 'utf-8');
+    $tpllower = mb_strtolower($tpl, 'utf-8');  // Все буквы маленькие
+    #ROMANS CODE 06-09-2021
+    $tpllower = $tpllower;
+    #END
     $tplucfirst = mb_ucfirst($tpllower);
+    #ROMANS CODE 06-09-2021
+    $tplucfirst = $tplucfirst;
+    #END
     $tplupper = mb_strtoupper($tpl, 'utf-8');
-    if (str_word_count > 1) { $tplconvert_case = mb_convert_case($tpllower, MB_CASE_TITLE, "UTF-8");}
+    #ROMANS CODE 06-09-2021
+    $tplupper = $tplupper;
+    #END
+    // if ($str_word_count > 1) { $tplconvert_case = mb_convert_case($tpllower, MB_CASE_TITLE, "UTF-8");}
     $stemmed = array();
-    $stemmed[] = $tplucfirst;       // Первая буква заглавная 
-    if (str_word_count > 1) { $stemmed[] = $tplconvert_case; } 
+    $stemmed[] = $tplucfirst;       // Первая буква заглавная
+    // if ($str_word_count > 1) { $stemmed[] = $tplconvert_case; } 
     $stemmed[] = $tplupper;         // Все буквы большие
     $stemmed[] = $tpllower;         // Все буквы маленькие
-    if (!in_array($tpl, $stemmed)) {  $stemmed[] = $tpl; }  // Проверяем есть ли исходная фраза в массиве, и если нет добавляем в массив
-    $wrd_cnt = count($stemmed);
-   }       
+    if (!in_array($tpl, $stemmed)) { $stemmed[] = $tpl; }  // Проверяем есть ли исходная фраза в массиве, и если нет добавляем в массив
+    $wrd_cnt = count($stemmed);    
+   }
       /*  + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
       +                          Включая все словоформы                 +
       +----------------------------------------------------------------*/
   else
     {
-      $tpl = preg_replace("/[^\w\x7F-\xFF\s]/", " ", $templateid);  
+      $tpl = preg_replace("/[^\w\x7F-\xFF\s]/", " ", $templateid);  // убираем все "ненормальные" символы
       $tpl = str_replace('?', '_', $tpl);
       $tpl = str_replace('*', '%', $tpl);
-      $tpl = trim(preg_replace("/\s(\S{1,2})\s/", " ", $tpl));   
-      //$tpl = ereg_replace(" +", " ", $tpl);
-      $tpl = mb_ereg_replace(" +", " ", $tpl);
-      $words = explode(" ", $tpl);                               
+      $tpl = trim(preg_replace("/\s(\S{1,2})\s/", " ", $tpl));     // ограничение по количеству вводимых символов
+      $tpl = ereg_replace(" +", " ", $tpl);                        // сжатие 2-х пробелов  .+$
+      $words = explode(" ", $tpl);                                 // $words = preg_split("/[\s,]+/", $tpl);// разбиваем строку по произвольному числу запятых и пробельных символов,
+// которые включают в себя  " ", \r, \t, \n и \f
       $stemmer = new \NXP\Stemmer();
       $stemmed = array();
+      $arr_wrd_cnt = array();
+
         foreach ($words as $word) 
           {
            if (!in_array(mb_strtolower($word, 'utf-8'), $noise_words))
              { 
-             $word = $stemmer->getWordBase($word);                               // Слова в исходном состоянии
-             $stemmed[] = $stemmer->getWordBase(mb_ucfirst($word));              //  Первая заглавная буква
-             $stemmed[] = $stemmer->getWordBase(mb_strtoupper($word, 'utf-8'));  //  Слова из заглавных букв
-             $stemmed[] = $stemmer->getWordBase(mb_strtolower($word, 'utf-8'));  //  Слова из маленькие буквы 
+             $word = $stemmer->getWordBase($word);           //  Слова в исходном состоянии
+             $tpllower = mb_strtolower($word, 'utf-8');      //  Буквы маленькие
+             $tplupper = mb_strtoupper($tpllower, 'utf-8');  //  Буквы большие
+
+             $stemmed[] = mb_ucfirst($tpllower);     //  Помещаем в массив первая заглавная буква
+             $stemmed[] = $tplupper;  //  Помещаем в массив заглавных букв
+             $stemmed[] = $tpllower;  //  Помещаем в массив маленькие буквы 
+    if (!in_array($word, $stemmed)) { $stemmed[] = $word; }  // Проверяем есть ли исходная фраза в массиве, и если нет добавляем в массив
              }
           } 
              $wrd_cnt = count($stemmed);
      }
         $result = implode(', ', $stemmed);
-        $_SESSION['words_sessia'] = serialize($stemmed);    //  не удалять сессию
-        $_SESSION['words_stemmed'] = $result;               //  не удалять сессию                                           
+        $_SESSION['words_sessia'] = serialize($stemmed);    //  !не удалять сессию
+        $_SESSION['words_stemmed'] = $result;               //  !не удалять сессию                                           
  
   if(empty($tpl))
     {
@@ -376,7 +390,6 @@ if(!empty($_POST['search']) || isset($_GET['part']))
              unset($_SESSION['template']);
              return;
      }
-
 }
 
 if($search_books_by_author[0]<>'G') 
@@ -455,8 +468,6 @@ else if($search_books_by_author[0]=='G')
    $id_pg_books = implode(", ", $id_books);
 
    //    echo $id_pg_books . '<hr>'; 
-
-/*$name` IN BOOLEAN MODE
  $query = "SELECT id_pg, content
               FROM {$gl_db_prefix}pages_blocks
               WHERE gen_type = 'text' AND id_pg IN ({$id_pg_books}) AND ";
@@ -468,36 +479,23 @@ else if($search_books_by_author[0]=='G')
 		      $query .= "content LIKE '%{$stemmed[$t]}%'";
 	        }
  		      $query .= " ) GROUP BY id_pg"; 
-*/
-
- $query = "SELECT *
-              FROM {$gl_db_prefix}pages_blocks
-              WHERE  gen_type = 'text' AND id_pg IN ({$id_pg_books}) AND  
-		MATCH(content) AGAINST('{$tpl}' IN BOOLEAN MODE)"; 
 
    $results = db_select($query);   
 
-      $tpl = preg_replace("/[^\w\x7F-\xFF\s]/", " ", $tpl);  
-      $tpl = str_replace('?', '_', $tpl);
-      $tpl = str_replace('*', '%', $tpl);
-      $tpl = preg_replace("/\s(\S{1,2})\s/", " ", $tpl);    
-      //$tpl = ereg_replace(" +", " ", $tpl);
-      $tpl = preg_replace(" +", " ", $tpl);
-
-   $arr = array();    // инициализация ассоциативного многомерного массива для заполнения данными
+   $arr = array();  // инициализация ассоциативного многомерного массива для заполнения данными
   
  if(is_array($results))
     {  // 6
      $cnt = count($results);                                         //  количество книг, найденных по критерию поиска
       for($i = 0; $i < $cnt; $i++)                                   //  постраничный перебор каждой книги
-        {    // 5
-          $id_pg = $results[$i]['id_pg'];                            //  номера, найденных книг
+        {   // 5
+          $id_pg = $results[$i]['id_pg'];                           //  номера, найденных книг
           $content = $results[$i]['content'];
-          //$content = stripslashes($results[$i]['content']);          //  stripslashes — Удаляет экранирование символов
-          $content = strip_tags($content);                           //  strip_tags - Удаляет HTML и PHP-теги из строки  
-  	   $content_by_pages = explode("[NEWPAGE]", $content);        //  разбивает контент на страницы
-  	   $pages_cnt = count($content_by_pages);                     //  количество страниц в найденной книге
-            //      echo $id_pg . ', ' ;                             //  печать найденных книг  new RegExp(word, 'g')                           
+          $content = stripslashes($results[$i]['content']);         //  stripslashes — Удаляет экранирование символов
+          $content = strip_tags($content);                          //  strip_tags - Удаляет HTML и PHP-теги из строки  
+  	   $content_by_pages = explode("[NEWPAGE]", $content);       //  разбивает контент на страницы
+  	   $pages_cnt = count($content_by_pages);                    //  количество страниц в найденной книге
+            //      echo $id_pg . ', ' ;                            //  печать найденных книг  new RegExp(word, 'g')                           
         $reps = array(); 
            if($pages_cnt > 0)
             {  // 4
@@ -509,34 +507,40 @@ else if($search_books_by_author[0]=='G')
                    	       $title = stripslashes(db_select_one($query));                     
                                $links_books = "<a href='?mod=s&mb={$id_pg}&part={$part}'>{$title}</a>";
 
-
-         		//for($k = 0; $k < $wrd_cnt; $k++)  
-          		//  {        //2                 	
-                           $count_words = preg_match_all( '/'. $tpl .'/iu', $content_by_pages[$j], $matches ); 
+// $count_words_arr = array();
+         		for($k = 0; $k < $wrd_cnt; $k++)  
+          		  {        //2                 	
+                         $count_words = preg_match_all( '/'. $stemmed[$k] .'/iu', $content_by_pages[$j], $matches ); 
+//  $count_words_arr[$k] = $count_words;
+//  mb_ereg_match
+//  if(preg_match('/'. $stemmed[$k] .'/i', $content_by_pages[$j])) 
+//  $stemmed[$k] = mb_convert_encoding($stemmed[$k], "UTF-8");
+//  preg_match('/^.{' . $stemmed[$k] . '}(.*)/us', $s, $tmp);
+//  /^[а-яё]+$/i; /^[а-яА-Я]+\s*[a-zA-Z]+$/
+// ^foo -- строка начинается с “foo” $convertedText = (mb_convert_encoding($stemmed[$k], 'utf-8', mb_detect_encoding($stemmed[$k])));
                                            
-                          if(preg_match('/'.$tpl.'/i', $content_by_pages[$j]))
+                          if(preg_match('/'.$stemmed[$k].'/i', $content_by_pages[$j]))
                              {         //1                    
-  	                       $pos = mb_strrpos($content_by_pages[$j], $tpl);        // позиция первого вхождения слова/фразы                        
-                                          $content_by_pages[$j] = mb_substr($content_by_pages[$j], $pos, 100);
-		                            $content_by_pages[$j] = $content_by_pages[$j];
-		                            $content_by_pages[$j] = substr($content_by_pages[$j], 0, strrpos($content_by_pages[$j], ' '));
-		                            $content_by_pages[$j] .= " ...";
-                                  	    $replacement = "<mark>".$tpl."</mark>"; 
-		                //$content_by_pages[$j] = eregi_replace($tpl, $replacement, $content_by_pages[$j]);
-                    $content_by_pages[$j] = mb_eregi_replace($tpl, $replacement, $content_by_pages[$j]);
+  	                       $pos = mb_strrpos($content_by_pages[$j], $stemmed[$k]);        // позиция первого вхождения слова/фразы                        
+                                       $content_by_pages[$j] = mb_substr($content_by_pages[$j], $pos, 100);
+		                         $content_by_pages[$j] = $content_by_pages[$j];
+		                         $content_by_pages[$j] = substr($content_by_pages[$j], 0, strrpos($content_by_pages[$j], ' '));
+		                         $content_by_pages[$j] .= " ...";
+                                  	    $replacement = "<mark>".$stemmed[$k]."</mark>"; 
+		                $content_by_pages[$j] = eregi_replace($stemmed[$k], $replacement, $content_by_pages[$j]); 
+// $array_sum_array_sum = array_sum($count_words_arr);                              
   $arr[$i][$j] = array('subject' => $title, 'lnk' => $links_books, 'shot_content' => $content_by_pages[$j], 'prt' => $part, 'ps' => $pos, 'rep' => $count_words);   
                                             	                            
-                             }       //1
+                             }       //1 
+                        }      //2  
+                   }      //3
+              }      // 4
+          }    // 5
+   }      // 6
  
-                   //     }      //2  
-                   }   //3
-              } // 4
-          }  // 5
-   }  // 6
+ foreach ($arr as $elements => $element) {$vcount = count($element) + $vcount;}
  
-foreach ($arr as $elements => $element) {$vcount = count($element) + $vcount;}
- 
-if($vcount > 0) 
+ if($vcount > 0) 
   {
     $n = 0;
     $ar_sort = array();
@@ -549,7 +553,6 @@ if($vcount > 0)
                  $n = $n + 1;         
                  $mass[$n] = '<tr><td>' . $v1[lnk] . '</td><td>' . $v1[shot_content] . '</td><td>' . $v1[prt] . '</td><td>' . $v1[rep] . '</td></tr>'; 
                  $reps[] = $v1[rep];   // Собираем массив количество найденных фраз
-
                }
           } 
 
@@ -558,7 +561,7 @@ if($vcount > 0)
       array_multisort($ar_sort, SORT_ASC, $mass);     //  сортировка по алфавиту
       $_SESSION['books_sessia'] = serialize($mass);   //  ПОМЕЩАЕМ МАССИВ В СЕССИЮ ПОСЛЕ СОРТИРОВКИ 
   
-      echo "<HTML><HEAD><META HTTP-EQUIV='Refresh' CONTENT='0; URL=?mod=search_tips_books'></HEAD></HTML>";  // Переходим к результатам поиска на другую страницу
+      echo "<HTML><HEAD><META HTTP-EQUIV='Refresh' CONTENT='0; URL=?mod=search_tips'></HEAD></HTML>";  // Переходим к результатам поиска на другую страницу
 
 	/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
 	+                          КОНЕЦ                                 +
@@ -612,7 +615,7 @@ if($vcount > 0)
 <h3>Расширенный поиск</h3>
         <dd>Вы можете ограничить несколько слов или фраз с помощью И, ИЛИ</dd> 
 <dt>Поиск по всем словоформам</dt>
-	<dd>Это метод поиска разделяет фразу на отдельные слова и генерирует все спряжения и склонения для каждого слова в поисковой фразе. Поиск слова, обитать, находит фразы обитать, обитающий, обители, обитель, обители, и обителей и т.д.</dd>
+	<dd>Это метод поиска разделяет фразу на отдельные слова и генерирует все спряжения и склонения для каждого слова в поисковой фразе. Поиск слова, обитать, находит фразы обитать, обитающий, обители, обитель, обители, и обителей и т. д.</dd>
        
       </dl> 
 
@@ -626,7 +629,7 @@ if($vcount > 0)
 <div id="myModalScope" class="reveal-modal" style="display: none; opacity: 1; visibility: hidden; top: -180px;">
  	<h2>Область поиска</h2>
  	<h3>Поиск по всем словоформам</h3>
-	<p>Это метод поиска разделяет фразу на отдельные слова и генерирует все спряжения и склонения для каждого слова в поисковой фразе. Поиск слова, обитать, находит фразы обитать, обитающий, обители, обитель, обители, и обителей и т.д.</p>
+	<p>Это метод поиска разделяет фразу на отдельные слова и генерирует все спряжения и склонения для каждого слова в поисковой фразе. Поиск слова, обитать, находит фразы обитать, обитающий, обители, обитель, обители, и обителей и т. д.</p>
 	<h3>Поиск по точному соответсвию</h3>
 	<p>Эта опция выполняет поиск точных совпадений указанных слов или фраз, используемых в строке поиска.</p> 
 	<h3>Примечание</h3>

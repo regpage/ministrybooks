@@ -57,9 +57,11 @@
 	                         file = '{$file}',
 	                         pos     = {$pos},
 	                         id_cat  = {$id_cat}";
-          mysql_query($query);
-
-          if(mysql_affected_rows() == 1)
+          //mysql_query($query);
+          mysqli_query(DBBYMYSQLI::$link, $query)
+           or die(mysqli_error(DBBYMYSQLI::$link));
+           //if(mysql_affected_rows() == 1)
+          if(mysqli_affected_rows(DBBYMYSQLI::$link) == 1)
           {
             $inserted[] = $file;
             $added_count = count($inserted);
