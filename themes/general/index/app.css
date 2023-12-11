@@ -1,0 +1,1474 @@
+/* --- FONT AWESOME --- */
+/*License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)*/
+@font-face{font-family:'FontAwesome';src:url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?v=4.7.0');src:url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'),url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'),url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');font-weight:normal;font-style:normal}.fa{display:inline-block;font:normal normal normal 14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.fa-lg{font-size:1.33333333em;line-height:.75em;vertical-align:-15%}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-fw{width:1.28571429em;text-align:center}.fa-ul{padding-left:0;margin-left:2.14285714em;list-style-type:none}.fa-ul>li{position:relative}.fa-li{position:absolute;left:-2.14285714em;width:2.14285714em;top:.14285714em;text-align:center}.fa-li.fa-lg{left:-1.85714286em}
+.fa-plus:before{content:"\f067"}
+.fa-minus:before{content:"\f068"}
+.fa-plus-circle:before{content:"\f055"}
+.fa-minus-circle:before{content:"\f056"}
+.fa-search:before{content:"\f002"}
+.fa-caret-left:before{content:"\f0d9"}
+.fa-caret-right:before{content:"\f0da"}
+#plustext .fa, #minustext .fa {font-size:0.688em; vertical-align: 2px; }
+/* REMOVE ICONMOON AFTER REPLACING WITH FONT AWESOME */
+/* Код для подключения шрифта в /css/stylename.css */verdana.ttf
+/* font-family: "DroidSerifRegular"; */
+/* Droid */
+
+/* font-family: "TemporaRegular"; */
+@font-face {
+    font-family: "TemporaRegular";
+    src: url("../fonts/TemporaRegular/TemporaRegular.eot");
+    src: url("../fonts/TemporaRegular/TemporaRegular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/TemporaRegular/TemporaRegular.woff") format("woff"),
+    url("../fonts/TemporaRegular/TemporaRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+/* font-family: "LiberationSerifRegular"; */
+@font-face {
+    font-family: "LiberationSerifRegular";
+    src: url("../fonts/LiberationSerifRegular/LiberationSerifRegular.eot");
+    src: url("../fonts/LiberationSerifRegular/LiberationSerifRegular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/LiberationSerifRegular/LiberationSerifRegular.woff") format("woff"),
+    url("../fonts/LiberationSerifRegular/LiberationSerifRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "LiberationSerifBold"; */
+@font-face {
+    font-family: "LiberationSerifBold";
+    src: url("../fonts/LiberationSerifBold/LiberationSerifBold.eot");
+    src: url("../fonts/LiberationSerifBold/LiberationSerifBold.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/LiberationSerifBold/LiberationSerifBold.woff") format("woff"),
+    url("../fonts/LiberationSerifBold/LiberationSerifBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "LiberationSerifItalic"; */
+@font-face {
+    font-family: "LiberationSerifItalic";
+    src: url("../fonts/LiberationSerifItalic/LiberationSerifItalic.eot");
+    src: url("../fonts/LiberationSerifItalic/LiberationSerifItalic.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/LiberationSerifItalic/LiberationSerifItalic.woff") format("woff"),
+    url("../fonts/LiberationSerifItalic/LiberationSerifItalic.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "LiberationSerifBoldItalic"; */
+@font-face {
+    font-family: "LiberationSerifBoldItalic";
+    src: url("../fonts/LiberationSerifBoldItalic/LiberationSerifBoldItalic.eot");
+    src: url("../fonts/LiberationSerifBoldItalic/LiberationSerifBoldItalic.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/LiberationSerifBoldItalic/LiberationSerifBoldItalic.woff") format("woff"),
+    url("../fonts/LiberationSerifBoldItalic/LiberationSerifBoldItalic.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+@font-face {
+    font-family: "droidserif"; 
+    src: url("..../ttf/3951.ttf"); 
+    url("..../ttf/3951.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+   }
+
+
+@font-face {
+    font-family: "verdana"; 
+    src: url("..../ttf/verdana.ttf"); 
+    url("..../ttf/verdana.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+   }
+@font-face {
+    font-family: "DroidS_R"; 
+    src: url("../fonts/DroidSIR/DroidS_R.ttf"); 
+    url("../fonts/DroidSIR/DroidS_R.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+   }
+@font-face {
+    font-family: "DroidSerifRegular";
+    src: url("../fonts/DroidSerifRegular/DroidSerifRegular.eot");
+    src: url("../fonts/DroidSerifRegular/DroidSerifRegular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/DroidSerifRegular/DroidSerifRegular.woff") format("woff"),
+    url("../fonts/DroidSerifRegular/DroidSerifRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "DroidSerifBold"; */
+@font-face {
+    font-family: "DroidSerifBold";
+    src: url("../fonts/DroidSerifBold/DroidSerifBold.eot");
+    src: url("../fonts/DroidSerifBold/DroidSerifBold.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/DroidSerifBold/DroidSerifBold.woff") format("woff"),
+    url("../fonts/DroidSerifBold/DroidSerifBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "DroidSerifItalic"; */
+@font-face {
+    font-family: "DroidSerifItalic";
+    src: url("../fonts/DroidSerifItalic/DroidSerifItalic.eot");
+    src: url("../fonts/DroidSerifItalic/DroidSerifItalic.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/DroidSerifItalic/DroidSerifItalic.woff") format("woff"),
+    url("../fonts/DroidSerifItalic/DroidSerifItalic.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "DroidSerifBoldItalic"; */
+@font-face {
+    font-family: "DroidSerifBoldItalic";
+    src: url("../fonts/DroidSerifBoldItalic/DroidSerifBoldItalic.eot");
+    src: url("../fonts/DroidSerifBoldItalic/DroidSerifBoldItalic.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/DroidSerifBoldItalic/DroidSerifBoldItalic.woff") format("woff"),
+    url("../fonts/DroidSerifBoldItalic/DroidSerifBoldItalic.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/K88pR3goAWT7BTt32Z01mxJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/RjgO7rYTmqiVp7vzi-Q5URJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/LWCjsQkB6EMdfHrEVqA1KRJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/xozscpT2726on7jbcb_pAhJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/59ZRklaO5bWGqF5A9baEERJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/u-WUoqrET9fUeobQW7jkRRJtnKITppOI_IvcXXDNrsc.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v13/k3k702ZOKiLJc3WVjuplzK-j2U0lmluP9RWlSytm3ho.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v13/k3k702ZOKiLJc3WVjuplzJX5f-9o1vgP2EXwfjgl7AY.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v13/k3k702ZOKiLJc3WVjuplzBWV49_lSm1NYrwo-zkhivY.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v13/k3k702ZOKiLJc3WVjuplzKaRobkAwv3vxw3jMhVENGA.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v13/k3k702ZOKiLJc3WVjuplzP8zf_FOSsgRmwsS7Aa9k2w.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v13/k3k702ZOKiLJc3WVjuplzD0LW-43aMEzIO6XUTLjad8.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v13/k3k702ZOKiLJc3WVjuplzOgdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(https://fonts.gstatic.com/s/opensans/v13/xjAJXh38I15wypJXxuGMBjTOQ_MqJVwkKsUn0wKzc2I.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(https://fonts.gstatic.com/s/opensans/v13/xjAJXh38I15wypJXxuGMBjUj_cnvWIuuBMVgbX098Mw.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(https://fonts.gstatic.com/s/opensans/v13/xjAJXh38I15wypJXxuGMBkbcKLIaa1LC45dFaAfauRA.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(https://fonts.gstatic.com/s/opensans/v13/xjAJXh38I15wypJXxuGMBmo_sUJ8uO4YLWRInS22T3Y.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(https://fonts.gstatic.com/s/opensans/v13/xjAJXh38I15wypJXxuGMBr6up8jxqWt8HVA3mDhkV_0.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(https://fonts.gstatic.com/s/opensans/v13/xjAJXh38I15wypJXxuGMBiYE0-AqJ3nfInTTiDXDjU4.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(https://fonts.gstatic.com/s/opensans/v13/xjAJXh38I15wypJXxuGMBo4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(https://fonts.gstatic.com/s/opensans/v13/PRmiXeptR36kaC0GEAetxp6iIh_FvlUHQwED9Yt5Kbw.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(https://fonts.gstatic.com/s/opensans/v13/PRmiXeptR36kaC0GEAetxi_vZmeiCMnoWNN9rHBYaTc.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(https://fonts.gstatic.com/s/opensans/v13/PRmiXeptR36kaC0GEAetxiFaMxiho_5XQnyRZzQsrZs.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(https://fonts.gstatic.com/s/opensans/v13/PRmiXeptR36kaC0GEAetxgalQocB-__pDVGhF3uS2Ks.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(https://fonts.gstatic.com/s/opensans/v13/PRmiXeptR36kaC0GEAetxmhQUTDJGru-0vvUpABgH8I.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(https://fonts.gstatic.com/s/opensans/v13/PRmiXeptR36kaC0GEAetxujkDdvhIIFj_YMdgqpnSB0.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(https://fonts.gstatic.com/s/opensans/v13/PRmiXeptR36kaC0GEAetxolIZu-HDpmDIZMigmsroc4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+	font-family: 'icomoon';
+	src:url('/themes/general/index/icomoon.eot');
+	src:url('/themes/general/index/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('/themes/general/index/icomoon.woff') format('woff'),
+		url('/themes/general/index/icomoon.ttf') format('truetype'),
+		url('/themes/general/index/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;}
+html { -webkit-text-size-adjust: 100%; }
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'icomoon';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;}
+body { background-image: url("/themes/general/index/paper_fibers.png"); font-family: DroidS_R, DroidSerifRegular, Georgia, Times, serif; position: relative; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5, h6 { font-family: 'LiberationSerifRegular', DroidSerifRegular, 'Droid Serif', Georgia, Times, serif; -webkit-font-smoothing: antialiased; }
+h1 { font-size: 1.5em; }
+h2, h3, h4, h5 { font-size: 1.125em; }
+h6 { font-size: 1em; }
+a { color: #ce3524; }
+a:hover { color: #69191a; }
+.spanish-link { text-align: center; }
+.spanish-link a { font-size: 14px; color: #fff; text-shadow: 1px 1px 1px #000; }
+.spanish-link a:hover { color: #ccc; }
+.subheader { color: #52301f; }
+.column, .columns { padding-left: 0.5em;  padding-right: 0.5em; }
+.hide-for-small {display: none !important;}
+@media only screen and (min-width: 768px) { .hide-for-small {display: inline !important;} }
+/* -----------------------------------------
+   Header / Footer
+----------------------------------------- */
+#header { background-image: url("/themes/general/index/paper_fibers-red.png"); padding: 20px 0; }
+#header h1 { color: #fff; margin-top: 3px; margin-bottom: 2px; font-weight: normal; text-shadow: 1px 1px 1px #000;}
+#header h2 { color: #e2dad5; display: block; font-size: .875em; font-weight: normal; margin-top: 2px;}
+#header img { float: left; padding-right: 10px; }
+#footer-links { background-color: #7f6959; -moz-box-shadow: 0 -3px 6px rgba(0,0,0,0.2); -webkit-box-shadow: 0 -3px 6px rgba(0,0,0,0.2); box-shadow: 0 -3px 6px rgba(0,0,0,0.2); }
+#footer-links h4 { color: #211102; font-size: 1em; margin-top: 10px; }
+#footer-links p, #footer-links a, #footer p { font-family: Helvetica, Arial, sans-serif; }
+#footer-links p, #footer-links ul { color: #ebe8e3; font-size: 0.875em; }
+#footer-links a { color: #7e1e1f; font-weight: bold; } /* 69191a --- text-shadow: 1px 1px 1px #ce3524; */
+#footer-links a:hover { color: #7e1e1f; }
+#footer { background-color: #211102; color: #ebe8e3; }
+#footer p { color: #ebe8e3; font-size: 12px; margin: 15px 0; }
+/* -----------------------------------------
+   Top Bar Nav
+----------------------------------------- */
+.contain-to-grid { 
+	-moz-box-shadow: 0 3px 5px rgba(0,0,0,0.3), inset 0 2px 1px rgba(255,255,255,0.2), inset 0 -2px 1px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0 3px 5px rgba(0,0,0,0.3), inset 0 2px 1px rgba(255,255,255,0.2), inset 0 -2px 1px rgba(0,0,0,0.2);
+	box-shadow: 0 3px 5px rgba(0,0,0,0.3), inset 0 2px 1px rgba(255,255,255,0.2), inset 0 -2px 1px rgba(0,0,0,0.2);
+	border-top: 1px solid rgba(255,255,255,0.4);}
+.top-bar-section ul li a, .top-bar, .top-bar ul {
+	-moz-box-shadow: inset 0 2px 1px rgba(255,255,255,0.2), inset 0 -2px 1px rgba(0,0,0,0.2);
+	-webkit-box-shadow: inset 0 2px 1px rgba(255,255,255,0.2), inset 0 -2px 1px rgba(0,0,0,0.2);
+	box-shadow: inset 0 2px 1px rgba(255,255,255,0.2), inset 0 -2px 1px rgba(0,0,0,0.2);}
+.top-bar-section li.has-dropdown ul.dropdown li a {
+	-moz-box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), inset 0 -1px 1px rgba(0,0,0,0.2);
+	-webkit-box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), inset 0 -1px 1px rgba(0,0,0,0.2);
+	box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), inset 0 -1px 1px rgba(0,0,0,0.2);
+	text-shadow: 0 0 0 #000;}
+.contain-to-grid .top-bar { margin-bottom: 0; }
+.top-bar, .contain-to-grid, .top-bar-section ul, .top-bar-section ul li > a, .top-bar title-area ul li > a, .top-bar-section li a:not(.button), .top-bar-section .has-form { background: #7f6a59; }
+.top-bar.expanded .title-area { background: #7f6a59; }
+.top-bar-section ul li > a { background-color: #7f6a59; font-weight: normal; padding: 10px 0 10px 15px; font-size: 0.875em; }
+.top-bar-section ul li > a:hover { background: #665344; }
+.top-bar-section ul li.active > a { background: #665344; }
+.top-bar-section li.has-dropdown ul.dropdown li a { background: #dcd9cf; color: #665344; }
+.top-bar-section li.has-dropdown ul.dropdown li a:hover { background: #d2cec6; }
+.top-bar .toggle-topbar.menu-icon a { text-indent: -60px; }
+.top-bar .title-area { background-color: #7f6a59; }
+.top-bar.expanded .toggle-topbar a { color: #483a2f; }
+.top-bar.expanded .toggle-topbar a span { -webkit-box-shadow: 0 10px 0 1px #483a2f, 0 16px 0 1px #483a2f, 0 22px 0 1px #483a2f; box-shadow: 0 10px 0 1px #483a2f, 0 16px 0 1px #483a2f, 0 22px 0 1px #483a2f; }
+@media only screen and (min-width: 62.75em) {
+  .top-bar { background: #7f6a59;}
+  .contain-to-grid .top-bar { margin-bottom: 0; }
+  .section-nav ul.button-group { text-align: right; }
+  .spanish-link { text-align: right; padding-right: 30px; }
+}
+/* -----------------------------------------
+   Footer Vertical Nav
+----------------------------------------- */
+#footer-links .columns { padding-left: 1em; padding-right: 1em; }
+.vertical > li { list-style-type: none; }
+#footer-links .vertical > li > a { display: block; padding: 5px 8px 5px 20px; background-color: #927d6c; margin-bottom: 1px; }
+#footer-links .vertical > li > a:hover, #footer-links .vertical > li > a:focus { background-color: #a6978b; }
+#footer-links .vertical li { position: relative; }
+#footer-links .vertical > li > a:after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      border: inset 5px;
+      border-color: transparent transparent transparent rgba(255, 255, 255, 0.2);
+      border-left-style: solid;
+      margin-right: 15px;
+      margin-top: -4.5px;
+      position: absolute;
+      top: 16px;
+      left: 10px; }
+/* -----------------------------------------
+   Accordion
+----------------------------------------- */
+.section-container { margin: 0; }
+.section-container, .section-container.auto, .section-container.accordion { border: 1px solid #7f6a59; }
+.section-container > section > .title, .section-container.accordion > section > .title { background-color: #e5e0dd; }
+.section-container > section > .title:hover, .section-container.accordion > section > .title:hover { background-color: #d8d4d1; }
+.section-container > section > h5 { margin-top: 0; }
+section > h5 > a {position: relative; }
+section > h5 > a:after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      border: inset 6px;
+      border-color: rgba(127,106,89,0.5) transparent transparent transparent;
+      border-left-style: solid;
+      margin-right: 15px;
+      margin-top: -4.5px;
+      position: absolute;
+      top: 23px;
+      right: 0; }
+.section-container > section > .title a span { font-weight: normal; }
+.section-container.accordion > section > .content, .section-container.accordion > .section > .content { border: 1px solid #e5e0dd; }
+.section-container.accordion > section > .title > a { white-space: normal; padding: 0.4em; padding-right: 30px; font-size: 0.88em; }
+[data-section='accordion'], .section-container.accordion { margin-bottom: 0; }
+/* -----------------------------------------
+   Breadcrumbs
+------------------------------------------*/
+.breadcrumbs {display: block; padding: .5em 0; overflow: hidden; margin: .25em 0; list-style: none; border: none; background: none;}
+.breadcrumbs > * { font-size: 0.75em; }
+/* -----------------------------------------
+   Sub-Nav
+----------------------------------------- */
+.sub-nav dt { font-weight: bold; }
+.sub-nav dd a { -webkit-border-radius: 1000px; border-radius: 1000px; background: #e5e0dd; font-weight: normal; padding: 0.1875em 0.5625em; color: #7f6a59; }
+.sub-nav dd a:hover, .sub-nav dd a:focus  { background: #7f6a59; color: #fff; }
+.sub-nav dd.active a:hover, .sub-nav dd.active a:focus { font-weight: bold; background: #7e1e1f; }
+/* -----------------------------------------
+   Book Navigation
+----------------------------------------- */
+/*#chapter-menu > div { text-align: left; float: left; }*/
+.book-pos { text-align: left; color: #4d4d4d; font-size: .875em; line-height: 1.5em; margin: 0 0 10px 0; }
+.section-nav ul { margin: 0 0 -1em; }
+/* back to top ------------------- */
+.to-top { margin: 20px auto 45px auto; padding-bottom: 3px; border-bottom: 1px solid #ddd; text-align: right; color: #999; font-size: 11px; clear: both; }
+/* -----------------------------------------
+   Tables
+----------------------------------------- */
+table thead tr th, table thead tr td, table tr td { font-size: 1em; }
+table { width: 100%; }
+table .date { white-space: nowrap; }
+table th, table td { vertical-align: top; }
+table th { background: #e5e0dd; }
+table tr.even, table tr.alt, table tr:nth-of-type(even) { background: #f2efed; }
+table { border: 1px solid #7f6a59; }
+table#search-results th:last-child { width: 65%; }
+/* -----------------------------------------
+   Forms
+----------------------------------------- */
+form label { font-size: 1em; font-weight: bold; }
+form label span { font-weight: normal; }
+.radio-btns p { margin: .5em 0; }
+.radio-btns label { font-weight: normal; }
+optgroup[label] { font-weight: bold; }
+optgroup option { margin-left: 10px; }
+/* -----------------------------------------
+   Lists
+----------------------------------------- */
+ol, ul.regular { margin: 0 auto; max-width: 92%;}
+ol li span { font-weight: normal; }
+/* -----------------------------------------
+   Inline List Centered
+----------------------------------------- */
+.center-list { text-align: center; font-family: 'LiberationSerifRegular', DroidSerifRegular, 'Droid Sans', Helvetica, Arial, sans-serif; font-size: 0.75em; }
+.center-list li a { font-size: 0.75em; }
+.center-list li { display: inline-block; padding: 0 10px; border-left: 1px solid #927d6c; }
+.center-list li:first-child { border-left: none; }
+/* -----------------------------------------
+   Button Group
+------------------------------------------*/
+.button-group { text-align: center; margin: 0 auto; }
+.button-group > * { margin: 0 0 0 -3px; float: none; display: inline-block; }
+.button-group .button, .button-group .radius { padding: 8px 12px; font-size: 12px; font-weight: normal; }
+.button-group li a.button { font-weight: bold; font-family: arial, verdana; }
+#footer-links .button-group > * { margin: 0 0 0 -2px; }
+button.secondary, .button.secondary { background-color: #927d6c; border-color: #8c796a; }
+button.secondary:hover, button.secondary:focus, .button.secondary:hover, .button.secondary:focus { background-color: #a6978b; }
+.button { font-size: 0.9em; padding: 0.5em 0.75em; font-family: arial, verdana; }
+.button.search { font-size: 0.875em;}
+.button.disabled, button.disabled:hover,button.disabled:focus,button[disabled]:hover,button[disabled]:focus,.button.disabled:hover,.button.disabled:focus,.button[disabled]:hover,.button[disabled]:focus { background-color:#ccc; border-color:#bbb; }
+/* --- FONT RESIZER BUTTONS --- */
+#plustext span { font-size: 1.5em; }
+#plustext, #minustext { display: block; height: 32px; width: 34px; float: left; margin: 0 1px; }
+.font-sizer-buttons { width: 72px; margin: 0 auto; }
+#plustext.button { padding: 0.5em; }
+#minustext.button { padding: 0.875em 0.65em 0.65em 0.65em; }
+.font-resizer { display: inline-block; border: 1px solid #bbb; white-space: nowrap; padding: 0.25em; text-align: center; margin: 0 auto; }
+.font-resizer a { text-align: center; }
+.tools .button { margin-bottom: 0; }
+.font-resizer p { margin-bottom: 0; font-size: 0.875em; color: #777; font-family: 'LiberationSerifRegular', Helvetica, Arial, sans-serif; text-align: center; clear:both; }
+/* -----------------------------------------
+   Book Navigation
+----------------------------------------- */
+/*#chapter-menu > div { text-align: left; float: left; }*/
+#chapter-menu select, #chapter-menu .button { margin-bottom: 0.625em; }
+.book-pos { text-align: right; color: #4d4d4d; font-size: .875em; line-height: 1.5em; margin: 0 0 0.625em 0; }
+.section-nav ul { margin: 0 0 -1em; }
+.section-nav .button { margin: 0 1px; }
+/* back to top ------------------- */
+.to-top { margin: 20px auto 45px auto; padding-bottom: 3px; border-bottom: 1px solid #ddd; text-align: right; color: #999; font-size: 11px; clear: both; }
+/* -----------------------------------------
+   Panel
+----------------------------------------- */
+.panel { border: 1px solid #7f6a59; background: #e5e0dd; }
+/* -----------------------------------------
+   Ministry Text Pages
+----------------------------------------- */
+h3 span, h2 span { color: #7f6959; display: block; }
+#ministry { background-color: #fff; padding: 1em; overflow: auto; margin: 1em auto; }
+
+/* -------- ministry-text styles ----------------- */
+#ministry-text h1, #ministry-text H1, #ministry-text .scripture, #ministry-text .SCRIPTURE, #ministry-text .scripture-center, #ministry-text h2, #ministry-text H2, #ministry-text .head1, #ministry-text .HEAD1, #ministry-text .head2, #ministry-text HEAD2, #ministry-text HEAD2F, #ministry-text .title, #ministry-text .TITLE, #ministry-text .paren, #ministry-text .PAREN, #ministry-text .center, #ministry-text .greek, #ministry-text .hebrew { text-align: center; font-family: 'LiberationSerifRegular', 'Droid Serif'; padding:0px 0px 0px 0px; }
+#ministry-text .series, #ministry-text .SERIES { font-weight: bold; font-size: 1.25em;}
+#ministry-text .msg, #ministry-text .MSG, #ministry-text .subtitle, #ministry-text .SUBTITLE { font-weight: normal; font-size: 1.225em; }
+#ministry-text .scripture, #ministry-text .SCRIPTURE, #ministry-text .scripture-center { font-weight: normal; font-size: 1.225em; font-family: "LiberationSerifRegular";}
+#ministry-text h2, #ministry-text H2, #ministry-text .head1, #ministry-text .HEAD1, #ministry-text .head2, #ministry-text HEAD2, #ministry-text HEAD2F, #ministry-text .title, #ministry-text .TITLE, #ministry-text .paren, #ministry-text .PAREN { font-weight: bold; font-size: 1.225em; }
+#ministry-text .uhead1 { text-decoration: underline; }
+#ministry-text .head3, #ministry-text .head3u, #ministry-text .HEAD3, #ministry-text .HEAD3F, #ministry-text .head4, #ministry-text .HEAD4, #ministry-text .HEAD4F, #ministry-text .ital { font-weight: normal; font-style: italic; font-size: 1em; }
+#ministry-text .head5, #ministry-text .HEAD5, #ministry-text .HEAD5F, #ministry-text .head6, #ministry-text .HEAD6, #ministry-text .HEAD6F { font-weight: normal; font-style: italic; font-size: 1em; }
+#ministry-text .head7, #ministry-text .HEAD7, #ministry-text .HEAD7F { font-weight: normal; font-size: 1em; }
+#ministry-text p, #ministry-text P { text-align: justify; font-size: 1.2em; font-weight: 100; line-height: 1.4em;}
+#ministry-text blockquote { color: #222; border-left: none; margin: 0 40px 1.25em 40px; padding: 0; text-align: justify; }
+#ministry-text .right { text-align: right; }
+#ministry-text .alignleft { text-align: left; }
+#ministry-text .footnote { text-align: justify; color: #999; }
+#ministry-text .indent1, #ministry-text .INDENT1, #ministry-text .hbody, #ministry-text .HBODY, #ministry-text .hymn-verse {display: table; max-width: 940px; min-width: 300px; margin-right: auto; margin-left: auto; padding: 5px 0px 10px 0px; line-height: 1.1em; }
+#ministry-text .scripture, #ministry-text .SCRIPTURE { text-align: left; margin-left: 1em; margin-right: 1em; line-height: 1.4; }
+#ministry-text .hbody2, #ministry-text .hymn-chorus { text-align: left; margin-left: 40px; margin-right: 10px; }
+#ministry-text .hbody-hymn, #ministry-text .hymn-number { text-align: right; margin-right: 10px; }
+#ministry-text .greek { font-family: 'LiberationSerifRegular';}
+#ministry-text .hebrew { font: normal 1em 'LiberationSerifRegular';}
+#ministry-text .sm {font: normal 0.875em 'LiberationSerifRegular'; text-align: left;}
+#ministry-text .gray {font: bold 0.875em 'LiberationSerifRegular'; color: #acacac;}
+#ministry-text .blue {color: #2959c4;}
+#ministry-text .bold, #ministry-text .regbold, #ministry-text .bd {font-weight: bold; text-align: left;}
+#ministry-text .underline {text-decoration: underline;}
+#ministry-text .bdit {font-style: italic; font-weight: bold; } 
+#ministry-text sup, #ministry-text sub {font-size: 0.875em; text-align: left; font-weight: bold;}
+#ministry-text .hbody62 {margin-left: 62px;}
+#ministry-text .left20 {margin-left: 20px;}
+#ministry-text .left30 {margin-left: 30px;}
+#ministry-text .left40 {margin-left: 40px;}
+#ministry-text .left60 {margin-left: 60px;}
+#ministry-text .indent10 {margin-left: 10px;}
+#ministry-text ol, #ministry-text ul { font-weight: normal; text-align: left; margin-bottom: 6px; margin-top:6px;}
+#ministry-text .upper-roman { list-style-type: upper-roman; font-weight: normal; padding-left: 25px; padding-right: 25px; }
+#ministry-text .lower-roman { list-style-type: lower-roman; font-weight: normal; }
+#ministry-text .upper-alpha { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha>li::before {
+    margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+   #ministry-text .upper-alpha>li:nth-of-type(01)::before {content: 'А.';}
+   #ministry-text .upper-alpha>li:nth-of-type(02)::before {content: 'Б.';}
+   #ministry-text .upper-alpha>li:nth-of-type(03)::before {content: 'В.';}
+   #ministry-text .upper-alpha>li:nth-of-type(04)::before {content: 'Г.';}
+   #ministry-text .upper-alpha>li:nth-of-type(05)::before {content: 'Д.';}
+   #ministry-text .upper-alpha>li:nth-of-type(06)::before {content: 'Е.';}
+   #ministry-text .upper-alpha>li:nth-of-type(07)::before {content: 'Ж.';}
+   #ministry-text .upper-alpha>li:nth-of-type(08)::before {content: 'З.';}
+   #ministry-text .upper-alpha>li:nth-of-type(09)::before {content: 'И.';}
+   #ministry-text .upper-alpha>li:nth-of-type(10)::before {content: 'К.';}
+   #ministry-text .upper-alpha>li:nth-of-type(11)::before {content: 'Л.';}
+   #ministry-text .upper-alpha>li:nth-of-type(12)::before {content: 'М.';}
+   #ministry-text .upper-alpha>li:nth-of-type(13)::before {content: 'Н.';}
+   #ministry-text .upper-alpha>li:nth-of-type(14)::before {content: 'О.';}
+   #ministry-text .upper-alpha>li:nth-of-type(15)::before {content: 'П.';}
+   #ministry-text .upper-alpha>li:nth-of-type(16)::before {content: 'Р.';}
+   #ministry-text .upper-alpha>li:nth-of-type(17)::before {content: 'С.';}
+   #ministry-text .upper-alpha>li:nth-of-type(18)::before {content: 'Т.';}
+   #ministry-text .upper-alpha>li:nth-of-type(19)::before {content: 'У.';}
+   #ministry-text .upper-alpha>li:nth-of-type(20)::before {content: 'Ф.';}
+   #ministry-text .upper-alpha>li:nth-of-type(21)::before {content: 'Х.';}
+   #ministry-text .upper-alpha>li:nth-of-type(22)::before {content: 'Ц.';}
+   #ministry-text .upper-alpha>li:nth-of-type(23)::before {content: 'Ч.';}
+   #ministry-text .upper-alpha>li:nth-of-type(24)::before {content: 'Ш.';}
+   #ministry-text .upper-alpha>li:nth-of-type(25)::before {content: 'Щ.';}
+   #ministry-text .upper-alpha>li:nth-of-type(26)::before {content: 'Ы.';}
+   #ministry-text .upper-alpha>li:nth-of-type(27)::before {content: 'Э.';}
+   #ministry-text .upper-alpha>li:nth-of-type(28)::before {content: 'Ю.';}
+   #ministry-text .upper-alpha>li:nth-of-type(29)::before {content: 'Я.';}
+
+/* -----------------------------------------
+   upper-alpha-2 начало списка с буквы Б
+----------------------------------------- */
+
+#ministry-text .upper-alpha-2 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-2>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+   #ministry-text .upper-alpha-2>li:nth-of-type(1)::before {content: 'Б.';}
+   #ministry-text .upper-alpha-2>li:nth-of-type(2)::before {content: 'В.';}
+   #ministry-text .upper-alpha-2>li:nth-of-type(3)::before {content: 'Г.';}
+   #ministry-text .upper-alpha-2>li:nth-of-type(4)::before {content: 'Д.';}
+
+/* -----------------------------------------
+   upper-alpha-3 начало списка с буквы В
+----------------------------------------- */
+
+#ministry-text .upper-alpha-3 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-3>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+   #ministry-text .upper-alpha-3>li:nth-of-type(1)::before {content: 'В.';}
+   #ministry-text .upper-alpha-3>li:nth-of-type(2)::before {content: 'Г.';}
+   #ministry-text .upper-alpha-3>li:nth-of-type(3)::before {content: 'Д.';}
+   #ministry-text .upper-alpha-3>li:nth-of-type(4)::before {content: 'Е.';}
+
+/* -----------------------------------------
+   upper-alpha-4 начало списка с буквы Г
+----------------------------------------- */
+
+#ministry-text .upper-alpha-4 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-4>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+
+   #ministry-text .upper-alpha-4>li:nth-of-type(1)::before {content: 'Г. ';}
+   #ministry-text .upper-alpha-4>li:nth-of-type(2)::before {content: 'Д. ';}
+   #ministry-text .upper-alpha-4>li:nth-of-type(3)::before {content: 'Е. ';}
+   #ministry-text .upper-alpha-4>li:nth-of-type(4)::before {content: 'Ж. ';}
+
+/* -----------------------------------------
+   upper-alpha-5 начало списка с буквы Д
+----------------------------------------- */
+#ministry-text .upper-alpha-5 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-5>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+
+   #ministry-text .upper-alpha-5>li:nth-of-type(1)::before {content: 'Д. ';}
+   #ministry-text .upper-alpha-5>li:nth-of-type(2)::before {content: 'Е. ';}
+   #ministry-text .upper-alpha-5>li:nth-of-type(3)::before {content: 'Ж. ';}
+   #ministry-text .upper-alpha-5>li:nth-of-type(4)::before {content: 'З. ';}
+   #ministry-text .upper-alpha-5>li:nth-of-type(5)::before {content: 'И.';}
+   #ministry-text .upper-alpha-5>li:nth-of-type(6)::before {content: 'К.';}
+   #ministry-text .upper-alpha-5>li:nth-of-type(7)::before {content: 'Л.';}
+   #ministry-text .upper-alpha-5>li:nth-of-type(8)::before {content: 'М.';}
+   #ministry-text .upper-alpha-5>li:nth-of-type(9)::before {content: 'Н.';}
+
+/* -----------------------------------------
+   upper-alpha-6 начало списка с буквы Е
+----------------------------------------- */
+#ministry-text .upper-alpha-6 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-6>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+
+   #ministry-text .upper-alpha-6>li:nth-of-type(1)::before {content: 'Е. ';}
+   #ministry-text .upper-alpha-6>li:nth-of-type(2)::before {content: 'Ж. ';}
+   #ministry-text .upper-alpha-6>li:nth-of-type(3)::before {content: 'З. ';}
+   #ministry-text .upper-alpha-6>li:nth-of-type(4)::before {content: 'И. ';}
+/* -----------------------------------------
+   upper-alpha-7 начало списка с буквы Ж
+----------------------------------------- */
+
+#ministry-text .upper-alpha-7 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-7>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+
+   #ministry-text .upper-alpha-7>li:nth-of-type(1)::before {content: 'Ж. ';}
+   #ministry-text .upper-alpha-7>li:nth-of-type(2)::before {content: 'З. ';}
+   #ministry-text .upper-alpha-7>li:nth-of-type(3)::before {content: 'И. ';}
+   #ministry-text .upper-alpha-7>li:nth-of-type(4)::before {content: 'К. ';}
+
+/* -----------------------------------------
+   upper-alpha-8 начало списка с буквы З
+----------------------------------------- */
+#ministry-text .upper-alpha-8 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-8>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+
+   #ministry-text .upper-alpha-8>li:nth-of-type(2)::before {content: 'З. ';}
+   #ministry-text .upper-alpha-8>li:nth-of-type(3)::before {content: 'И. ';}
+   #ministry-text .upper-alpha-8>li:nth-of-type(4)::before {content: 'К. ';}
+   #ministry-text .upper-alpha-8>li:nth-of-type(1)::before {content: 'Л. ';}
+
+
+/* -----------------------------------------
+   upper-alpha-9 начало списка с буквы И
+----------------------------------------- */
+#ministry-text .upper-alpha-9 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-9>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+   #ministry-text .upper-alpha-9>li:nth-of-type(1)::before {content: 'И.';}
+   #ministry-text .upper-alpha-9>li:nth-of-type(2)::before {content: 'К.';}
+   #ministry-text .upper-alpha-9>li:nth-of-type(3)::before {content: 'Л.';}
+   #ministry-text .upper-alpha-9>li:nth-of-type(4)::before {content: 'М.';}
+   #ministry-text .upper-alpha-9>li:nth-of-type(5)::before {content: 'Н.';}
+   #ministry-text .upper-alpha-9>li:nth-of-type(6)::before {content: 'О.';}
+   #ministry-text .upper-alpha-9>li:nth-of-type(7)::before {content: 'П.';}
+   #ministry-text .upper-alpha-9>li:nth-of-type(8)::before {content: 'Р.';}
+   #ministry-text .upper-alpha-9>li:nth-of-type(9)::before {content: 'С.';}
+   #ministry-text .upper-alpha-9>li:nth-of-type(10)::before {content: 'Т.';}
+   #ministry-text .upper-alpha-9>li:nth-of-type(11)::before {content: 'У.';}
+   #ministry-text .upper-alpha-9>li:nth-of-type(12)::before {content: 'Ф.';}
+   #ministry-text .upper-alpha-9>li:nth-of-type(13)::before {content: 'Х.';}
+   #ministry-text .upper-alpha-9>li:nth-of-type(14)::before {content: 'Ц.';}
+   #ministry-text .upper-alpha-9>li:nth-of-type(15)::before {content: 'Ц.';}
+   #ministry-text .upper-alpha-9>li:nth-of-type(16)::before {content: 'Ч.';}
+   #ministry-text .upper-alpha-9>li:nth-of-type(17)::before {content: 'Ш.';}
+   #ministry-text .upper-alpha-9>li:nth-of-type(18)::before {content: 'Щ.';}
+   #ministry-text .upper-alpha-9>li:nth-of-type(19)::before {content: 'Ы.';}
+   #ministry-text .upper-alpha-9>li:nth-of-type(20)::before {content: 'Э.';}
+   #ministry-text .upper-alpha-9>li:nth-of-type(21)::before {content: 'Ю.';}
+   #ministry-text .upper-alpha-9>li:nth-of-type(22)::before {content: 'Я.';}
+/* -----------------------------------------
+   upper-alpha-10 начало списка с буквы К
+----------------------------------------- */
+#ministry-text .upper-alpha-10 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-10>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+
+   #ministry-text .upper-alpha-10>li:nth-of-type(1)::before {content: 'К.';}
+   #ministry-text .upper-alpha-10>li:nth-of-type(2)::before {content: 'Л.';}
+   #ministry-text .upper-alpha-10>li:nth-of-type(3)::before {content: 'М.';}
+   #ministry-text .upper-alpha-10>li:nth-of-type(4)::before {content: 'Н.';}
+   #ministry-text .upper-alpha-10>li:nth-of-type(5)::before {content: 'О.';}
+   #ministry-text .upper-alpha-10>li:nth-of-type(6)::before {content: 'П.';}
+   #ministry-text .upper-alpha-10>li:nth-of-type(7)::before {content: 'Р.';}
+   #ministry-text .upper-alpha-10>li:nth-of-type(8)::before {content: 'С.';}
+   #ministry-text .upper-alpha-10>li:nth-of-type(9)::before {content: 'Т.';}
+   #ministry-text .upper-alpha-10>li:nth-of-type(10)::before {content: 'У.';}
+   #ministry-text .upper-alpha-10>li:nth-of-type(11)::before {content: 'Ф.';}
+   #ministry-text .upper-alpha-10>li:nth-of-type(12)::before {content: 'Х.';}
+   #ministry-text .upper-alpha-10>li:nth-of-type(13)::before {content: 'Ц.';}
+   #ministry-text .upper-alpha-10>li:nth-of-type(14)::before {content: 'Ц.';}
+   #ministry-text .upper-alpha-10>li:nth-of-type(15)::before {content: 'Ч.';}
+   #ministry-text .upper-alpha-10>li:nth-of-type(16)::before {content: 'Ш.';}
+   #ministry-text .upper-alpha-10>li:nth-of-type(17)::before {content: 'Щ.';}
+   #ministry-text .upper-alpha-10>li:nth-of-type(18)::before {content: 'Ы.';}
+   #ministry-text .upper-alpha-10>li:nth-of-type(19)::before {content: 'Э.';}
+   #ministry-text .upper-alpha-10>li:nth-of-type(20)::before {content: 'Ю.';}
+   #ministry-text .upper-alpha-10>li:nth-of-type(21)::before {content: 'Я.';}
+
+/* -----------------------------------------
+   upper-alpha-11 начало списка с буквы Л
+----------------------------------------- */
+#ministry-text .upper-alpha-11 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-11>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+
+   #ministry-text .upper-alpha-11>li:nth-of-type(1)::before {content: 'Л.';}
+   #ministry-text .upper-alpha-11>li:nth-of-type(2)::before {content: 'М.';}
+   #ministry-text .upper-alpha-11>li:nth-of-type(3)::before {content: 'Н.';}
+   #ministry-text .upper-alpha-11>li:nth-of-type(4)::before {content: 'О.';}
+
+/* -----------------------------------------
+   upper-alpha-12 начало списка с буквы М
+----------------------------------------- */
+#ministry-text .upper-alpha-12 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-12>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+
+   #ministry-text .upper-alpha-12>li:nth-of-type(1)::before {content: 'М.';}
+   #ministry-text .upper-alpha-12>li:nth-of-type(2)::before {content: 'Н.';}
+   #ministry-text .upper-alpha-12>li:nth-of-type(3)::before {content: 'О.';}
+   #ministry-text .upper-alpha-12>li:nth-of-type(4)::before {content: 'П.';}
+/* -----------------------------------------
+   upper-alpha-13 начало списка с буквы Н
+----------------------------------------- */
+#ministry-text .upper-alpha-13 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-13>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+
+   #ministry-text .upper-alpha-13>li:nth-of-type(1)::before {content: 'Н.';}
+   #ministry-text .upper-alpha-13>li:nth-of-type(2)::before {content: 'О.';}
+   #ministry-text .upper-alpha-13>li:nth-of-type(3)::before {content: 'П.';}
+   #ministry-text .upper-alpha-13>li:nth-of-type(4)::before {content: 'Р.';}
+
+/* -----------------------------------------
+   upper-alpha-14 начало списка с буквы О
+----------------------------------------- */
+#ministry-text .upper-alpha-14 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-14>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+
+   #ministry-text .upper-alpha-14>li:nth-of-type(1)::before {content: 'О.';}
+   #ministry-text .upper-alpha-14>li:nth-of-type(2)::before {content: 'П.';}
+   #ministry-text .upper-alpha-14>li:nth-of-type(3)::before {content: 'Р.';}
+   #ministry-text .upper-alpha-14>li:nth-of-type(4)::before {content: 'С.';}
+
+/* -----------------------------------------
+   upper-alpha-15 начало списка с буквы П
+----------------------------------------- */
+#ministry-text .upper-alpha-15 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-15>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+
+   #ministry-text .upper-alpha-15>li:nth-of-type(1)::before {content: 'П.';}
+   #ministry-text .upper-alpha-15>li:nth-of-type(2)::before {content: 'Р.';}
+   #ministry-text .upper-alpha-15>li:nth-of-type(3)::before {content: 'С.';}
+   #ministry-text .upper-alpha-15>li:nth-of-type(4)::before {content: 'Т.';}
+   #ministry-text .upper-alpha-15>li:nth-of-type(5)::before {content: 'У.';}
+   #ministry-text .upper-alpha-15>li:nth-of-type(6)::before {content: 'Ф.';}
+   #ministry-text .upper-alpha-15>li:nth-of-type(7)::before {content: 'Х.';}
+   #ministry-text .upper-alpha-15>li:nth-of-type(8)::before {content: 'Ц.';}
+   #ministry-text .upper-alpha-15>li:nth-of-type(9)::before {content: 'Ч.';}
+   #ministry-text .upper-alpha-15>li:nth-of-type(10)::before {content: 'Ш.';}
+   #ministry-text .upper-alpha-15>li:nth-of-type(11)::before {content: 'Щ.';}
+
+/* -----------------------------------------
+   upper-alpha-16 начало списка с буквы Р
+----------------------------------------- */
+#ministry-text .upper-alpha-16 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-16>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+
+   #ministry-text .upper-alpha-16>li:nth-of-type(1)::before {content: 'Р.';}
+   #ministry-text .upper-alpha-16>li:nth-of-type(2)::before {content: 'С.';}
+   #ministry-text .upper-alpha-16>li:nth-of-type(3)::before {content: 'Т.';}
+   #ministry-text .upper-alpha-16>li:nth-of-type(4)::before {content: 'У.';}
+   #ministry-text .upper-alpha-16>li:nth-of-type(5)::before {content: 'Ф.';}
+   #ministry-text .upper-alpha-16>li:nth-of-type(6)::before {content: 'Х.';}
+   #ministry-text .upper-alpha-16>li:nth-of-type(7)::before {content: 'Ц.';}
+   #ministry-text .upper-alpha-16>li:nth-of-type(8)::before {content: 'Ч.';}
+   #ministry-text .upper-alpha-16>li:nth-of-type(9)::before {content: 'Ш.';}
+   #ministry-text .upper-alpha-16>li:nth-of-type(10)::before {content: 'Щ.';}
+
+/* -----------------------------------------
+   upper-alpha-17 начало списка с буквы С
+----------------------------------------- */
+#ministry-text .upper-alpha-17 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-17>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+
+   #ministry-text .upper-alpha-17>li:nth-of-type(1)::before {content: 'С.';}
+   #ministry-text .upper-alpha-17>li:nth-of-type(2)::before {content: 'Т.';}
+   #ministry-text .upper-alpha-17>li:nth-of-type(3)::before {content: 'У.';}
+   #ministry-text .upper-alpha-17>li:nth-of-type(4)::before {content: 'Ф.';}
+   #ministry-text .upper-alpha-17>li:nth-of-type(5)::before {content: 'Х.';}
+   #ministry-text .upper-alpha-17>li:nth-of-type(6)::before {content: 'Ц.';}
+   #ministry-text .upper-alpha-17>li:nth-of-type(7)::before {content: 'Ч.';}
+   #ministry-text .upper-alpha-17>li:nth-of-type(8)::before {content: 'Ш.';}
+   #ministry-text .upper-alpha-17>li:nth-of-type(9)::before {content: 'Щ.';}
+
+/* -----------------------------------------
+   upper-alpha-18 начало списка с буквы Т
+----------------------------------------- */
+#ministry-text .upper-alpha-18 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-18>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+
+   #ministry-text .upper-alpha-18>li:nth-of-type(1)::before {content: 'Т.';}
+   #ministry-text .upper-alpha-18>li:nth-of-type(2)::before {content: 'У.';}
+   #ministry-text .upper-alpha-18>li:nth-of-type(3)::before {content: 'Ф.';}
+   #ministry-text .upper-alpha-18>li:nth-of-type(4)::before {content: 'Х.';}
+   #ministry-text .upper-alpha-18>li:nth-of-type(5)::before {content: 'Ц.';}
+   #ministry-text .upper-alpha-18>li:nth-of-type(6)::before {content: 'Ч.';}
+   #ministry-text .upper-alpha-18>li:nth-of-type(7)::before {content: 'Ш.';}
+   #ministry-text .upper-alpha-18>li:nth-of-type(8)::before {content: 'Щ.';}
+
+/* -----------------------------------------
+   upper-alpha-19 начало списка с буквы У
+----------------------------------------- */
+#ministry-text .upper-alpha-19 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-19>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+
+   #ministry-text .upper-alpha-19>li:nth-of-type(1)::before {content: 'У.';}
+   #ministry-text .upper-alpha-19>li:nth-of-type(2)::before {content: 'Ф.';}
+   #ministry-text .upper-alpha-19>li:nth-of-type(3)::before {content: 'Х.';}
+   #ministry-text .upper-alpha-19>li:nth-of-type(4)::before {content: 'Ц.';}
+   #ministry-text .upper-alpha-19>li:nth-of-type(5)::before {content: 'Ч.';}
+   #ministry-text .upper-alpha-19>li:nth-of-type(6)::before {content: 'Ш.';}
+   #ministry-text .upper-alpha-19>li:nth-of-type(7)::before {content: 'Щ.';}
+   #ministry-text .upper-alpha-19>li:nth-of-type(8)::before {content: 'Э.';}
+   #ministry-text .upper-alpha-19>li:nth-of-type(9)::before {content: 'Ю.';}
+   #ministry-text .upper-alpha-19>li:nth-of-type(10)::before {content: 'Я.';}
+
+/* -----------------------------------------
+   upper-alpha-20 начало списка с буквы Ф
+----------------------------------------- */
+#ministry-text .upper-alpha-20 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-20>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+
+   #ministry-text .upper-alpha-20>li:nth-of-type(1)::before {content: 'Ф.';}
+   #ministry-text .upper-alpha-20>li:nth-of-type(2)::before {content: 'Х.';}
+   #ministry-text .upper-alpha-20>li:nth-of-type(3)::before {content: 'Ц.';}
+   #ministry-text .upper-alpha-20>li:nth-of-type(4)::before {content: 'Ч.';}
+   #ministry-text .upper-alpha-20>li:nth-of-type(5)::before {content: 'Ш.';}
+   #ministry-text .upper-alpha-20>li:nth-of-type(6)::before {content: 'Щ.';}
+   #ministry-text .upper-alpha-20>li:nth-of-type(7)::before {content: 'Э.';}
+   #ministry-text .upper-alpha-20>li:nth-of-type(8)::before {content: 'Ю.';}
+   #ministry-text .upper-alpha-20>li:nth-of-type(9)::before {content: 'Я.';}
+
+/* -----------------------------------------
+   upper-alpha-21 начало списка с буквы Х
+----------------------------------------- */
+#ministry-text .upper-alpha-21 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-21>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+
+   #ministry-text .upper-alpha-21>li:nth-of-type(1)::before {content: 'Х.';}
+   #ministry-text .upper-alpha-21>li:nth-of-type(2)::before {content: 'Ц.';}
+   #ministry-text .upper-alpha-21>li:nth-of-type(3)::before {content: 'Ч.';}
+   #ministry-text .upper-alpha-21>li:nth-of-type(4)::before {content: 'Ш.';}
+   #ministry-text .upper-alpha-21>li:nth-of-type(5)::before {content: 'Щ.';}
+   #ministry-text .upper-alpha-21>li:nth-of-type(6)::before {content: 'Э.';}
+   #ministry-text .upper-alpha-21>li:nth-of-type(7)::before {content: 'Ю.';}
+   #ministry-text .upper-alpha-21>li:nth-of-type(8)::before {content: 'Я.';}
+
+/* -----------------------------------------
+   upper-alpha-22 начало списка с буквы Ц
+----------------------------------------- */
+#ministry-text .upper-alpha-22 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-22>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+
+   #ministry-text .upper-alpha-22>li:nth-of-type(1)::before {content: 'Ц.';}
+   #ministry-text .upper-alpha-22>li:nth-of-type(2)::before {content: 'Ч.';}
+   #ministry-text .upper-alpha-22>li:nth-of-type(3)::before {content: 'Ш.';}
+   #ministry-text .upper-alpha-22>li:nth-of-type(4)::before {content: 'Щ.';}
+   #ministry-text .upper-alpha-22>li:nth-of-type(5)::before {content: 'Э.';}
+   #ministry-text .upper-alpha-22>li:nth-of-type(6)::before {content: 'Ю.';}
+   #ministry-text .upper-alpha-22>li:nth-of-type(7)::before {content: 'Я.';}
+
+
+/* -----------------------------------------
+   upper-alpha-23 начало списка с буквы Ч
+----------------------------------------- */
+#ministry-text .upper-alpha-23 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-23>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+
+   #ministry-text .upper-alpha-23>li:nth-of-type(1)::before {content: 'Ч.';}
+   #ministry-text .upper-alpha-23>li:nth-of-type(2)::before {content: 'Ш.';}
+   #ministry-text .upper-alpha-23>li:nth-of-type(3)::before {content: 'Щ.';}
+   #ministry-text .upper-alpha-23>li:nth-of-type(4)::before {content: 'Э.';}
+   #ministry-text .upper-alpha-23>li:nth-of-type(5)::before {content: 'Ю.';}
+   #ministry-text .upper-alpha-23>li:nth-of-type(6)::before {content: 'Я.';}
+
+
+/* -----------------------------------------
+   upper-alpha-24 начало списка с буквы Ш
+----------------------------------------- */
+#ministry-text .upper-alpha-24 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-24>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+
+   #ministry-text .upper-alpha-24>li:nth-of-type(1)::before {content: 'Ш.';}
+   #ministry-text .upper-alpha-24>li:nth-of-type(2)::before {content: 'Щ.';}
+   #ministry-text .upper-alpha-24>li:nth-of-type(3)::before {content: 'Э.';}
+   #ministry-text .upper-alpha-24>li:nth-of-type(4)::before {content: 'Ю.';}
+   #ministry-text .upper-alpha-24>li:nth-of-type(5)::before {content: 'Я.';}
+
+/* -----------------------------------------
+   upper-alpha-end
+----------------------------------------- */
+
+#ministry-text .decimal {list-style-type: decimal; font-weight: normal;  margin-left: 27px;}
+#ministry-text .decimal li {padding-left: 0px;}
+#ministry-text .decimal-italic { list-style-type: decimal; font-style: italic; }
+#ministry-text .decimal-italic li span { font-style: normal; }
+/* -----------------------------------------
+   lower-alpha 
+----------------------------------------- */
+#ministry-text .lower-alpha { list-style-type: none; font-weight: normal;  margin-left: 35px; }
+   #ministry-text .lower-alpha>li::before {
+  margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;   
+   }
+   #ministry-text .lower-alpha>li:nth-of-type(1)::before { content: 'а. '; }
+   #ministry-text .lower-alpha>li:nth-of-type(2)::before { content: 'б. '; }
+   #ministry-text .lower-alpha>li:nth-of-type(3)::before { content: 'в. '; }
+   #ministry-text .lower-alpha>li:nth-of-type(4)::before { content: 'г. '; }
+   #ministry-text .lower-alpha>li:nth-of-type(5)::before { content: 'д. '; }
+   #ministry-text .lower-alpha>li:nth-of-type(6)::before { content: 'е. '; }
+   #ministry-text .lower-alpha>li:nth-of-type(7)::before { content: 'ж. '; }
+   #ministry-text .lower-alpha>li:nth-of-type(8)::before { content: 'з. '; }
+   #ministry-text .lower-alpha>li:nth-of-type(9)::before { content: 'и. '; }
+   #ministry-text .lower-alpha>li:nth-of-type(10)::before {content: 'к. '; }
+   #ministry-text .lower-alpha>li:nth-of-type(11)::before {content: 'л. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(12)::before {content: 'м. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(13)::before {content: 'н. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(14)::before {content: 'о. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(15)::before {content: 'п. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(16)::before {content: 'р. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(17)::before {content: 'с. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(18)::before {content: 'т. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(19)::before {content: 'у. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(20)::before {content: 'ф. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(21)::before {content: 'х. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(22)::before {content: 'ц. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(23)::before {content: 'ч. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(24)::before {content: 'ш. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(25)::before {content: 'щ. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(26)::before {content: 'ы. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(27)::before {content: 'э. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(28)::before {content: 'ю. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(29)::before {content: 'я. ';}
+
+/* -----------------------------------------
+   lower-alpha-3 начало списка с буквы в
+----------------------------------------- */
+#ministry-text .lower-alpha-3 { list-style-type: none; font-weight: normal;  margin-left: 35px; }
+   #ministry-text .lower-alpha-3>li::before {
+  margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;   
+   }
+
+   #ministry-text .lower-alpha-3>li:nth-of-type(1)::before {content: 'в. '; }
+   #ministry-text .lower-alpha-3>li:nth-of-type(2)::before {content: 'г. '; }
+   #ministry-text .lower-alpha-3>li:nth-of-type(3)::before {content: 'д. '; }
+   #ministry-text .lower-alpha-3>li:nth-of-type(4)::before {content: 'е. '; }
+   #ministry-text .lower-alpha-3>li:nth-of-type(5)::before {content: 'ж. '; }
+   #ministry-text .lower-alpha-3>li:nth-of-type(6)::before {content: 'з. '; }
+   #ministry-text .lower-alpha-3>li:nth-of-type(7)::before {content: 'и. '; }
+   #ministry-text .lower-alpha-3>li:nth-of-type(8)::before {content: 'к. '; }
+   #ministry-text .lower-alpha-3>li:nth-of-type(9)::before {content: 'л. ';}
+   #ministry-text .lower-alpha-3>li:nth-of-type(10)::before {content: 'м. ';}
+   #ministry-text .lower-alpha-3>li:nth-of-type(11)::before {content: 'н. ';}
+   #ministry-text .lower-alpha-3>li:nth-of-type(12)::before {content: 'о. ';}
+   #ministry-text .lower-alpha-3>li:nth-of-type(13)::before {content: 'п. ';}
+
+
+/* -----------------------------------------
+   lower-alpha-brackets 
+----------------------------------------- */
+  #ministry-text .lower-alpha-brackets { list-style-type: none; font-weight: normal;  margin-left: 20px; }
+  #ministry-text .lower-alpha-brackets>li::before {
+  margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;   
+   }
+   #ministry-text .lower-alpha-brackets>li:nth-of-type(1)::before {content: 'а) ';}
+   #ministry-text .lower-alpha-brackets>li:nth-of-type(2)::before {content: 'б) ';}
+   #ministry-text .lower-alpha-brackets>li:nth-of-type(3)::before {content: 'в) ';}
+   #ministry-text .lower-alpha-brackets>li:nth-of-type(4)::before {content: 'г) ';}
+   #ministry-text .lower-alpha-brackets>li:nth-of-type(5)::before {content: 'д) ';}
+   #ministry-text .lower-alpha-brackets>li:nth-of-type(6)::before {content: 'е) ';}
+   #ministry-text .lower-alpha-brackets>li:nth-of-type(7)::before {content: 'ж) ';}
+   #ministry-text .lower-alpha-brackets>li:nth-of-type(8)::before {content: 'з) ';}
+   #ministry-text .lower-alpha-brackets>li:nth-of-type(9)::before {content: 'и) ';}
+   #ministry-text .lower-alpha-brackets>li:nth-of-type(10)::before {content: 'к) ';}
+   #ministry-text .lower-alpha-brackets>li:nth-of-type(11)::before {content: 'л) ';}
+   #ministry-text .lower-alpha-brackets>li:nth-of-type(12)::before {content: 'м) ';}
+   #ministry-text .lower-alpha-brackets>li:nth-of-type(13)::before {content: 'н) ';}
+   #ministry-text .lower-alpha-brackets>li:nth-of-type(14)::before {content: 'о) ';}
+   #ministry-text .lower-alpha-brackets>li:nth-of-type(15)::before {content: 'п) ';}
+   #ministry-text .lower-alpha-brackets>li:nth-of-type(16)::before {content: 'р) ';}
+   #ministry-text .lower-alpha-brackets>li:nth-of-type(17)::before {content: 'с) ';}
+   #ministry-text .lower-alpha-brackets>li:nth-of-type(18)::before {content: 'т) ';}
+   #ministry-text .lower-alpha-brackets>li:nth-of-type(19)::before {content: 'у) ';}
+   #ministry-text .lower-alpha-brackets>li:nth-of-type(20)::before {content: 'ф) ';}
+   #ministry-text .lower-alpha-brackets>li:nth-of-type(21)::before {content: 'х) ';}
+   #ministry-text .lower-alpha-brackets>li:nth-of-type(22)::before {content: 'ц) ';}
+   #ministry-text .lower-alpha-brackets>li:nth-of-type(23)::before {content: 'ч) ';}
+   #ministry-text .lower-alpha-brackets>li:nth-of-type(24)::before {content: 'ш) ';}
+   #ministry-text .lower-alpha-brackets>li:nth-of-type(25)::before {content: 'щ) ';}
+   #ministry-text .lower-alpha-brackets>li:nth-of-type(26)::before {content: 'ы) ';}
+   #ministry-text .lower-alpha-brackets>li:nth-of-type(27)::before {content: 'э) ';}
+   #ministry-text .lower-alpha-brackets>li:nth-of-type(28)::before {content: 'ю) ';}
+   #ministry-text .lower-alpha-brackets>li:nth-of-type(29)::before {content: 'я) ';}
+
+
+/* -----------------------------------------
+   number-brackets [ 1), 2), 3), 4), ] 
+----------------------------------------- */
+  #ministry-text .number-brackets {list-style-type: none;  counter-reset:  item;  margin-left: 23px;  }  
+  #ministry-text .number-brackets>li:before {content: counter(item) ') '; counter-increment: item; 
+
+  margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px; 
+
+
+}   
+
+#ministry-text .none { list-style-type: none; list-style-position: outside; font-weight: normal; }
+#ministry-text .disc { list-style-type: disc; list-style-position: outside; font-weight: normal; }
+#ministry-text .upper-romanbd { list-style-type: upper-roman; font-weight: bold;}
+#ministry-text .decimalbd {list-style-type: decimal; font-weight: normal; color: #000; }
+#ministry-text .decimalbd span, #ministry-text .decimalbd li span { font-weight: normal; color: #000; }
+#ministry-text .otl-number { font-weight: bold; color: #2959c4; }
+#ministry-text .newSection {text-align: center; font-size: 1.125em; font-weight: bold; padding: 1.1em 0;}
+#ministry-text .smcaps { font-variant: small-caps; }
+/* -----------------------------------------
+   Share List
+----------------------------------------- */
+.share { margin: 5px 10px; list-style-type: none; }
+.share li { padding: 10px 0 0 40px; }
+.share #read { background: url(/themes/general/index/read.png) no-repeat left center; }
+.share #email { background: url(/themes/general/index/email.png) no-repeat left center; }
+.share #link { background: url(/themes/general/index/link.png) no-repeat left 10px; }
+/* -----------------------------------------
+   Definition List
+----------------------------------------- */
+dt { font-weight: bold; }
+dd { margin-left: 20px; margin-bottom: 20px; }
+/* -----------------------------------------
+   Misc Open Sans 
+----------------------------------------- */
+.banner-img { padding: 15px 0; display: block; margin: 0 auto; }
+#notice p { font-family: DroidS_R, DroidSerifRegular, Open Sans, "Droid Serif", Georgia, Times, serif; text-align: center; font-size: 13px; }
+#notice .note { text-align: left; }
+.small-note { font-size: 14px; }
+.clear { clear: both; }
+.coverimg { padding-bottom: 20px; }
+@media only screen and (max-width: 768px) {
+	.covers { position: relative; padding: 15px 0;}
+	.covers:before {content: ""; width: 100%; height: 1px; position: absolute; border-top: 1px solid #ddd; top: 0; left: 0;}
+	.coverimg { max-width: 130px; float: left; padding-right: 17px; padding-bottom: 0; }
+}
+@media only screen and (max-width: 568px) {
+	#header { text-align: center; padding: 5px 0; }
+	/*#header img { float: none; margin: 0 auto; padding-right: 0; }*/
+	#header img { display: none; }
+	#header h1, #header h2 { text-align: center; }
+	.banner-img { display: none; }
+	.site-title { margin-top: 10px; }
+       #ministry-text p, #ministry-text P {line-height: 1.1em;}
+}
+@media only screen and (min-width: 569px) {
+	h1 { font-size: 2.25em; }
+  	h2 { font-size: 1.875em; }
+	.book-pos { text-align: right; }
+}
+
+/* ------------------------------ 
+      Gallery navigation 
+--------------------------------*/
+.ngg-navigation {
+	font-size:0.9em !important;
+	clear:both !important;
+	display:block !important;	
+	text-align:center;
+        font-weight:bold;
+	font-family: arial, verdana;
+	
+}
+.ngg-navigation span {
+	font-weight:bold;	
+	font-family: arial, verdana; font-size:0.9em;
+}
+
+.ngg-navigation a.page-numbers, a.next, a.prev,
+	span.page-numbers, span.next, span.prev {
+	border:1px solid #DDDDDD;
+margin-top:3px;
+
+	margin-right:3px;
+float: none;
+    display: inline-block;
+	padding:3px 7px;
+}
+
+.ngg-navigation a.page-numbers:hover, a.next:hover, a.prev:hover, 
+	span.page-numbers:hover, span.next:hover, span.prev:hover {
+	background-color: #7e1e1f;
+	color: #FFFFFF !important;
+	text-decoration: none !important;
+}
+
+.label {
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1;
+    white-space: nowrap;
+    display: inline;
+    position: relative;
+    bottom: 0px; 
+    color: #fff;
+    background: #7e1e1f;
+}
+
+div.bookstore {
+  width: 96%;
+  max-width: 80px;
+  margin: 0 auto; /* центрируем основной контейнер */
+  padding: 7px 17px 17px 0;
+  float:left;
+}
+
+p {
+   /* font-family: arial,helvetica, verdana; */
+    font-family: "LiberationSerifRegular";
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    text-rendering: optimizeLegibility;
+}
+
+/*  ----------- Table Search Form -------------   */
+
+.SiteFCapt{
+  width: 26%;
+  max-width: 25px;
+}
+.Mustred {
+}
+
+
+.indent1, .INDENT1 {
+ /*  
+       text-align: left !important;    
+       margin-left: 20px !important;
+       margin-right: 10px !important;
+*/
+    width: 100% !important;
+    line-height: 1.4 !important;
+    border-left: none !important;  
+    padding: 0px 20px 15px 20px !important;
+}
+
+
+a.back-to-top {
+    display: none;
+    width: 60px;
+    height: 60px;
+    text-indent: -9999px;
+    position: fixed;
+    z-index: 999;
+    right: 20px;
+    bottom: 20px;
+    background: rgba(0,0,0,0.15) url(/themes/general/index/up-arrow.png) no-repeat center 43%;
+    border-radius: 30px;
+}
+

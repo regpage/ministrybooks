@@ -1,0 +1,48 @@
+.AuthFormTbl {
+	MARGIN: 0px 20px 0px 0px;
+ WIDTH: 300px
+}
+.AuthFormCapt {
+	COLOR: #605F5E;
+ PADDING-RIGHT: 10px;
+ PADDING-LEFT: 10px;
+ FONT-WEIGHT: normal;
+ FONT-SIZE: 11px;
+ PADDING-BOTTOM: 10px;
+ WIDTH: 80px;
+ PADDING-TOP: 10px;
+ FONT-FAMILY: Verdana
+}
+.AuthFormSavePsw {
+	COLOR: #6C8FB7;
+ PADDING-RIGHT: 10px;
+ PADDING-LEFT: 10px;
+ FONT-WEIGHT: normal;
+ FONT-SIZE: 11px;
+ PADDING-BOTTOM: 10px;
+ WIDTH: 80px;
+ PADDING-TOP: 10px;
+ FONT-FAMILY: Verdana
+}
+.AuthFormInput {
+	COLOR: #605F5E;
+ BORDER: #605F5E 1px solid;
+ PADDING-LEFT: 5px;
+ FONT-WEIGHT: normal;
+ FONT-SIZE: 11px;
+ MARGIN: 0px 10px;
+ WIDTH: 125px;
+ FONT-FAMILY: Verdana;
+ HEIGHT: 19px
+}
+.AuthFormButton {
+	COLOR: #605F5E;
+ BORDER: #605F5E 1px solid;
+ FONT-WEIGHT: normal;
+ FONT-SIZE: 11px;
+ MARGIN: 5px 0px 10px 10px;
+ WIDTH: 53px;
+ FONT-FAMILY: Verdana;
+ HEIGHT: 23px;
+ BACKGROUND-COLOR: white
+}

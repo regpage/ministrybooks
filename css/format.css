@@ -1,0 +1,257 @@
+/* alineas */
+a { color:#666; font-family:Verdana; font-size: 14px; Verdana; text-decoration: none;}
+a:hover { color:#972A30; text-decoration: none;}
+.Text { font-family:Verdana; font-size:11px; font-weight:normal;}
+p, .Just, .Left, .Right, .Center { font-family:Verdana; font-size:11px; font-weight:normal; line-height:1.5; padding:3px 0px 3px 0px; margin:0px 4px 0px 0px;padding:0 10px 0 10px;}
+p, .Just { text-align:justify; padding:0 10px 0 10px;}
+.Left { text-align:left;}
+.Right { text-align:right;}
+.Center { text-align:center;}
+
+/* titles */
+h2 {
+  font-family:Verdana;
+  font-weight:bold;
+  text-align:justify;
+  margin:10px 0px 0 0px;
+  padding:0 10px 0 10px;
+}
+
+h1 {
+	color: #666; 
+	font-size: 16px; 
+	font-family: Verdana; 
+	font-weight: bold; 
+	background-color: #e3dad1; 
+	text-align: justify; 
+	margin: 10px 0px 10px 5px; 
+	padding: 10pt 10px; 
+	border-width: 0; 
+	border-color: #ccc; 
+	outline: dashed 1px #ccc 
+}
+
+h2 {font-size:13px; color:#666; padding-bottom:10px;}
+
+h3 {
+  color:#D25A0B;
+  font-size:6px;
+  margin-bottom:4px;
+}
+
+/* lists */
+ul {
+   margin-right:0px;
+  margin-top:0;
+  margin-bottom:0;
+}
+
+li {
+  margin-top:0px;
+  font-family:Verdana;
+  font-size:10px;
+  font-weight:normal;
+  line-height:1.5;
+  text-align:justify;
+}
+
+ol {
+  margin:0 0 0 32px;
+  padding:0;
+}
+
+/* tables */
+.SiteTbl  { font-size: 9px; margin: 0; top: 0; border: solid 0px #999; border-collapse: collapse   }
+td.SiteTblTH a { color:#000000;font-size:12px;}
+td.SiteTblTH a:hover {color:#D25A0B;  text-decoration:underline;}
+td.SiteTblTH h1 {color: #000000; font-size: 14px; background-color: #ccc; border-bottom: 5px ridge #c33 }
+td.SiteTblTH {color: #fff; font-size: 14px; font-family: Verdana; font-weight: normal; background-color: #999; text-align: center; padding: 0; height: 40px; border: solid 1pt #000; border-collapse: collapse   
+  }
+td.SiteTblTHPage  { color: #fff; font-size: 14px; font-family: Verdana; font-weight: normal; background-color: #998f7d; text-align: center; padding: 0; height: 40px; border: solid 1pt #000; border-collapse: collapse   
+   }  
+.SiteTblLeft  {color: #000; font-size: 12px; font-family: Verdana; font-weight: normal; background-color: #fff; text-align: left; padding: 10pt; height: 20px; border: solid 1pt #999; border-collapse: collapse   
+  }
+.SiteTblCenter {
+border:1px solid #999; 
+text-align:center;
+font-family:Verdana;
+font-size:11px;
+padding:5px 5px 5px 5px;
+border-collapse: collapse;
+}
+
+
+
+/* forms */
+
+
+.SiteFTbl {
+  margin:0px 0px 0px 0px;
+  width:100%;
+}
+
+.SiteFCapt {
+  font-family:Verdana;
+  font-size:11px;
+  font-weight:normal;
+  padding:10px 10px 10px 5px;
+
+}
+
+.SiteFInfoTbl {
+  margin:0px 0px 0px 0px;
+  width:350px;
+}
+
+td.SiteFInfo {
+  font-family:Verdana;
+  font-size:11px;
+  font-weight:normal;
+  line-height:1.5;
+  padding:5px 10px 0px 0px;
+}
+
+.SiteFTblHeading {
+  font-family:Verdana;
+  font-size:11px;
+  font-weight:bold;
+  line-height:1.5;
+  padding:5px 10px 0px 5px;
+}
+
+.SiteFInputM,.SiteFInputMA, .SiteFInputS, .SiteFInputL  { font-size: 14px; font-family: Verdana; font-weight: normal;   padding:2px;
+padding-left: 5px; height: 25px; border: solid 1px #ccc }
+.SiteFInputS {
+}
+
+.SiteFInputM {
+  width:500px;
+}
+
+.SiteFInputMA {
+  width:150px;
+}
+
+.SiteFInputL {
+  width:600px;
+}
+
+.SiteFButton {
+  border:1px solid #6C8FB7;
+  background-color:white;
+  font-family:Verdana;
+  font-size:13px;
+  font-weight:normal;
+  width:100px;
+  height:23px;
+  margin:10px 10px 10px 0;
+}
+
+.SiteFTextareaS, .SiteFTextareaM, .SiteFTextareaL {
+  border: solid 1px #ccc;
+  padding:5px;
+  margin-bottom:10px;
+  font-family:Verdana;
+  font-size:11px;
+  font-weight:normal;
+}
+
+.SiteFTextareaS {
+
+}
+
+.SiteFTextareaM {
+  width:500px;
+}
+
+.SiteFTextareaL {
+  width:800px;
+}
+
+/* colors */
+.Mustred {
+    color:#6C8FB7;
+    font-size:14px;
+}
+
+a:hover.Mustred {
+color: #972A30;
+
+}
+
+.Mustdarkred {
+  color:#93143E;
+}
+
+.Mustdarkblue {
+  color:#6C8FB7;
+}
+
+.Mustgreen {
+	color:#6C8FB7;
+	background-color: #E3DAD1;
+	margin: 10px;
+	padding: 5px;
+	border: solid 1px #a3a3a3; 
+	outline: solid 1px #c6a49d;
+
+text-decoration: none
+}
+
+a:hover.Mustgreen {
+color: #972A30; text-decoration: none
+}
+
+.Mustblue {
+  color:#8EA8C4;
+}
+
+/*images*/
+.ImageInBlock {
+  display:block;
+  margin:0px 5px 0 0;
+}
+
+.ImageInBlockTbl { margin-left:10px; margin-top:5px;}
+
+.message {
+	color: #c00;
+	margin: 0 0 16px 8px;
+	border-width: 1px;
+	border-style: solid;
+	padding: 12px;
+	background-color: #ffebe8;
+	border-width: 0;
+	border-color: #FF5353;
+	outline: dashed 1px #FF5353;
+	width: 600px;
+}
+
+.message b {
+  	color: #c00;
+  	font-family:Verdana;
+  	font-size:16px;
+	font-weight:bold;
+}
+.edit-slug-buttons {
+	border-color: #328ab2;
+	background-color: #a6d2e5 !important;
+}
+
+.page_entry {
+	margin: 10px 0px 0px 0px;
+	padding: 2px 0px 20px 0px;
+	border-top: 2px solid #73943B;
+	border-bottom: 1px solid #73943B;
+}
+.info {
+	float:left;
+	display:inline; 
+	overflow:hidden; /*when ie6, image's with is > content width, hidden*/
+	padding: 0px 15px 0px 25px;
+	background:url('images/content_bg.jpg') no-repeat 567px 0px;
+}
+
+#wphead {
+	background-color: #14568a;
+}

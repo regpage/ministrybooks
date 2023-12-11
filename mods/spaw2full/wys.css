@@ -1,0 +1,401 @@
+body {
+background-color:#ffffff;
+margin: 0px;
+padding: 0px;
+font-family: georgia;
+}
+
+img {border: 0px;}
+
+#toc {
+ padding-top:20px;
+ width:80%;
+ margin:auto;
+}
+
+/* -----------------------------------------
+   Ministry Text Pages
+----------------------------------------- */
+h3 span, h2 span { color: #7f6959; display: block; }
+#ministry { background-color: #fff; padding: 1em; overflow: auto; margin: 1em auto; }
+
+/* -------- ministry-text styles ----------------- */
+#ministry-text h1, #ministry-text H1, #ministry-text .scripture, #ministry-text .SCRIPTURE, #ministry-text .scripture-center, #ministry-text h2, #ministry-text H2, #ministry-text .head1, #ministry-text .HEAD1, #ministry-text .head2, #ministry-text HEAD2, #ministry-text HEAD2F, #ministry-text .title, #ministry-text .TITLE, #ministry-text .paren, #ministry-text .PAREN, #ministry-text .center, #ministry-text .greek, #ministry-text .hebrew { text-align: center; font-family: 'LiberationSerifRegular', 'Droid Serif'; padding:10px 0px 10px 0px; }
+#ministry-text .series, #ministry-text .SERIES { font-weight: bold; font-size: 1.25em;}
+#ministry-text .msg, #ministry-text .MSG, #ministry-text .subtitle, #ministry-text .SUBTITLE { font-weight: normal; font-size: 1.225em; }
+#ministry-text .scripture, #ministry-text .SCRIPTURE, #ministry-text .scripture-center { font-weight: normal; font-size: 1.225em; font-family: "LiberationSerifRegular";}
+#ministry-text h2, #ministry-text H2, #ministry-text .head1, #ministry-text .HEAD1, #ministry-text .head2, #ministry-text HEAD2, #ministry-text HEAD2F, #ministry-text .title, #ministry-text .TITLE, #ministry-text .paren, #ministry-text .PAREN { font-weight: bold; font-size: 1.225em; }
+#ministry-text .uhead1 { text-decoration: underline; }
+#ministry-text .head3, #ministry-text .head3u, #ministry-text .HEAD3, #ministry-text .HEAD3F, #ministry-text .head4, #ministry-text .HEAD4, #ministry-text .HEAD4F, #ministry-text .ital { font-weight: normal; font-style: italic; font-size: 1em; }
+#ministry-text .head5, #ministry-text .HEAD5, #ministry-text .HEAD5F, #ministry-text .head6, #ministry-text .HEAD6, #ministry-text .HEAD6F { font-weight: normal; font-style: italic; font-size: 1em; }
+#ministry-text .head7, #ministry-text .HEAD7, #ministry-text .HEAD7F { font-weight: normal; font-size: 1em; }
+#ministry-text p, #ministry-text P { text-align: justify; font-size: 1.2em; font-weight: 100; line-height: 1.4em;}
+#ministry-text blockquote { color: #222; border-left: none; margin: 0 40px 1.25em 40px; padding: 0; text-align: justify; }
+#ministry-text .right { text-align: right; }
+#ministry-text .alignleft { text-align: left; }
+#ministry-text .footnote { text-align: justify; color: #999; }
+#ministry-text .indent1, #ministry-text .INDENT1, #ministry-text .hbody, #ministry-text .HBODY, #ministry-text .hymn-verse {max-width: 445px; text-align: left; margin: 0 auto; text-align: justify; padding: 5px 20px 10px 20px; border-left: 1px solid #927d6c; line-height: 1.1em; }
+#ministry-text .scripture, #ministry-text .SCRIPTURE { text-align: left; margin-left: 1em; margin-right: 1em; line-height: 1.4; }
+#ministry-text .hbody2, #ministry-text .hymn-chorus { text-align: left; margin-left: 40px; margin-right: 10px; }
+#ministry-text .hbody-hymn, #ministry-text .hymn-number { text-align: right; margin-right: 10px; }
+#ministry-text .greek { font-family: 'LiberationSerifRegular';}
+#ministry-text .hebrew { font: normal 1em 'LiberationSerifRegular';}
+#ministry-text .sm {font: normal 0.875em 'LiberationSerifRegular'; text-align: left;}
+#ministry-text .gray {font: bold 0.875em 'LiberationSerifRegular'; color: #acacac;}
+#ministry-text .blue {color: #2959c4;}
+#ministry-text .bold, #ministry-text .regbold, #ministry-text .bd {font-weight: bold; text-align: left;}
+#ministry-text .underline {text-decoration: underline;}
+#ministry-text .bdit {font-style: italic; font-weight: bold; }
+#ministry-text sup, #ministry-text sub {font-size: 0.875em; text-align: left;}
+#ministry-text .hbody62 {margin-left: 62px;}
+#ministry-text .left20 {margin-left: 20px;}
+#ministry-text .left30 {margin-left: 30px;}
+#ministry-text .left40 {margin-left: 40px;}
+#ministry-text .left60 {margin-left: 60px;}
+#ministry-text .indent10 {margin-left: 10px;}
+#ministry-text ol, #ministry-text ul { font-weight: normal; text-align: left; margin-bottom: 6px; margin-top:6px;}
+#ministry-text .upper-roman { list-style-type: upper-roman; font-weight: normal; padding-left: 25px; padding-right: 25px; }
+#ministry-text .lower-roman { list-style-type: lower-roman; font-weight: normal; }
+#ministry-text .upper-alpha { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha>li::before {
+    margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+   #ministry-text .upper-alpha>li:nth-of-type(01)::before {content: 'А.';}
+   #ministry-text .upper-alpha>li:nth-of-type(02)::before {content: 'Б.';}
+   #ministry-text .upper-alpha>li:nth-of-type(03)::before {content: 'В.';}
+   #ministry-text .upper-alpha>li:nth-of-type(04)::before {content: 'Г.';}
+   #ministry-text .upper-alpha>li:nth-of-type(05)::before {content: 'Д.';}
+   #ministry-text .upper-alpha>li:nth-of-type(06)::before {content: 'Е.';}
+   #ministry-text .upper-alpha>li:nth-of-type(07)::before {content: 'Ж.';}
+   #ministry-text .upper-alpha>li:nth-of-type(08)::before {content: 'З.';}
+   #ministry-text .upper-alpha>li:nth-of-type(09)::before {content: 'И.';}
+   #ministry-text .upper-alpha>li:nth-of-type(10)::before {content: 'К.';}
+   #ministry-text .upper-alpha>li:nth-of-type(11)::before {content: 'Л.';}
+   #ministry-text .upper-alpha>li:nth-of-type(12)::before {content: 'М.';}
+   #ministry-text .upper-alpha>li:nth-of-type(13)::before {content: 'Н.';}
+   #ministry-text .upper-alpha>li:nth-of-type(14)::before {content: 'О.';}
+   #ministry-text .upper-alpha>li:nth-of-type(15)::before {content: 'П.';}
+   #ministry-text .upper-alpha>li:nth-of-type(16)::before {content: 'Р.';}
+   #ministry-text .upper-alpha>li:nth-of-type(17)::before {content: 'С.';}
+   #ministry-text .upper-alpha>li:nth-of-type(18)::before {content: 'Т.';}
+   #ministry-text .upper-alpha>li:nth-of-type(19)::before {content: 'У.';}
+   #ministry-text .upper-alpha>li:nth-of-type(20)::before {content: 'Ф.';}
+   #ministry-text .upper-alpha>li:nth-of-type(21)::before {content: 'Х.';}
+   #ministry-text .upper-alpha>li:nth-of-type(22)::before {content: 'Ц.';}
+   #ministry-text .upper-alpha>li:nth-of-type(23)::before {content: 'Ч.';}
+   #ministry-text .upper-alpha>li:nth-of-type(24)::before {content: 'Ш.';}
+   #ministry-text .upper-alpha>li:nth-of-type(25)::before {content: 'Щ.';}
+   #ministry-text .upper-alpha>li:nth-of-type(26)::before {content: 'Ы.';}
+   #ministry-text .upper-alpha>li:nth-of-type(27)::before {content: 'Э.';}
+   #ministry-text .upper-alpha>li:nth-of-type(28)::before {content: 'Ю.';}
+   #ministry-text .upper-alpha>li:nth-of-type(29)::before {content: 'Я.';}
+
+/* -----------------------------------------
+   upper-alpha-2 начало списка с буквы Б
+----------------------------------------- */
+
+#ministry-text .upper-alpha-2 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-2>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+   #ministry-text .upper-alpha-2>li:nth-of-type(1)::before {content: 'Б.';}
+   #ministry-text .upper-alpha-2>li:nth-of-type(2)::before {content: 'В.';}
+   #ministry-text .upper-alpha-2>li:nth-of-type(3)::before {content: 'Г.';}
+   #ministry-text .upper-alpha-2>li:nth-of-type(4)::before {content: 'Д.';}
+
+/* -----------------------------------------
+   upper-alpha-3 начало списка с буквы В
+----------------------------------------- */
+
+#ministry-text .upper-alpha-3 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-3>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+   #ministry-text .upper-alpha-3>li:nth-of-type(1)::before {content: 'В.';}
+   #ministry-text .upper-alpha-3>li:nth-of-type(2)::before {content: 'Г.';}
+   #ministry-text .upper-alpha-3>li:nth-of-type(3)::before {content: 'Д.';}
+   #ministry-text .upper-alpha-3>li:nth-of-type(4)::before {content: 'Е.';}
+
+/* -----------------------------------------
+   upper-alpha-4 начало списка с буквы Г
+----------------------------------------- */
+
+#ministry-text .upper-alpha-4 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-4>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+
+   #ministry-text .upper-alpha-4>li:nth-of-type(1)::before {content: 'Г. ';}
+   #ministry-text .upper-alpha-4>li:nth-of-type(2)::before {content: 'Д. ';}
+   #ministry-text .upper-alpha-4>li:nth-of-type(3)::before {content: 'Е. ';}
+   #ministry-text .upper-alpha-4>li:nth-of-type(4)::before {content: 'Ж. ';}
+
+/* -----------------------------------------
+   upper-alpha-5 начало списка с буквы Д
+----------------------------------------- */
+#ministry-text .upper-alpha-5 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-5>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+
+   #ministry-text .upper-alpha-5>li:nth-of-type(1)::before {content: 'Д. ';}
+   #ministry-text .upper-alpha-5>li:nth-of-type(2)::before {content: 'Е. ';}
+   #ministry-text .upper-alpha-5>li:nth-of-type(3)::before {content: 'Ж. ';}
+   #ministry-text .upper-alpha-5>li:nth-of-type(4)::before {content: 'З. ';}
+/* -----------------------------------------
+   upper-alpha-6 начало списка с буквы Е
+----------------------------------------- */
+#ministry-text .upper-alpha-6 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-6>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+
+   #ministry-text .upper-alpha-6>li:nth-of-type(1)::before {content: 'Е. ';}
+   #ministry-text .upper-alpha-6>li:nth-of-type(2)::before {content: 'Ж. ';}
+   #ministry-text .upper-alpha-6>li:nth-of-type(3)::before {content: 'З. ';}
+   #ministry-text .upper-alpha-6>li:nth-of-type(4)::before {content: 'И. ';}
+/* -----------------------------------------
+   upper-alpha-7 начало списка с буквы Ж
+----------------------------------------- */
+
+#ministry-text .upper-alpha-7 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-7>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+
+   #ministry-text .upper-alpha-7>li:nth-of-type(1)::before {content: 'Ж. ';}
+   #ministry-text .upper-alpha-7>li:nth-of-type(2)::before {content: 'З. ';}
+   #ministry-text .upper-alpha-7>li:nth-of-type(3)::before {content: 'И. ';}
+   #ministry-text .upper-alpha-7>li:nth-of-type(4)::before {content: 'К. ';}
+
+/* -----------------------------------------
+   upper-alpha-8 начало списка с буквы З
+----------------------------------------- */
+#ministry-text .upper-alpha-8 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-8>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+
+   #ministry-text .upper-alpha-8>li:nth-of-type(2)::before {content: 'З. ';}
+   #ministry-text .upper-alpha-8>li:nth-of-type(3)::before {content: 'И. ';}
+   #ministry-text .upper-alpha-8>li:nth-of-type(4)::before {content: 'К. ';}
+   #ministry-text .upper-alpha-8>li:nth-of-type(1)::before {content: 'Л. ';}
+
+
+/* -----------------------------------------
+   upper-alpha-9 начало списка с буквы И
+----------------------------------------- */
+#ministry-text .upper-alpha-9 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-9>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+   #ministry-text .upper-alpha-9>li:nth-of-type(1)::before {content: 'И.';}
+   #ministry-text .upper-alpha-9>li:nth-of-type(2)::before {content: 'К.';}
+   #ministry-text .upper-alpha-9>li:nth-of-type(3)::before {content: 'Л.';}
+   #ministry-text .upper-alpha-9>li:nth-of-type(4)::before {content: 'М.';}
+   #ministry-text .upper-alpha-9>li:nth-of-type(5)::before {content: 'Н.';}
+
+/* -----------------------------------------
+   upper-alpha-10 начало списка с буквы К
+----------------------------------------- */
+#ministry-text .upper-alpha-10 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-10>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+
+   #ministry-text .upper-alpha-10>li:nth-of-type(1)::before {content: 'К.';}
+   #ministry-text .upper-alpha-10>li:nth-of-type(2)::before {content: 'Л.';}
+   #ministry-text .upper-alpha-10>li:nth-of-type(3)::before {content: 'М.';}
+   #ministry-text .upper-alpha-10>li:nth-of-type(4)::before {content: 'Н.';}
+
+/* -----------------------------------------
+   upper-alpha-11 начало списка с буквы Л
+----------------------------------------- */
+#ministry-text .upper-alpha-11 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-11>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+
+   #ministry-text .upper-alpha-11>li:nth-of-type(1)::before {content: 'Л.';}
+   #ministry-text .upper-alpha-11>li:nth-of-type(2)::before {content: 'М.';}
+   #ministry-text .upper-alpha-11>li:nth-of-type(3)::before {content: 'Н.';}
+   #ministry-text .upper-alpha-11>li:nth-of-type(4)::before {content: 'О.';}
+
+/* -----------------------------------------
+   upper-alpha-12 начало списка с буквы М
+----------------------------------------- */
+#ministry-text .upper-alpha-12 { list-style-type: none; font-weight: normal;  margin-left: 45px;}
+   #ministry-text .upper-alpha-12>li::before {
+ margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;
+   }
+
+   #ministry-text .upper-alpha-12>li:nth-of-type(1)::before {content: 'М.';}
+   #ministry-text .upper-alpha-12>li:nth-of-type(2)::before {content: 'Н.';}
+   #ministry-text .upper-alpha-12>li:nth-of-type(3)::before {content: 'О.';}
+   #ministry-text .upper-alpha-12>li:nth-of-type(4)::before {content: 'П.';}
+
+/* -----------------------------------------
+   upper-alpha-end
+----------------------------------------- */
+
+#ministry-text .decimal {list-style-type: decimal; font-weight: normal;  margin-left: 27px;}
+#ministry-text .decimal li {padding-left: 0px;}
+#ministry-text .decimal-italic { list-style-type: decimal; font-style: italic; }
+#ministry-text .decimal-italic li span { font-style: normal; }
+/* -----------------------------------------
+   lower-alpha 
+----------------------------------------- */
+#ministry-text .lower-alpha { list-style-type: none; font-weight: normal;  margin-left: 35px; }
+   #ministry-text .lower-alpha>li::before {
+  margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;   
+   }
+   #ministry-text .lower-alpha>li:nth-of-type(1)::before { content: 'а. '; }
+   #ministry-text .lower-alpha>li:nth-of-type(2)::before { content: 'б. '; }
+   #ministry-text .lower-alpha>li:nth-of-type(3)::before { content: 'в. '; }
+   #ministry-text .lower-alpha>li:nth-of-type(4)::before { content: 'г. '; }
+   #ministry-text .lower-alpha>li:nth-of-type(5)::before { content: 'д. '; }
+   #ministry-text .lower-alpha>li:nth-of-type(6)::before { content: 'е. '; }
+   #ministry-text .lower-alpha>li:nth-of-type(7)::before { content: 'ж. '; }
+   #ministry-text .lower-alpha>li:nth-of-type(8)::before { content: 'з. '; }
+   #ministry-text .lower-alpha>li:nth-of-type(9)::before { content: 'и. '; }
+   #ministry-text .lower-alpha>li:nth-of-type(10)::before {content: 'к. '; }
+   #ministry-text .lower-alpha>li:nth-of-type(11)::before {content: 'л. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(12)::before {content: 'м. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(13)::before {content: 'н. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(14)::before {content: 'о. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(15)::before {content: 'п. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(16)::before {content: 'р. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(17)::before {content: 'с. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(18)::before {content: 'т. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(19)::before {content: 'у. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(20)::before {content: 'ф. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(21)::before {content: 'х. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(22)::before {content: 'ц. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(23)::before {content: 'ч. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(24)::before {content: 'ш. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(25)::before {content: 'щ. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(26)::before {content: 'ы. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(27)::before {content: 'э. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(28)::before {content: 'ю. ';}
+   #ministry-text .lower-alpha>li:nth-of-type(29)::before {content: 'я. ';}
+
+/* -----------------------------------------
+   lower-alpha-3 начало списка с буквы в
+----------------------------------------- */
+#ministry-text .lower-alpha-3 { list-style-type: none; font-weight: normal;  margin-left: 35px; }
+   #ministry-text .lower-alpha-3>li::before {
+  margin-right: 7px; /* Расстояние от буквы до текста */
+    width: 1em;  /* Ширина */
+    text-align: right; /* Выравнивание по правому краю */
+    display: inline-block; /* Строчно-блочный элемент */
+    text-indent: -55px;
+    padding-left: 0px;
+    margin-left: -25px;   
+   }
+
+   #ministry-text .lower-alpha-3>li:nth-of-type(1)::before {content: 'в. '; }
+   #ministry-text .lower-alpha-3>li:nth-of-type(2)::before {content: 'г. '; }
+   #ministry-text .lower-alpha-3>li:nth-of-type(3)::before {content: 'д. '; }
+   #ministry-text .lower-alpha-3>li:nth-of-type(4)::before {content: 'е. '; }
+   #ministry-text .lower-alpha-3>li:nth-of-type(5)::before {content: 'ж. '; }
+   #ministry-text .lower-alpha-3>li:nth-of-type(6)::before {content: 'з. '; }
+   #ministry-text .lower-alpha-3>li:nth-of-type(7)::before {content: 'и. '; }
+   #ministry-text .lower-alpha-3>li:nth-of-type(8)::before {content: 'к. '; }
+   #ministry-text .lower-alpha-3>li:nth-of-type(9)::before {content: 'л. ';}
+   #ministry-text .lower-alpha-3>li:nth-of-type(10)::before {content: 'м. ';}
+   #ministry-text .lower-alpha-3>li:nth-of-type(11)::before {content: 'н. ';}
+   #ministry-text .lower-alpha-3>li:nth-of-type(12)::before {content: 'о. ';}
+   #ministry-text .lower-alpha-3>li:nth-of-type(13)::before {content: 'п. ';}
+
+/* -----------------------------------------
+   number-brackets [ 1), 2), 3), 4), ] 
+----------------------------------------- */
+  #ministry-text .number-brackets {list-style-type: none;  counter-reset:  item;  margin-left: 0px;  }  
+  #ministry-text .number-brackets>li:before {content: counter(item) ') '; counter-increment: item; }   
+
+#ministry-text .none { list-style-type: none; list-style-position: outside; font-weight: normal; }
+#ministry-text .disc { list-style-type: disc; list-style-position: outside; font-weight: normal; }
+#ministry-text .upper-romanbd { list-style-type: upper-roman; font-weight: bold;}
+#ministry-text .decimalbd {list-style-type: decimal; font-weight: normal; color: #000; }
+#ministry-text .decimalbd span, #ministry-text .decimalbd li span { font-weight: normal; color: #000; }
+#ministry-text .otl-number { font-weight: bold; color: #2959c4; }
+#ministry-text .newSection {text-align: center; font-size: 1.125em; font-weight: bold; padding: 1.1em 0;}
+#ministry-text .smcaps { font-variant: small-caps; }

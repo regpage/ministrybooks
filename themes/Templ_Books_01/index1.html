@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title><?php print $site_title; ?></title>
+<?php setmeta($gl_page, $site_keywords, $site_descr) ?>
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="css/galery3.css" type="text/css" />
+<link rel="stylesheet" href="themes/JavaBean/css/template_css.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="themes/JavaBean/css/format.css" type="text/css" media="screen" />
+<script type="text/javascript" language="JavaScript1.2" src="stm31.js"></script>
+</head>
+<body bgcolor="#FFFFFF">
+		<table class="tentt" width="899" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="eeeeee">
+	<tr>  
+	  <td width="5" bgcolor="#FFFFFF"><img src="themes/JavaBean/images/pixel.png" width="1" height="1" alt="spacer" /></td>
+  	  <td valign="top" class="greybg">
+					<table width="100%" cellpadding="0" cellspacing="0" border="0" align="center">
+						<tr>
+							<td height="3" valign="bottom" bgcolor="#FFFFFF"><img src="themes/JavaBean/images/pixel.png" width="1" height="1" alt="spacer" /></td>
+							<td width="180" colspan="4" height="3" valign="bottom" bgcolor="#FFFFFF"><img src="themes/JavaBean/images/search_01.png" width="180" height="3" alt="search"/></div></td>
+						</tr>
+						<tr height="40">
+							<td rowspan="3" valign="middle"><div><img src="themes/JavaBean/images/ONLINE.jpg" alt="search"/></div>								
+									<!--    <font class="title">ЧТЕНИЕ КНИГ СЛУЖЕНИЯ ON-LINE</font> -->
+								<br />								
+									<font class="subtitle"></font>
+							</td>
+							<td height="17" valign="top"><img src="themes/JavaBean/images/search_02.png" width="180" height="17" alt="Search" />
+									<form method="post" action="index.php?mod=search">
+										<input class="inputbox" id="s" type="text" name="template" value=""/>
+										<input class="button" id="x" type="submit" name='search' value="Поиск" />
+									</form>								
+							</td>
+							<td colspan="3" height="45"></td>
+						</tr>
+					</table>					
+					
+        <table width="887" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+          <tr>
+             <td width="180" valign="top"></td>
+             <td align="right" valign="top">
+            [CODEFR=header_picture]
+              </td>
+           </tr>
+        </table>
+        
+        <table width="885" border="0" cellspacing="0" cellpadding="0">
+           <tr>
+             <td width="180" valign="top" bgcolor="#eeeeee"><div id="mainarea">
+                 <div id=""  style="padding-left:10px">
+                   <div class="contentheading">Меню</div>                                 
+                                   [CODEFR=menu]
+           	   </div>
+               
+                                           <!--    <div id="sidebarnav">   -->
+                                           <!--    <div class="contentheading">Меню</div>  -->
+                                           <!--    [CODEFR=Left_menu]   -->
+                                           <!--    </div>   -->
+                                           <!--   <div id="subsidebarnav">    -->
+                                           <!--              [CODEFR=SubMenuAuthor]                 -->
+                                           <!--  </div>  -->
+              <br /> 
+              <br /> 
+              <br />
+                                          <!-- <div id="sidebarnav"> -->                   
+                                          <!-- <div class="contentheading">Меню пользователя</div> -->
+                                          <!-- [CODEFR=personal_menu]<br /><br /> -->
+            	                          <!-- </div> -->
+           
+<div id="menu_chupters">
+       <?php include("{$gl_path_to_engine}public/chpt_nvg.inc"); ?>
+
+  </div>
+  <div id="menu_chupters">
+       <?php include("{$gl_path_to_engine}public/ch_novig.inc"); ?>
+  </div>
+       </td>
+           <td width="5" bgcolor="#FFFFFF"></td>
+		  <td valign="top">
+         <table width="98%" border="0" align="center" cellpadding="4" cellspacing="0">
+          <tr>
+            <td><?php include("{$gl_path_to_engine}public/content.inc"); ?>
+            </td>
+          </tr>
+        </table></td>
+		  </tr>
+  </table>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="51%" height="40" bgcolor="#999999"></td>
+      <td width="49%" align="right" valign="middle" bgcolor="#999999" style="padding-right:5px">Материалы сайта предназначены только для частного использования. Все права на материалы сайта защищены и принадлежат издательству <b>"Коллектор библейской книги"</b>. Ваш <b>IP</b> адрес: <b>[CODEFR=ip]</b>
+      </td>
+    </tr>
+  </table>
+
+  </td>
+				<td width="6" bgcolor="#FFFFFF"><img src="themes/JavaBean/images/pixel.png" width="1" height="1" alt="spacer"/></td>
+				<td></td>
+			</tr>
+  <tr>
+    <td  colspan="4" height="6"  bgcolor="#FFFFFF"></td>
+  </tr>
+</table>
+	</body>
+</html>

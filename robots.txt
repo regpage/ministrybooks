@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /engine/
+Disallow: /templates/
+
+Sitemap: http://www.ministrybooks.ru/sitemap.xml

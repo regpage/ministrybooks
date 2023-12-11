@@ -1,0 +1,58 @@
+div.graphics {display:none}
+
+td.print {width:600px}
+
+td.noprint {width:0px}
+
+table {width:600px}
+
+p {font-family:arial,helvetica; font-size:12px; color:#000000; text-align:justify; line-height:115%; letter-spacing:0px}
+
+p.right {font-family:arial,helvetica; font-size:12px; color:#000000; text-align:right; line-height:115%; letter-spacing:0px}
+
+blockquote {font-family:arial,helvetica; font-size:12px; color:#000000; text-align:justify; line-height:115%; letter-spacing:0px}
+
+p.copyright {font-family:arial,helvetica; font-size:10px; color:#8C8C8C; text-align:center; margin-top:15px}
+
+div.indent {font-family:arial,helvetica; font-size:12px; text-align:justify; margin-top:0px; margin-left:65px}
+
+a:visited {font-family:arial,helvetica; font-size:12px; color:#0862A1; font-weight:bold; text-decoration:none}
+a:link {font-family:arial,helvetica; font-size:12px; color:#0862A1; font-weight:bold; text-decoration:none}
+a:hover {font-family:arial,helvetica; font-size:12px; color:#0862A1; font-weight:bold; text-decoration:underline}
+
+span.normal {font-family:arial,helvetica; font-size:12px; color:#000000; font-weight:bold}
+span.red {font-family:arial,helvetica; font-size:12px; color:red; font-weight:bold}
+
+a:visited.small {font-family:arial,helvetica; font-size:10px; color:#0862A1; font-weight:bold; text-decoration:none}
+a:link.small {font-family:arial,helvetica; font-size:10px; color:#0862A1; font-weight:bold; text-decoration:none}
+a:hover.small {font-family:arial,helvetica; font-size:10px; color:#0862A1; font-weight:bold; text-decoration:underline}
+
+a:visited.copy {font-family:arial,helvetica; font-size:10px; color:#0862A1; font-weight:bold; text-decoration:none}
+a:link.copy {font-family:arial,helvetica; font-size:10px; color:#0862A1; font-weight:bold; text-decoration:none}
+a:hover.copy {font-family:arial,helvetica; font-size:10px; color:#0862A1; font-weight:bold; text-decoration:underline}
+
+span.small {font-family:arial,helvetica; font-size:10px; color:#0862A1; font-weight:bold}
+
+ul {list-style-type:disc; font-family:arial,helvetica; font-size:12px; font-weight:normal; color:#000000; line-height:120%}
+
+ul.none {list-style-type:none; font-family:arial,helvetica; font-size:12px; font-weight:bold; color:#891C1F; line-height:120%}
+
+ul.disc {list-style-image:url(../images/tan_bullet.gif); font-family:arial,helvetica; font-size:12px; font-weight:bold; line-height:130%}
+
+ol.upper-alpha {list-style-type:upper-alpha; font-family:arial,helvetica; font-size:12px; font-weight:bold; color:#303030; text-align:justify}
+ol.upper-roman {list-style-type:upper-roman; font-family:arial,helvetica; font-size:12px; font-weight:bold; color:#303030; text-align:justify}
+ol.decimal {list-style-type:decimal; font-family:arial,helvetica; font-size:12px; font-weight:normal; color:#303030; text-align:justify}
+ol.lower-alpha {list-style-type:lower-alpha; font-family:arial,helvetica; font-size:12px; font-weight:bold; color:#303030; text-align:justify}
+ol.bullet {list-style-image:url(bullet.gif); list-style-position:outside; font-size:12px; font-weight:normal; font-family:arial,verdana; text-align:left; line-height:120%}
+
+td.box {border:0px solid #B07C45; padding:10px 10px 10px 10px}
+
+td.list {background:#F2E9E0; font-family:arial,helvetica; font-size:12px; text-align:center; border:1px solid #B27E48}
+
+td.heading {font-family:arial,helvetica; font-size:12px; font-weight:bold; background:#ACACAC; text-align:center; color:black}
+
+td.dms {font-family:arial,helvetica; font-size:12px; text-align:center; color:black}
+
+td.right {font-family:arial,helvetica; font-size:12px; text-align:right; color:black}
+
+td.dms-bold {font-family:arial,helvetica; font-size:12px; text-align:center; color:black; font-weight:bold}

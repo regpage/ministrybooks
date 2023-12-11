@@ -1,0 +1,29 @@
+<?php     
+ function get_real_ip()
+      {
+          if (!empty($_SERVER['HTTP_CLIENT_IP'])) 
+          { 
+              $ip = $_SERVER['HTTP_CLIENT_IP'];
+          }
+          elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))
+          {
+              $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+          }
+          else
+          {
+              $ip = $_SERVER['REMOTE_ADDR'];
+          }
+            return $ip;
+      }
+$formatter = new IntlDateFormatter('ru_RU', IntlDateFormatter::FULL, IntlDateFormatter::FULL);
+$formatter->setPattern('d MMMM YYYY');
+$date_today = $formatter->format(new DateTime()); // 22 января
+//echo $formatter->format(new DateTime('05-03-2013')); // 5 марта
+
+$today[1] = date("H:i:s"); //присвоит 1 элементу массива 17:16:17
+//echo("Текущее время: $today[1] и дата: $day_today .");
+//$real_ip = get_real_ip();
+//print $real_ip;
+echo "Ваш IP адрес: ". get_real_ip() . " [{$today[1]}, {$date_today}] ";
+//echo "<b>". $_SERVER['REMOTE_ADDR'] ."<b>";
+?>

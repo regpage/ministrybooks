@@ -1,0 +1,15 @@
+<?
+include "flooders.inc.php"; 
+$f=new Flooders("/temp/ban.txt");
+$f->AddAlowAgent("StackRambler");
+$f->AddAlowAgent("Googlebot");
+$f->AddAlowAgent("Yandex");
+$f->AddAlowAgent("Aport");
+$f->AddAlowAgent("msnbot");
+$f->AddAlowAgent("FAST-WebCrawler");
+$f->AddAlowAgent("Slurp/cat");
+$f->AddAlowAgent("ASPseek/1.2.10");
+$f->AddAlowAgent("CNSearch");
+$f->SetLogFileName("/bbd_tmpr/ban.log");
+$f->Ban();
+?>

@@ -1,0 +1,135 @@
+* {
+margin: 0;
+padding: 0;
+border: 0;
+} 
+
+html {
+  	width			:100%; 
+    height			:100%;
+  	overflow		:hidden;
+
+}
+body {
+	vertical-align	:top;
+top:0;
+  	width			:100%; height:100%;
+  	margin			:0px; 
+    padding         :0px;
+  	overflow		:auto;
+}
+
+a img {
+  border:none;
+}
+
+
+a {
+  text-decoration:none;
+}
+
+a:hover {
+  text-decoration:underline;
+}
+
+.NavigTbl {
+  margin-bottom:10px;
+
+}
+
+.NavigTD {
+  font-weight:normal;
+  font-size:14px;
+  font-family:'Times New Roman';
+  padding:0px 5px 0px 5px;
+  text-align:center;
+}
+
+.NavigTDCurPage {
+  font-weight:normal;
+  font-size:14px;
+  font-family:'Times New Roman';
+  padding:0px 5px 0px 5px;
+  text-align:center;
+}
+
+
+/* Topmenu */
+
+.Topmenu {
+  background-color:white;
+  margin:20px 10px 10px 10px;
+  padding:10px 10px 10px 10px;
+  font-weight:normal;
+  font-size:14px;
+  font-family:Verdana;
+  color:#006FC4;
+}
+
+.Content {
+  background-color:white;
+  margin:0px 10px 10px 10px;
+  padding:10px 10px 10px 10px;
+  font-weight:normal;
+  font-family:Verdana;
+  color:#006FC4;
+
+}
+
+.Footer {
+  background-color:white;
+  margin:20px 10px 10px 10px;
+  padding:10px 10px 10px 10px;
+  font-weight:normal;
+  font-size:14px;
+  font-family:Verdana;
+  color:#006FC4;
+  text-align:center;
+}
+
+/* Vertical menu : not selected items */
+.VertMenuItem1, .VertMenuItem2, .VertMenuItem3 {
+  background-color:white;
+  margin:20px 10px 10px 10px;
+  padding:10px 10px 10px 10px;
+  font-weight:normal;
+
+  font-family:Verdana;
+  color:#006FC4;
+}
+
+
+.VertMenuItem1 {  font-size:14px;
+}
+
+.VertMenuItem2 {
+  font-size:12px;
+}
+
+.VertMenuItem3 {
+  font-size:10px;
+}
+
+/* Vertical menu : selected items */
+.VertMenuItemSel1, .VertMenuItemSel2, .VertMenuItemSel3 {
+  background-color:white;
+  margin:20px 10px 10px 10px;
+  padding:10px 10px 10px 10px;
+  font-weight:normal;
+
+  font-family:Verdana;
+  color:#006FC4;
+}
+
+
+.VertMenuItemSel1 {
+  font-size:14px;
+}
+
+.VertMenuItemSel2 {
+  font-size:12px;
+}
+
+.VertMenuItemSel3 {
+  font-size:10px;
+}

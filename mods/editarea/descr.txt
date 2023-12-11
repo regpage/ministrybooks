@@ -1,0 +1,66 @@
+Antf, предлагаю включить в cms (возможно как модуль) редактор кода.
+
+пример как будет выглядеть - http://ballista.ru/test/ex.gif 
+скачать - http://ballista.ru/test/editarea.rar (268кб)
+
+поддержка браузеров:
+Firefox 1.5 & 2
+IE 6 & 7
+Opera 9
+
+Safari?
+
+не поддерживаются:
+Netscape 8 with rendering mode IE
+Mozilla 1.7 (buggy)
+
+------------------------------------
+как устанавливал я
+------------------------------------
+изменения в файлах:
+
+[B]engine/admin/main.inc[/B]
+
+после строки 47 (<link rel=\"stylesheet\" href=\"<? echo $gl_admin_url ?>css/admin/format.css\" type=\"text/css\" />)
+добавить: 
+<?php
+if($gl_adm == \'tpl_text\' || $gl_adm == \'stpl_edit\' || $gl_adm == \'css_text\' || $gl_adm == \'codesfragms_text\'){	
+
+	echo \'<script language=\"javascript\" type=\"text/javascript\" src=\"engine/\'.$gl_admin_url.\'editarea/edit_area/edit_area_compressor.php\"></script>\';
+	echo \'<script language=\"javascript\" type=\"text/javascript\">\';
+	
+	echo \'editAreaLoader.init({\';
+	switch($gl_adm)
+	{
+	 case \'tpl_text\'  : echo \'syntax: \"html\"\'; echo \',id : \"textarea-html\"\';	  break;
+	 case \'stpl_edit\' : echo \'syntax: \"html\"\'; echo \',id : \"textarea-html\"\';	  break;
+	 case \'codesfragms_text\' : echo \'syntax: \"html\"\'; echo \',id : \"textarea-html\"\';	  break;
+     case \'css_text\' : echo \'syntax: \"css\"\'; echo \',id : \"textarea-css\"\';	  break;	
+	}
+
+	echo \',start_highlight: true\';
+	echo \',language: \"ru\"\';		
+	echo \'});\';
+	
+	echo \'</script>\';
+}
+?>
+
+далее для textarea надо добавить id:
+
+[B]engine\\tpl\\tpl_text.inc[/B]
+строка 91 :  id=\'textarea-html\'
+
+[B]engine\\stpl\\stpl_edit.inc[/B]
+строка 112 :  id=\'textarea-html\'
+
+[B]engine\\codesfragms\\text.inc[/B]
+строка 59  :  id=\'textarea-html\'
+
+[B]engine\\css\\css_text.inc[/B]
+строка 55  :  id=\'textarea-css\'
+
+
+------------------------------------
+подробное описание есть в архиве!
+------------------------------------

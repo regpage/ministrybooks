@@ -1,0 +1,36 @@
+* {margin: 0px; padding: 0; }
+body {height: 100%; border-style: solid none none; border-width: 30px medium medium; border-color: #3c3c3c }
+p  {color: #932e2e; font-size: 12px; font-family: Verdana, Arial, Helvetica, sans-serif; text-align: center }
+a  {color: #006; font-size: 12px; font-family: Verdana, Arial, Helvetica, sans-serif; text-align: center }
+a:hover  { color: #700000 }
+#backto a {position: absolute; font-family: Verdana, Arial, Helvetica, sans-serif; top: 7px; left: 15px;	text-decoration: none;}
+#backto a {color: #ccc;}
+#backto a:hover {color: #fff;}
+#login { width: 100%; margin: 3em auto; }
+.title_form  { color: #f7e7de; font-size: 25px; font-family: sans-serif; font-weight: normal; vertical-align: middle }
+.text  { color: #c14949; font-size: 15px; font-family: sans-serif; font-weight: normal;}
+.text_submit { color: #c14949; font-size: 15px; font-family: sans-serif; font-weight: normal; padding-bottom: 16px }
+.reg{background:#fff6e4 url(../auth_images/reg_tbr.gif) repeat-x top; width: 100%;}
+.reg .mh{width:0;height:200px;}
+.reg .d1{background:url(../auth_images/reg_bbr.gif) repeat-x bottom;}
+.reg .d2{background:url(../auth_images/reg_px.gif) repeat-y left;}
+.reg .d3{background:url(../auth_images/reg_px.gif) repeat-y right;}
+table.tentt {padding-left: 200px }
+.reg .d4{background:url(../auth_images/reg_ctr.gif) no-repeat right top;}
+.reg .d5{background:url(../auth_images/reg_ctl.gif) no-repeat left top;}
+.reg .d6{background:url(../auth_images/reg_cbr.gif) no-repeat right bottom;}
+.reg .d7{background:url(../auth_images/reg_cbl.gif) no-repeat left bottom;}
+.reg .pd{padding:4px 32px 0 16px;font-size:85%;}
+
+.reg .tlt{height:55px;font-size:150%;color:#FFFFFF;font-family: Verdana, Arial, Helvetica, sans-serif;}
+.reg .submit{padding-top:10px;}
+.reg .submit div{background:url(../auth_images/btn_reg.gif) no-repeat top left; width:136px; margin:0 auto; padding:4px; padding-top:3px;}
+.reg .submit input{width:136px; height:20px; font-size:100%;}
+.inputbox { color: #eca3a3; font-size: 100%; font-family: Verdana, Arial, Helvetica, sans-serif; background-color: #ffffff; width: 160px; height: 17px; border: inset 1px }
+
+.mege { background-color: #ffd3c8; text-align: center; margin: 0 3px 10px; padding: 3px; width: 100%; border: solid 1px #aa0540 }
+
+.user_icon {background:url(../auth_images/title_user.gif) no-repeat left; width:270px; margin-left:10px; padding:6px; padding-left:60px}
+.goto_site_icon {background:url(../auth_images/public.gif) no-repeat left; width:200px; margin-left:10px; padding:6px; padding-left:30px}
+.goto_admin_icon {background:url(../auth_images/panel_settings.gif) no-repeat left; width:270px; margin-left:10px; padding:6px; padding-left:30px}
+.goto_arxiv_icon {background:url(../auth_images/imgdir.gif) no-repeat left; width:200px; margin-left:10px; padding:6px; padding-left:30px}

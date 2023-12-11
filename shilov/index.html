@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Чтение</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="msapplication-config" content="favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+        body {
+            margin: 0;            /* Reset default margin */
+        }
+        iframe {
+            display: block;       /* iframes are inline by default */
+            background: white;
+            border: none;         /* Reset default border */
+            height: 100vh;        /* Viewport-relative units */
+            width: 100vw;
+        }
+    </style>
+</head>
+<body>
+<iframe id="iframe"></iframe>
+<script>
+    const iframe = document.getElementById("iframe");
+
+    if('serviceWorker' in navigator)
+      navigator.serviceWorker.register('sw.js')
+        .then(reg => console.log('service worker registered'))
+        .catch(err => console.log('service worker not registered: ', err));
+
+    function eventFire(el, etype){
+      if (el.fireEvent)
+        el.fireEvent('on' + etype);
+      else {
+        var evObj = document.createEvent('Events');
+        evObj.initEvent(etype, true, false);
+        el.dispatchEvent(evObj);
+      }
+    }
+  
+    iframe.addEventListener('load', () => {
+        const httpRequest = new XMLHttpRequest();
+        httpRequest.open("GET", "ajax.php?set="+encodeURIComponent(iframe.contentWindow.location.href), true);
+        httpRequest.send();
+        eventFire (iframe.contentWindow.document.getElementById('plustext'), 'click');
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const httpRequest = new XMLHttpRequest();
+        httpRequest.onreadystatechange = function () {
+            if (httpRequest.readyState === XMLHttpRequest.DONE && httpRequest.status === 200)
+                iframe.src = httpRequest.responseText;
+        };
+        httpRequest.open("GET", "ajax.php", true);
+        httpRequest.send();
+    });
+</script>
+</body>
+</html>

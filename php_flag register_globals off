@@ -1,0 +1,22 @@
+php_flag register_globals off
+php_flag display_errors off
+AddType application/x-httpd-php .cfm .php3
+DirectoryIndex index.cfm
+AddDefaultCharset utf-8
+<Files "*.inc">
+  deny from all
+</Files>
+<Files bbd_auth.cfm>
+deny from all
+allow from 83.220.40.218
+</Files>
+deny from 37.122.33.169
+deny from 146.120.112.34
+deny from 91.121.157.223
+deny from 178.159.254.126
+ErrorDocument 404 https://ministrybooks.ru/?mod=errors
+
+  RewriteEngine On
+      RewriteRule ^([a-zA-Z0-9_-]+)$ ?mb=$1
+      RewriteRule ^([a-zA-Z0-9_-]+)/$ ?mb=$1
+

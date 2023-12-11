@@ -1,0 +1,105 @@
+<script _base_href="https://javascript.aho.ru/example/JsPrimeryCode-90.htm">
+/* Author: 12345с, isvetlov/at/hotmail_com */
+brkL="[";brkR="]";selted='';
+function insPic(s1,s2,s3){if(!d.all&&selted==''&&s3==3){s1=s2;s2=brkL+'/'+s2+brkR;s3='';}
+if(s3==3){s1+=s2;s2='';}
+s1=brkL+s1+(s2==brkR?'=':brkR); //'[b]' or '[b='
+if(s3==2){s1+=s2;s2='';}
+var isPic=s2==null;  //insert picture: cursor to end
+var s=insField.value;var insPosL,insPosR;
+var scrl=insField.scrollTop;
+if(insField.selectionEnd==null){var ch=0;
+    if(d.selection&&d.selection.createRange)
+      {var tR=d.selection.createRange();var ch='character';var tR1=d.body.createTextRange();}
+  if(!ch||tR.parentElement&&tR.parentElement()!=insField){insPosL=insPosR=s.length;}
+  else{    insPosL=tR.text.length;
+    if(insField.type=='textarea'){tR1.moveToElementText(insField);
+      tR.setEndPoint('StartToStart',tR1);insPosR=tR.text.length;
+    }else{tR.moveStart('textedit',-1);insPosR=tR.text.length;}
+    insPosL=insPosR-insPosL;  //-чрезвычайно хитрое поведение textRange в textarea
+}}else{  insPosL=insField.selectionStart;  insPosR=insField.selectionEnd;
+  if(insBeg&&self.opera&&!insPosL&&!insPosR){insPosL=insPosR=s.length;insBeg=0;}
+}var insText=s.substring(insPosL,insPosR);
+if((isInSel=selted==insText)&&s3==3){isInSel=insText.length;insText='';}
+if(d.all)insField.defaultValue=s;else defa=s;
+if(isPic&&!(s3==2&&insText!='')){s2=s1;s1='';} //for addressing&picture code
+insField.value=s.substring(0,insPosL)+s1+insText+s2+s.substring(insPosR,s.length);
+if(isInSel&&s3==3)insPosR-=isInSel;
+var insCursor=insPosR+s1.length+(isPic||insPosL!=insPosR?s2.length:0);
+/*for selectional cursor*/var insCursorL=insCursor;
+if(s3==1){insCursorL=insPosL+s1.length;insCursor=s1.length+insPosR;}//end "for"
+var a1=s.substr(0,s3!=3?insPosR:insPosR+isInSel).match(/\r\n/g);
+if(d.body.createTextRange){setTimeout("var t=insField.createTextRange();t.collapse();t.moveEnd('"
+  +ch+"',"+(insCursor-(a1?a1.length:0))+");t.moveStart('"+ch+"',"
+  +(insCursorL-((a1=s3!=3?s.substr(0,s3==1?insPosL:insPosR).match(/\r\n/g):a1)?a1.length:0))
+  +");t.select();",1); //-ещё более хитрые поправки последующего выделения текста в IE
+}else{  if(d.all)insField.focus();
+  if(insField.selectionEnd!=null){
+    insField.selectionStart=insCursorL;insField.selectionEnd=insCursor+(d.all?1:0);
+    setTimeout("insField.focus();if(d.all)insField.selectionEnd--",50);
+      //задержки нужны для нормальной визуализации курсора (обход багов)
+  if(d.all){var tR=d.selection.createRange();
+    if(insCursorL==insCursor)tR.collapse();tR.select();}
+  else if(scrl>0)insField.scrollTop=scrl;
+}}}
+function insTag(s,c){insPic(s,(c?c:'')+brkL+'/'+s+brkR+(c?', ':''),c?2:null);}   //'b','[/b]' | 'c[/b], '
+function insTagSel(s){insPic(s,brkL+'/'+s+brkR,1);}   //'b','[/b]',1
+function insTagArg(s){insPic(s,brkR);}  //'b',']'
+function insBack(){with(insField){var s=d.all?value:defa;value=d.all?defaultValue:defa;if(d.all)defaultValue=s;else defa=s;}}
+d=document;
+/*dlia zitati*/d.onmouseup=function(){if(self.opera)str=d.getSelection();}
+  //--for selection capture in old Opera (>7,<8) only
+function insCapt(s){insPic(s+brkR
+  +(selted=(d.getSelection?(self.str?str:(d.all?(d.getSelection()
+    ?d.getSelection():d.selection.createRange().text):getSelection()))
+    :(d.selection?d.selection.createRange().text:'')))
+  +brkL+'/',s,3);}  //'b]selection[/',b,3 /*konetz funkci dlia citati*/
+onload=function(){insField=d.getElementById('text');insBeg=1;}
+</script>
+
+<!--Vidimaya chast-->
+<style>
+.text{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	vertical-align:super;
+	width:6px;
+}
+img{
+	cursor:pointer;
+}
+</style>
+<br>
+<div>
+	 <img src="{url_for_images}img/left.gif" width="20" height="20"  onmousedown="insTag('LEFT')"   alt="LEFT">
+	 <img src="{url_for_images}img/center.gif" width="20" height="20"  onmousedown="insTag('CENTER')"  alt="CENTER">
+	 <img src="{url_for_images}img/right.gif" width="20" height="20"  onmousedown="insTag('RIGHT')"  alt="RIGHT">
+	 <img src="{url_for_images}img/just.gif" width="20" height="20"  onmousedown="insTag('JUST')"  alt="JUST">
+	 <span class="text"></span>
+	 <img src="{url_for_images}img/h1.gif" width="20" height="20"  onmousedown="insTag('H1')"  alt="&lt;H1&gt;">
+	 <img src="{url_for_images}img/h2.gif" width="20" height="20"  onmousedown="insTag('H2')"  alt="&lt;H2&gt;">
+	 <img src="{url_for_images}img/h3.gif" width="20" height="20"  onmousedown="insTag('H3')"  alt="&lt;H3&gt;">
+	 <span class="text"></span>
+	 <img src="{url_for_images}img/bold.gif" width="20" height="20"  onmousedown="insTagSel('B')"  alt="bold">
+	 <img src="{url_for_images}img/italic.gif" width="20" height="20"  onmousedown="insTagSel('I')"  alt="italic">
+	 <span class="text"></span>
+	 <img src="{url_for_images}img/sub.gif" width="20" height="20"  onmousedown="insTagSel('SUB')"  alt="subscript">
+	 <img src="{url_for_images}img/sup.gif" width="20" height="20"  onmousedown="insTagSel('SUP')"  alt="superscript">
+	 <span class="text"></span>
+	 <img src="{url_for_images}img/url.gif" width="20" height="20"  onmousedown="insTagArg('URL')"  alt="URL">
+  <img src="{url_for_images}img/cit.gif" width="20" height="20"  onmousedown="insTagSel('CIT')"  alt="citation">
+	 <span class="text"></span>
+	 <span style="vertical-align:top">
+	 <select style="height:20px; margin:0; padding:0" onchange="insTag(this.options[selectedIndex].value);this.selectedIndex=0;">
+	 <option value="nocolor" style="color: black;">no</option>
+	 <option value="RED" style="color: red;">red</option>
+	 <option value="GREEN" style="color: green;">green</option>
+	 <option value="BLUE" style="color: blue;">blue</option>
+	 </select>
+	 </span>
+	 <span class="text"></span>
+	 <img src="{url_for_images}img/undo.gif" width="20" height="20"  onclick="insBack()" alt="undo">
+	 <br>
+	 <textarea id="text" name='{name}' rows="10" wrap="physical" class="{css}" style='height:300px;'>{text}</textarea>
+	 <br>
+</div>

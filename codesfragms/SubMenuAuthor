@@ -1,0 +1,10 @@
+<?php
+//print "<div class='mainpage'>";
+    print "<ul>";
+             print "<li><a class='contentpagetitle' href='?mod=life_study'>Жизнеизучения</a></li>";
+             print "<li><a class='contentpagetitle' href='?mod=conclnt'>Заключительные<br/>сообщения к НЗ</a></li>";
+             print "<li><a class='contentpagetitle' href='?mod=high_peak_books'>Вершина Божественного<br/>откровения</a></li>";
+             print "<li><a class='contentpagetitle' href='?mod=selected_titles'>Избранные работы У. Ли</a></li>";
+    print "</ul>";
+//print "</div>";    
+?> 
