@@ -380,6 +380,8 @@ $tpl = trim($templateid);
     //$stemmed[] = search_with_simbol(trim($templateid), '"', "f");
     //$stemmed[] = search_with_simbol(trim($templateid), "'", "f");
     //$stemmed[] = search_with_simbol(trim($templateid), "`", "f");
+    //$stemmed[] = search_with_simbol(trim($templateid), '»', 'f');
+    //$stemmed[] = '«' . search_with_simbol(trim($templateid), '', 'f');    
 
     // if ($str_word_count > 1) { $stemmed[] = $tplconvert_case; }
 
