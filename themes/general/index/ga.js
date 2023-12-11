@@ -77,15 +77,17 @@ setTimeout(b,1E3);J.body.appendChild(c);c.src=e;return!0};var qf=function(){this
 E.aa=function(){this.w=!0};E.la=function(){this.G=!0};var Fe=function(a){if("prerender"==J.visibilityState)return!1;a();return!0};var M=new qf;var Ha=W._gat;Ha&&Ba(Ha._getTracker)?M=Ha:W._gat=M;var Z=new Y;(function(a){if(!Fe(a)){H(123);var b=!1,c=function(){if(!b&&Fe(a)){b=!0;var d=J,e=c;d.removeEventListener?d.removeEventListener("visibilitychange",e,!1):d.detachEvent&&d.detachEvent("onvisibilitychange",e)}};Ga(J,"visibilitychange",c)}})(function(){var a=W._gaq,b=!1;if(a&&Ba(a.push)&&(b="[object Array]"==Object.prototype.toString.call(Object(a)),!b)){Z=a;return}W._gaq=Z;b&&Z.push.apply(Z,a)});function Yc(a){var b=1,c=0,d;if(a)for(b=0,d=a.length-1;0<=d;d--)c=a.charCodeAt(d),b=(b<<6&268435455)+c+(c<<14),c=b&266338304,b=0!=c?b^c>>21:b;return b};})();
 
 // ROMANS CODE 11-07-2022
-// Модальное окно c title в // мобильной версии
-
-$("sup").click(function(e){
-	console.log($(this).parent("span").attr("title"));
+// РАБОТАЕТ ТОЛЬКО В МОБИЛЬНОЙ ВЕРСИИ Модальное окно c title в мобильной версии
+if (window.innerWidth < 768) {
+	$("sup").click(function(e){
+	//console.log($(this).parent("span").attr("title"));
     //e.stopPropagation();
     if ($(this).parent("span").attr("title")) {
     	alert($(this).parent("span").attr("title"));
     }
 });
+}
+
 /*
 $("span").click(function(e){
 	console.log("I am here!");
