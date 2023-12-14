@@ -365,35 +365,56 @@ $tpl = trim($templateid);
   //  if (true) { // Если знак припинания на последнем месте в строке
 
     // Оригинальная фраза
-    $stemmed[] = search_with_simbol(trim($templateid), 'space', 'o');       // Оригинальная фраза
+    /*$stemmed[] = search_with_simbol(trim($templateid), 'space', 'o');
     $stemmed[] = search_with_simbol(trim($templateid), ',', 'o');
+    $stemmed[] = search_with_simbol(trim($templateid), '.', 'o');
+    $stemmed[] = search_with_simbol(trim($templateid), "!", "o");
+    $stemmed[] = search_with_simbol(trim($templateid), "?", "o");
+    $stemmed[] = search_with_simbol(trim($templateid), ":", "o");
+    $stemmed[] = search_with_simbol(trim($templateid), ";", "o");
+    $stemmed[] = search_with_simbol(trim($templateid), "-", "o");
+    $stemmed[] = search_with_simbol(trim($templateid), '»', 'o');
+    $stemmed[] = '«' . search_with_simbol(trim($templateid), '', 'o');*/
 
     // Первые буквы заглавные
+    // Русские слова с тире?
     $stemmed[] = search_with_simbol(trim($templateid), 'space', 'f');       // Первые буквы заглавные
     $stemmed[] = search_with_simbol(trim($templateid), ',', 'f');
-    //$stemmed[] = search_with_simbol(trim($templateid), '.', 'f');
-    //$stemmed[] = search_with_simbol(trim($templateid), "!", "f");
-    //$stemmed[] = search_with_simbol(trim($templateid), "?", "f");
-    //$stemmed[] = search_with_simbol(trim($templateid), ":", "f");
-    //$stemmed[] = search_with_simbol(trim($templateid), ";", "f");
-    //$stemmed[] = search_with_simbol(trim($templateid), "-", "f");
+    $stemmed[] = search_with_simbol(trim($templateid), '.', 'f');
+    $stemmed[] = search_with_simbol(trim($templateid), "!", "f");
+    $stemmed[] = search_with_simbol(trim($templateid), "?", "f");
+    $stemmed[] = search_with_simbol(trim($templateid), ":", "f");
+    $stemmed[] = search_with_simbol(trim($templateid), ";", "f");
+    $stemmed[] = search_with_simbol(trim($templateid), "-", "f");
     //$stemmed[] = search_with_simbol(trim($templateid), '"', "f");
     //$stemmed[] = search_with_simbol(trim($templateid), "'", "f");
     //$stemmed[] = search_with_simbol(trim($templateid), "`", "f");
-    //$stemmed[] = search_with_simbol(trim($templateid), '»', 'f');
-    //$stemmed[] = '«' . search_with_simbol(trim($templateid), '', 'f');    
-
-    // if ($str_word_count > 1) { $stemmed[] = $tplconvert_case; }
-
-    // Все буквы большие
-    $stemmed[] = search_with_simbol(trim($templateid), 'space', 'u');       // Все буквы большие
-    $stemmed[] = search_with_simbol(trim($templateid), ',', 'u');
-    //$stemmed[] = search_with_simbol(trim($templateid), '.', 'u');
+    $stemmed[] = search_with_simbol(trim($templateid), '»', 'f');
+    $stemmed[] = '«' . search_with_simbol(trim($templateid), '', 'f');    
 
     // Все буквы маленькие
     $stemmed[] = search_with_simbol(trim($templateid), 'space', 'l');       // Все буквы маленькие
     $stemmed[] = search_with_simbol(trim($templateid), ',', 'l');
-    //$stemmed[] = search_with_simbol(trim($templateid), '.', 'l');
+    $stemmed[] = search_with_simbol(trim($templateid), '.', 'l');
+    $stemmed[] = search_with_simbol(trim($templateid), "!", "l");
+    $stemmed[] = search_with_simbol(trim($templateid), "?", "l");
+    $stemmed[] = search_with_simbol(trim($templateid), ":", "l");
+    $stemmed[] = search_with_simbol(trim($templateid), ";", "l");
+    $stemmed[] = search_with_simbol(trim($templateid), "-", "l");
+    $stemmed[] = search_with_simbol(trim($templateid), '»', 'l');
+    $stemmed[] = '«' . search_with_simbol(trim($templateid), '', 'l');
+
+    // Все буквы большие
+    $stemmed[] = search_with_simbol(trim($templateid), 'space', 'u');       // Все буквы большие
+    $stemmed[] = search_with_simbol(trim($templateid), ',', 'u');
+    $stemmed[] = search_with_simbol(trim($templateid), '.', 'u');
+    $stemmed[] = search_with_simbol(trim($templateid), "!", "u");
+    $stemmed[] = search_with_simbol(trim($templateid), "?", "u");
+    $stemmed[] = search_with_simbol(trim($templateid), ":", "u");
+    $stemmed[] = search_with_simbol(trim($templateid), ";", "u");
+    $stemmed[] = search_with_simbol(trim($templateid), "-", "u");
+    $stemmed[] = search_with_simbol(trim($templateid), '»', 'u');
+    $stemmed[] = '«' . search_with_simbol(trim($templateid), '', 'u');
 
     # Romans code 11-11-2021
     /*foreach ($stemmed as $key => $value) {
@@ -542,15 +563,27 @@ $tpl = trim($templateid);
    $id_pg_books = implode(", ", $id_books);
    # I AM HERE
    //    echo $id_pg_books . '<hr>';
+// ПОИСК MySQL *********************************
  $query = "SELECT id_pg, content
               FROM {$gl_db_prefix}pages_blocks
               WHERE id_pg IN ({$id_pg_books}) AND "; //gen_type = 'text' AND Временно удалено, не используется.
     $query .= " (";
-          for($t = 0; $t < $wrd_cnt; $t++) {
-		  if($t != 0)
-		      $query .= ' '.$search_books_by_logic.' ';
-		      $query .= "MATCH (content) AGAINST ('{$stemmed[$t]}')"; //  OR content REGEXP '[[:<:]]{$stemmed[$t]}[[:>:]]'    content LIKE '%{$stemmed[$t]}%'    MATCH (content) AGAINST ('{$stemmed[$t]}')
-	        }
+      if ($search_books_by_stype == 'S') { // Точное совпадение с запятыми, ковычками и пр. знаками. Точка и знак вопроса пока не работают
+        for($t = 0; $t < $wrd_cnt; $t++) {
+            if($t != 0) {
+              $query .= ' OR '; //$search_books_by_logic
+          }
+          //$query .= "`content` LIKE '%{$stemmed[$t]}%'";
+          $query .= "MATCH (content) AGAINST ('{$stemmed[$t]}')";
+        }
+      } else { // Включая все словоформы
+        for($t = 0; $t < $wrd_cnt; $t++) {
+            if($t != 0)
+              $query .= ' '.$search_books_by_logic.' ';
+            $query .= "MATCH (content) AGAINST ('{$stemmed[$t]}')"; //  OR content REGEXP '[[:<:]]{$stemmed[$t]}[[:>:]]'    content LIKE '%{$stemmed[$t]}%'    MATCH (content) AGAINST ('{$stemmed[$t]}')
+        }        
+      }
+
  		      $query .= " ) GROUP BY id_pg";
 
    $results = db_select($query);
@@ -567,8 +600,8 @@ $tpl = trim($templateid);
           $content = stripslashes($results[$i]['content']);         //  stripslashes — Удаляет экранирование символов
           $content = strip_tags($content);                          //  strip_tags - Удаляет HTML и PHP-теги из строки
   	   $content_by_pages = explode("[NEWPAGE]", $content);       //  разбивает контент на страницы
-  	   $pages_cnt = count($content_by_pages);                    //  количество страниц в найденной книге
-            //      echo $id_pg . ', ' ;                            //  печать найденных книг  new RegExp(word, 'g')
+  	   $pages_cnt = count($content_by_pages);                    //  количество страниц в найденной книге       
+       // echo $id_pg . ', ' ;                            //  печать найденных книг  new RegExp(word, 'g')
         $reps = array();
            if($pages_cnt > 0)
             {  // 4
@@ -582,28 +615,37 @@ $tpl = trim($templateid);
 
 // $count_words_arr = array();
          		for($k = 0; $k < $wrd_cnt; $k++)
-          		  {        //2
-                         $count_words = preg_match_all( '/'. $stemmed[$k] .'/iu', $content_by_pages[$j], $matches );
+          		  {        //2                         
+                         $count_words = preg_match_all( '/'. $stemmed[$k] .'/iu', $content_by_pages[$j], $matches );                         
 //  $count_words_arr[$k] = $count_words;
 //  mb_ereg_match
 //  if(preg_match('/'. $stemmed[$k] .'/i', $content_by_pages[$j]))
 //  $stemmed[$k] = mb_convert_encoding($stemmed[$k], "UTF-8");
 //  preg_match('/^.{' . $stemmed[$k] . '}(.*)/us', $s, $tmp);
 //  /^[а-яё]+$/i; /^[а-яА-Я]+\s*[a-zA-Z]+$/
-// ^foo -- строка начинается с “foo” $convertedText = (mb_convert_encoding($stemmed[$k], 'utf-8', mb_detect_encoding($stemmed[$k])));
+// ^foo -- строка начинается с “foo” $convertedText = (mb_convert_encoding($stemmed[$k], 'utf-8', mb_detect_encoding($stemmed[$k])));                         
 
-                          if(preg_match('/'.$stemmed[$k].'/i', $content_by_pages[$j]))
-                             {         //1
-  	                       $pos = mb_strrpos($content_by_pages[$j], $stemmed[$k]);        // позиция первого вхождения слова/фразы
-                                       $content_by_pages[$j] = mb_substr($content_by_pages[$j], $pos, 100);
-		                         $content_by_pages[$j] = $content_by_pages[$j];
-		                         $content_by_pages[$j] = substr($content_by_pages[$j], 0, strrpos($content_by_pages[$j], ' '));
-		                         $content_by_pages[$j] .= " ...";
-                                  	    $replacement = "<mark>".$stemmed[$k]."</mark>";
-		                //$content_by_pages[$j] = eregi_replace($stemmed[$k], $replacement, $content_by_pages[$j]);
-                    $content_by_pages[$j] = mb_eregi_replace($stemmed[$k], $replacement, $content_by_pages[$j]);
-// $array_sum_array_sum = array_sum($count_words_arr);
-  $arr[$i][$j] = array('subject' => $title, 'lnk' => $links_books, 'shot_content' => $content_by_pages[$j], 'prt' => $part, 'ps' => $pos, 'rep' => $count_words);
+                          if (strpos($content_by_pages[$j], $stemmed[$k])) { //1  // preg_match('/'.$stemmed[$k].$tmp_ecran.'/i', $content_by_pages[$j])
+                              // позиция ПОСЛЕДНЕГО вхождения слова/фразы (что если слово окажется последним в тексте?)
+  	                          $pos = mb_strrpos($content_by_pages[$j], $stemmed[$k]);
+                              // Получаем фрагмент текста длинной 100 символов
+                              $content_by_pages[$j] = mb_substr($content_by_pages[$j], $pos, 100);
+
+		                          //$content_by_pages[$j] = $content_by_pages[$j];
+
+                              // убираем часть строки до первого пробела с конца.
+		                          $content_by_pages[$j] = substr($content_by_pages[$j], 0, strrpos($content_by_pages[$j], ' '));
+                              // добавляем троеточее в конец фразы        
+		                          $content_by_pages[$j] .= " ...";                              
+                              // отмечаем икомое слово
+                              $replacement = "<mark>".$stemmed[$k]."</mark>";
+
+		                          //$content_by_pages[$j] = eregi_replace($stemmed[$k], $replacement, $content_by_pages[$j]);
+                              // заменяем искомое слово словом с выделением
+                              $content_by_pages[$j] = mb_eregi_replace($stemmed[$k], $replacement, $content_by_pages[$j]);                              
+                              
+                              // $array_sum_array_sum = array_sum($count_words_arr);
+                              $arr[$i][$j] = array('subject' => $title, 'lnk' => $links_books, 'shot_content' => $content_by_pages[$j], 'prt' => $part, 'ps' => $pos, 'rep' => $count_words);
 
                              }       //1
                         }      //2
@@ -626,7 +668,7 @@ $tpl = trim($templateid);
                  $ar_sort[] = $v1[subject];    // заполняем массив для сортировки
                  $n = $n + 1;
                  $mass[$n] = '<tr><td>' . $v1[lnk] . '</td><td>' . $v1[shot_content] . '</td><td>' . $v1[prt] . '</td><td>' . $v1[rep] . '</td></tr>';
-                 $reps[] = $v1[rep];   // Собираем массив количество найденных фраз
+                 $reps[] = $v1[rep];   // Собираем массив количество найденных фраз                 
                }
           }
 

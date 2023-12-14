@@ -91,9 +91,9 @@ echo "Такой страницы нет в данной книге  » "; echo 
 
 	         echo "</div></div></div>"; 
  }
- session_start();
+ //session_start();
  $stemmed = unserialize($_SESSION['words_sessia']);
-   $wrd_cnt = count($stemmed); 
+ $wrd_cnt = count($stemmed); 
 if ($wrd_cnt > 1) { echo '<div class="small-9 columns"><p style="margin: 5px 0px 0px 20px; float: left;"><a href="/?mod=search_tips"> « результаты поиска </a></p></div>';}
 ?>
 </div>

@@ -5,7 +5,7 @@
  
   //url адрес сайта
   $gl_site = "http://".$_SERVER['SERVER_NAME'];
- 
+  $gl_subdir='';
   //определяем поддиректорию, в которую установлен сайт
   preg_match("/([\a-z_-]+)index.cfm/", $_SERVER['PHP_SELF'], $matches);
 
@@ -14,13 +14,13 @@
 		$last = strlen($gl_site) - 1;
 		if($gl_site[$last] != '/')
 		  $gl_site .= '/';
-
+  
   if(strpos($matches[1], '//') === false && $gl_subdir != '/')
   {
     $gl_subdir = $matches[1];
 
     //директория , убираем передний слэш
-		  if($gl_subdir[0] == '/')
+		  if(substr($gl_subdir, 0, 1) == '/')
 		  {
 		  	 $len = strlen($gl_subdir);
 		    $gl_subdir = substr($gl_subdir, 1, $len - 1);
@@ -43,7 +43,7 @@
     $gl_path_to_root = substr($gl_path_to_root, 0, $inx);
   unset($inx);
 
-  if($gl_subdir[0] != '/')
+  if(substr($gl_subdir, 0, 1) != '/')
     $gl_subdir = '/'.$gl_subdir;
   $inx = strlen($gl_subdir) - 1;
   if($gl_subdir[$inx] != '/')
