@@ -3,16 +3,19 @@
 //session_start();
 $stemmed = unserialize($_SESSION['words_sessia']);
 // экранируем точки
+// ЧТО БЫ ВЫДЕЛЯЛСЯ ТЕКСТ ТОЛЬКО С ТОЧКОЙ или "?" ПРИ строгом соответствии для запроса с точкой или "?" то нужно дорабатывать.
 for ($i=0; $i < count($stemmed); $i++) { 
-	if (substr($stemmed[$i],-1) === '.') {
+	if (substr(trim($stemmed[$i]),-1) === '.') {
 		$temp_str_ekran = explode('.', $stemmed[$i]);
-		$stemmed[$i] = implode("/\./", $temp_str_ekran);
-	} elseif (substr($stemmed[$i],-1) === '?') {
+		//$stemmed[$i] = implode("/\./", $temp_str_ekran); // нужно тестировать
+		$stemmed[$i] = trim($temp_str_ekran[0]);
+	} elseif (substr(trim($stemmed[$i]),-1) === '?') {		
 		$temp_str_ekran = explode('?', $stemmed[$i]);
-		$stemmed[$i] = implode("/\?/", $temp_str_ekran);
+		//$stemmed[$i] = implode("/\?/", $temp_str_ekran); // не работает
+		$stemmed[$i] = trim($temp_str_ekran[0]);
 	}
 }
-print_r($stemmed);
+
  $wrd_cnt = count($stemmed);
  $colorstyle = array('powderblue', 'PaleTurquoise', 'Wheat', 'Yellow', 'Tomato', 'Gold', 'LightCyan', 'Orchid', 'Goldenrod', 'papayawhip', 'lemonchiffon', 'palevioletred', 'Green');
 ?>
@@ -33,6 +36,7 @@ print_r($stemmed);
 </style>
 
 <script type="text/javascript">
+	// ТОЛЬКО ДЛЯ ТОЧНОГО СООТВЕТСТВИЯ добавить регистро независимый поиск + длина искомой строки и полученный текст оборачивать в теги и вставлять обратно в текст
 var Word = {
 	selected: function(word, where, className, del) {
 		where = typeof where == 'string' ? document.getElementById(where) : where || console.log('Error');
@@ -58,7 +62,7 @@ var Word = {
 }
 <?  if ($wrd_cnt > 1) {  ?> 
   $(document).ready(function() {
-<? for($k = 0; $k < $wrd_cnt; $k++) { ?>
+<? for($k = 0; $k < $wrd_cnt; $k++) { ?>	
      Word.selected('<?=$stemmed[$k]; ?>', 'ministry-text', '<? echo $colorstyle[$k]; ?>');
 <? } ?>
  });
