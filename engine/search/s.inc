@@ -2,17 +2,42 @@
  
 //session_start();
 $stemmed = unserialize($_SESSION['words_sessia']);
+//print_r($stemmed);
 // экранируем точки
 // ЧТО БЫ ВЫДЕЛЯЛСЯ ТЕКСТ ТОЛЬКО С ТОЧКОЙ или "?" ПРИ строгом соответствии для запроса с точкой или "?" то нужно дорабатывать.
 for ($i=0; $i < count($stemmed); $i++) { 
 	if (substr(trim($stemmed[$i]),-1) === '.') {
 		$temp_str_ekran = explode('.', $stemmed[$i]);
 		//$stemmed[$i] = implode("/\./", $temp_str_ekran); // нужно тестировать
-		$stemmed[$i] = trim($temp_str_ekran[0]);
+		if (in_array($stemmed[$i], $stemmed)) {
+			$stemmed[$i] = '';
+		} else {
+			$stemmed[$i] = trim($temp_str_ekran[0]);
+		}		
 	} elseif (substr(trim($stemmed[$i]),-1) === '?') {		
 		$temp_str_ekran = explode('?', $stemmed[$i]);
 		//$stemmed[$i] = implode("/\?/", $temp_str_ekran); // не работает
-		$stemmed[$i] = trim($temp_str_ekran[0]);
+		if (in_array($stemmed[$i], $stemmed)) {
+			$stemmed[$i] = '';
+		} else {
+			$stemmed[$i] = trim($temp_str_ekran[0]);
+		}		
+	} elseif (substr(trim($stemmed[$i]),-1) === ')') {
+		$temp_str_ekran = explode(')', $stemmed[$i]);
+		//$stemmed[$i] = implode("/\?/", $temp_str_ekran); // не работает
+		if (in_array($stemmed[$i], $stemmed)) {
+			$stemmed[$i] = '';
+		} else {
+			$stemmed[$i] = trim($temp_str_ekran[0]);
+		}		
+	} elseif (substr(trim($stemmed[$i]), 0, 1) === '(') {
+		$temp_str_ekran = explode('(', $stemmed[$i]);
+		//$stemmed[$i] = implode("/\?/", $temp_str_ekran); // не работает
+		if (in_array($stemmed[$i], $stemmed)) {
+			$stemmed[$i] = '';
+		} else {
+			$stemmed[$i] = trim($temp_str_ekran[1]);
+		}
 	}
 }
 
@@ -60,13 +85,17 @@ var Word = {
 	},
 	focusIndex: -1
 }
-<?  if ($wrd_cnt > 1) {  ?> 
+<?php  if ($wrd_cnt > 1) {  ?> 
   $(document).ready(function() {
-<? for($k = 0; $k < $wrd_cnt; $k++) { ?>	
-     Word.selected('<?=$stemmed[$k]; ?>', 'ministry-text', '<? echo $colorstyle[$k]; ?>');
-<? } ?>
+<?php for($k = 0; $k < $wrd_cnt; $k++) { 
+	if (!empty($stemmed[$k])) {?>
+     Word.selected('<?php echo trim($stemmed[$k]); ?>', 'ministry-text', '<?php echo $colorstyle[$k]; ?>');
+<?php 
+	}
+} 
+?>
  });
-<?  } ?>
+<?php  } ?>
  
 </script>
 

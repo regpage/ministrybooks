@@ -22,7 +22,8 @@
     <!-- Google Fonts -->
     <link href="themes/general/index/css" rel="stylesheet" type="text/css">
     <!-- javascript -->
-  	<script type="text/javascript" async src="themes/general/index/ga.js"></script><script src="themes/general/index/custom.modernizr.js"></script>
+  	<script type="text/javascript" async src="themes/general/index/ga.js?v1"></script>
+    <script src="themes/general/index/custom.modernizr.js"></script>
   	<script src="themes/general/index/jquery.min.js"></script>
     <script src="themes/general/index/scroll-top.js"></script>
 </head>

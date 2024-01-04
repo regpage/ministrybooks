@@ -85,8 +85,23 @@ if (window.innerWidth < 768) {
     if ($(this).parent("span").attr("title")) {
     	alert($(this).parent("span").attr("title"));
     }
-});
+});	
+} else {
+	// выравниваем щирину блоков для гимнов
+	let mbook_width_hbody = 0;
+	// получаем наибольшую ширину
+	$(".HBODY").each(function () {		
+		if ($(this).width() > 300 && $(this).width() > mbook_width_hbody) {
+		mbook_width_hbody = $(this).width();
+		}	
+	});
+
+	if (mbook_width_hbody > 300) {		
+		// задаём ширину блокам
+		$(".HBODY").css("width", mbook_width_hbody + "px");
+	}
 }
+
 
 /*
 $("span").click(function(e){

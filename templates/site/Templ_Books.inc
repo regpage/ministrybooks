@@ -35,10 +35,10 @@
 
 
     <!-- javascript -->
-<script type="text/javascript" async src="themes/general/mistakes/mistakes.js"></script>
-
-  	<script type="text/javascript" async src="themes/general/index/ga.js"></script><script src="themes/general/index/custom.modernizr.js"></script>
-  	<script src="themes/general/index/jquery.min.js"></script>
+    <script src="themes/general/index/jquery.min.js"></script>
+    <script type="text/javascript" async src="themes/general/mistakes/mistakes.js"></script>
+  	<script type="text/javascript" async src="themes/general/index/ga.js?v2"></script>
+    <script src="themes/general/index/custom.modernizr.js"></script>  	
     <script src="themes/general/index/scroll-top.js"></script>
 </head>
 <body id="top" style="padding-top: 0px;"><a name="topofpage"></a>
